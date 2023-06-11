@@ -16,7 +16,7 @@ fetch('../cards/list.json')
                     vida
                 } = data[carta];
                 const cartaHtml = `
-            <div>
+            <div class="${mana}">
               <h3>${titol}</h3>
               
               <img src="https://github.com/TBernaus/TBernaus.github.io/blob/main/cards/images/${imatge}.PNG?raw=true" alt="${titol}">
