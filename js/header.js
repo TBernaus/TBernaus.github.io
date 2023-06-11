@@ -2,7 +2,7 @@
 var encabezado = document.createElement("h1");
 
 // Crear el contenido del encabezado
-var textoEncabezado = document.createTextNode("header de prova");
+var textoEncabezado = document.createTextNode("");
 
 // Agregar el contenido al elemento de encabezado
 encabezado.appendChild(textoEncabezado);
