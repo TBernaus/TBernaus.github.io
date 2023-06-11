@@ -1,6 +1,16 @@
-#F{
-    background-color: pink;
+div{
+    max-width: 400px;
 }
-#M{
-    background-color: red;
+.F{
+    background-color: pink;
+    border: 3px solid black;
+}
+.R{
+    background-color: rgb(148, 54, 54);
+    border: 3px solid black;
+}
+img{
+    height: 200px;
+    width: 340px;
+    margin-left: 27px;
 }
