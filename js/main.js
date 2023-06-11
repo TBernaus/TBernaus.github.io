@@ -18,7 +18,8 @@ fetch('../cards/list.json')
                 const cartaHtml = `
             <div>
               <h3>${titol}</h3>
-              <img src="../cards/images/${imatge}" alt="${titol}">
+              
+              <img src="https://github.com/TBernaus/TBernaus.github.io/blob/main/cards/images/${imatge}.PNG?raw=true" alt="${titol}">
               <p><strong>Coste de mana:</strong> ${mana}</p>
               <p><strong>tipus:</strong> ${tipus}</p>
               <p><strong>faccio:</strong> ${faccio.join(', ')}</p>

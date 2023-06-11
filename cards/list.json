@@ -2,7 +2,7 @@
     {
         "titol": "Papallona Vident",
         "mana": "F",
-        "imatge": "Papallona_Vident.png",
+        "imatge": "Papallona_Vident",
         "tipus": "Criatura",
         "faccio": [
             "Furry",
@@ -18,7 +18,7 @@
     {
         "titol": "Papallona Lladre",
         "mana": "F",
-        "imatge": "Papallona_Lladre.png",
+        "imatge": "Papallona_Lladre",
         "tipus": "Criatura",
         "faccio": [
             "Furry",
