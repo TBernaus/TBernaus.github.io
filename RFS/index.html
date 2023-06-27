@@ -9,66 +9,59 @@
     <script src="./js/main.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script>
-        let quant = prompt("Quantes opcions vols?")
-        if (quant >= 1) {
-            console.log(quant);
-            window.onload = function () {
-                document.getElementById("Quant").innerHTML = "has indicat "+ quant
-            }
-
-        }
-        else if (isNaN(quant)) {
-            console.log(quant);
-            window.onload = function () {
-                document.getElementById("Quant").innerHTML = "has d'indicar una xifra :("
-            }
-
-        }
-        else {
-
-            console.log(quant);
-            window.onload = function () {
-                document.getElementById("Quant").innerHTML = "mínim 1 :("
-            }
-        }
-
-    </script>
-
 </head>
 
 <body>
     <h1>RFS</h1>
-    <div id="Quant">
-        <p>quelcom ha sortit malament uwu</p>
-    </div>
 
+    <h3>llistat de pa:</h3>
+    <script> llistar(pa)</script>
+    <h3>pa seleccionat:</h3>
+    <b>
+        <script>escollir(pa)</script>
+    </b>
+    <button onclick="escollir(pa)">Reroll</button>
+
+    <h3>llistat de formatge:</h3>
+    <script>llistar(formatge)</script>
+    <h3>formatge seleccionat:</h3>
+    <b>
+        <script>escollir(formatge)</script>
+    </b>
+    <button onclick="escollir(formatge)">Reroll</button>
+
+    <h3>llistat de base:</h3>
+    <script> llistar(base)</script>
+    <h3>base seleccionat:</h3>
+    <b>
+        <script>escollir(base)</script>
+    </b>
+    <button onclick="escollir(base)">Reroll</button>
+
+    <h3>llistat de verdureta:</h3>
+    <script> llistar(verdureta)</script>
+    <h3>verdureta seleccionat:</h3>
+    <b>
+        <script>escollir(verdureta)</script>
+    </b>
+    <button onclick="escollir(verdureta)">Reroll</button>
+
+    <h3>llistat de wildMagic:</h3>
+    <script> llistar(wildMagic)</script>
+    <h3>wildMagic seleccionat:</h3>
+    <b>
+        <script>escollir(wildMagic)</script>
+    </b>
+    <button onclick="escollir(wildMagic)">Reroll</button>
+
+    <h3>llistat de salsa:</h3>
+    <script> llistar(salsa)</script>
+    <h3>salsa seleccionat:</h3>
+    <b>
+        <script>escollir(salsa)</script>
+    </b>
+    <button onclick="escollir(salsa)">Reroll</button>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-<!-- window.onload = function () {
-    document.getElementById("Quant").innerHTML = "Quelcom ha sortit bé!"
-} -->
-
-<!-- if (quant > 1) {
-    console.log(quant);
-    window.onload = function () {
-        document.getElementById("Quant").innerHTML = quant + " és major que 1"
-    }
-
-}
-else {
-    console.log(quant);
-    window.onload = function () {
-        document.getElementById("Quant").innerHTML = quant + " és menor a 1"
-    }
-} -->
