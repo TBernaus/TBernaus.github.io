@@ -19,7 +19,7 @@ fetch('../cards/list.json')
             <div class="${mana}">
               <h3>${titol}</h3>
               
-              <img src="https://github.com/TBernaus/TBernaus.github.io/blob/main/cards/images/${imatge}.PNG?raw=true" alt="${titol}">
+              <img src="https://github.com/TBernaus/TBernaus.github.io/tree/main/RatTCG/cards/images/${imatge}.PNG?raw=true" alt="${titol}">
               <p><strong>Coste de mana:</strong> ${mana}</p>
               <p><strong>tipus:</strong> ${tipus}</p>
               <p><strong>faccio:</strong> ${faccio.join(', ')}</p>
