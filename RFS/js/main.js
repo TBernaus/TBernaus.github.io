@@ -1,3 +1,12 @@
+let ingredients = [
+    "pa",
+    "formatge",
+    "base",
+    "verdureta",
+    "wildMagic",
+    "salsa",
+]
+
 let pa = [
     "Pagès", 
     "Baguette", 
