@@ -114,6 +114,10 @@ function llistar(ingredient){
 function escollir(ingredient){
     const num = Math.floor(Math.random()*ingredient.length);
     let ingredientRandom = ingredient[num]
-    document.getElementById("pa").innerHTML=document.write(ingredientRandom);
+    document.write(ingredientRandom);
 }
 
+function reroll(ingredient){
+    console.log(ingredient)
+    
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://github.com/TBernaus/TBernaus.github.io/blob/main/RFS/assets/favicon.png">
+    <link rel="shortcut icon" href="https://github.com/TBernaus/TBernaus.github.io/blob/main/RFS/assets/favicon.png?raw=true">
     <title>Roll For Sandwich</title>
     <script src="js/main.js"></script>
 
@@ -15,54 +15,55 @@
 <body>
     <h1>Roll For Sandwich</h1>
 
-    <!-- <h3>llistat de pa:</h3>
-    <script> llistar(pa)</script> -->
 
+    <!-- PA -->
     <h3>pa seleccionat:</h3>
-    <b>
-        <script>escollir(pa)</script>
-    </b>
-    <button onclick="escollir(pa)">Reroll</button>
+    <div id="paDIV">
+        <script> escollir(pa)</script>
+    </div>
+    <button onclick="reroll(pa)">Reroll</button>
 
-    <!-- <h3>llistat de formatge:</h3>
-    <script>llistar(formatge)</script> -->
+
+    <!-- FORMATGE -->
     <h3>formatge seleccionat:</h3>
-    <b>
-        <script>escollir(formatge)</script>
-    </b>
-    <button onclick="escollir(formatge)">Reroll</button>
+    <div id="formatge">
+        <script> escollir(formatge)</script>
+    </div>
+    <button onclick="reroll(formatge)">Reroll</button>
 
-    <!-- <h3>llistat de base:</h3>
-    <script> llistar(base)</script> -->
+
+    <!-- BASE -->
     <h3>base seleccionat:</h3>
-    <b>
-        <script>escollir(base)</script>
-    </b>
-    <button onclick="escollir(base)">Reroll</button>
+    <div id="base">
+        <script> escollir(base)</script>
+    </div>
+    <button onclick="reroll(base)">Reroll</button>
 
-    <!-- <h3>llistat de verdureta:</h3>
-    <script> llistar(verdureta)</script> -->
+
+    <!-- VERDURETA -->
     <h3>verdureta seleccionat:</h3>
-    <b>
-        <script>escollir(verdureta)</script>
-    </b>
-    <button onclick="escollir(verdureta)">Reroll</button>
+    <div id="verdureta">
+        <script> escollir(verdureta)</script>
+    </div>
+    <button onclick="reroll(verdureta)">Reroll</button>
 
-    <!-- <h3>llistat de wildMagic:</h3>
-    <script> llistar(wildMagic)</script> -->
+
+    <!-- WILD MAGIC -->
     <h3>wildMagic seleccionat:</h3>
-    <b>
-        <script>escollir(wildMagic)</script>
-    </b>
-    <button onclick="escollir(wildMagic)">Reroll</button>
-<!-- 
-    <h3>llistat de salsa:</h3>
-    <script> llistar(salsa)</script> -->
+    <div id="wildMagic">
+        <script> escollir(wildMagic)</script>
+    </div>
+    <button onclick="reroll(wildMagic)">Reroll</button>
+
+
+    <!-- SALSA -->
     <h3>salsa seleccionat:</h3>
-    <b>
-        <script>escollir(salsa)</script>
-    </b>
-    <button onclick="escollir(salsa)">Reroll</button>
+    <div id="salsa">
+        <script> escollir(salsa)</script>
+    </div>
+    
+    <button onclick="reroll(salsa)">Reroll</button>
+
 
 </body>
 
