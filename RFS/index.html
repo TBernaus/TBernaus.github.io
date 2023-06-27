@@ -10,25 +10,40 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- <script>
+    <script>
         let quant = prompt("Quantes opcions vols?")
-        while (quant > 0) {
-            console.log(quant)
+        if (quant >= 1) {
+            console.log(quant);
+            window.onload = function () {
+                document.getElementById("Quant").innerHTML = "has indicat "+ quant
+            }
 
-            
-            quant--;
+        }
+        else if (isNaN(quant)) {
+            console.log(quant);
+            window.onload = function () {
+                document.getElementById("Quant").innerHTML = "has d'indicar una xifra :("
+            }
+
+        }
+        else {
+
+            console.log(quant);
+            window.onload = function () {
+                document.getElementById("Quant").innerHTML = "mínim 1 :("
+            }
         }
 
-    </script> -->
+    </script>
 
 </head>
 
 <body>
     <h1>RFS</h1>
-    <!-- <div id="Quant">
-        <p>quelcom ha sortit malament</p>
-    </div> -->
-    
+    <div id="Quant">
+        <p>quelcom ha sortit malament uwu</p>
+    </div>
+
 
 </body>
 
