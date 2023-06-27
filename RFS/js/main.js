@@ -119,5 +119,9 @@ function escollir(ingredient){
 
 function reroll(ingredient){
     console.log(ingredient)
-    
+    const num = Math.floor(Math.random()*ingredient.length);
+    console.log(num)
+    let ingredientRandom = ingredient[num]
+    console.log(ingredientRandom)
+    console.log(document.getElementById("pa"))
 }
