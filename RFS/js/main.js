@@ -8,28 +8,28 @@ let ingredients = [
 ]
 
 let pa = [
-    "Pagès", 
-    "Baguette", 
-    "Motlle", 
-    "Bagel", 
-    "Llavors", 
-    "Hamburguesa", 
-    "Pita", 
+    "Pagès",
+    "Baguette",
+    "Motlle",
+    "Bagel",
+    "Llavors",
+    "Hamburguesa",
+    "Pita",
     "Frankfurt",
 ];
 
 
 let formatge = [
-    "Fresc", 
-    "Tendre", 
-    "Rulo de cabra", 
-    "Semicurat", 
-    "Grana Padano", 
-    "Gouda", 
-    "Havarti", 
-    "Edam", 
+    "Fresc",
+    "Tendre",
+    "Rulo de cabra",
+    "Semicurat",
+    "Grana Padano",
+    "Gouda",
+    "Havarti",
+    "Edam",
     "Cheddar",
-    "Emmental", 
+    "Emmental",
     "Curat",
     "Cabra en llesques",
 ]
@@ -42,7 +42,7 @@ let base = [
     "Mortadela",
     "Tonyina",
     "Pollastre",
-    "Frankfurt", 
+    "Frankfurt",
     "Bacó",
     "Hamburguesa",
     "Carn arrebossada",
@@ -105,23 +105,33 @@ let salsa = [
     "Espinaler",
 ]
 
-function llistar(ingredient){
+function llistar(ingredient) {
     ingredient.forEach(element => {
-        document.write(element+", ")
+        document.write(element + ", ")
     });
 }
 
-function escollir(ingredient){
-    const num = Math.floor(Math.random()*ingredient.length);
+function escollir(ingredient) {
+    const num = Math.floor(Math.random() * ingredient.length);
     let ingredientRandom = ingredient[num]
     document.write(ingredientRandom);
+    return ingredientRandom
 }
 
-function reroll(ingredient){
-    console.log(ingredient)
-    const num = Math.floor(Math.random()*ingredient.length);
-    console.log(num)
+function reroll(ingredient) {
+    // console.log(ingredient)
+    const num = Math.floor(Math.random() * ingredient.length);
+    // console.log(num)
     let ingredientRandom = ingredient[num]
     console.log(ingredientRandom)
-    console.log(document.getElementById("pa"))
+    // console.log(document.getElementById("pa"))
+    let div = document.getElementById(ingredient);
+    console.log(div)
 }
+
+// function reroll(ingredient) {
+//     let div = document.getElementById(ingredient);
+//     let canvi = escollir(ingredient)
+//     console.log(canvi)
+//     div.write = canvi;
+// }
