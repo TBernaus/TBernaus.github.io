@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://github.com/TBernaus/TBernaus.github.io/blob/main/RFS/assets/favicon.png?raw=true">
+    <link rel="shortcut icon"
+        href="https://github.com/TBernaus/TBernaus.github.io/blob/main/RFS/assets/favicon.png?raw=true">
+    <link rel="stylesheet" href="styles.css">
     <title>Roll For Sandwich</title>
     <script src="js/main.js"></script>
 
@@ -14,54 +16,71 @@
 
 <body>
     <h1>Roll For Sandwich</h1>
-
+    <br><br>
 
     <!-- PA -->
     <h3>pa seleccionat:</h3>
+<<<<<<< HEAD
     <div id="pa">
         <p id="pa"><script> escollir(pa)</script></p>
+=======
+    <div id="paDIV">
+        <p id="pa">
+            <script> escollir(pa)</script>
+        </p>
+>>>>>>> 4ce354c (reroll)
     </div>
-    <button onclick="reroll(pa)">Reroll</button>
+    <button onclick="reroll(pa, 'pa')">Reroll</button>
 
 
     <!-- FORMATGE -->
     <h3>formatge seleccionat:</h3>
-    <div id="formatge">
-        <script> escollir(formatge)</script>
+    <div id="formatgeDIV">
+        <p id="formatge">
+            <script> escollir(formatge)</script>
+        </p>
     </div>
-    <button onclick="reroll(formatge)">Reroll</button>
+    <button onclick="reroll(formatge, 'formatge')">Reroll</button>
 
 
     <!-- BASE -->
     <h3>base seleccionat:</h3>
-    <div id="base">
-        <script> escollir(base)</script>
+    <div id="baseDIV">
+        <p id="base">
+            <script> escollir(base)</script>
+        </p>
     </div>
-    <button onclick="reroll(base)">Reroll</button>
+    <button onclick="reroll(base, 'base')">Reroll</button>
 
 
     <!-- VERDURETA -->
     <h3>verdureta seleccionat:</h3>
-    <div id="verdureta">
-        <script> escollir(verdureta)</script>
+    <div id="verduretaDIV">
+        <p id="verdureta">
+            <script> escollir(verdureta)</script>
+        </p>
     </div>
-    <button onclick="reroll(verdureta)">Reroll</button>
+    <button onclick="reroll(verdureta,'verdureta')">Reroll</button>
 
 
     <!-- WILD MAGIC -->
     <h3>wildMagic seleccionat:</h3>
-    <div id="wildMagic">
-        <script> escollir(wildMagic)</script>
+    <div id="wildMagicDIV">
+        <p id="wildMagic">
+            <script> escollir(wildMagic)</script>
+        </p>
     </div>
-    <button onclick="reroll(wildMagic)">Reroll</button>
+    <button onclick="reroll(wildMagic,'wildMagic')">Reroll</button>
 
 
     <!-- SALSA -->
     <h3>salsa seleccionat:</h3>
-    <div id="salsa">
-        <script> escollir(salsa)</script>
+    <div id="salsaDIV">
+        <p id="salsa">
+            <script> escollir(salsa, 'salsa')</script>
+        </p>
     </div>
-    
+
     <button onclick="reroll(salsa)">Reroll</button>
 
 

@@ -1,0 +1,15 @@
+body{
+    font-family: monospace;
+    text-align: center;
+}
+h1{
+    text-align: center;
+    margin: 2em;
+}
+div{
+    border: 1px black solid;
+    display: inline-block;
+    text-align: center;
+    width: 10em;
+    height: 3em;
+}

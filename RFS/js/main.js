@@ -118,6 +118,7 @@ function escollir(ingredient) {
     return ingredientRandom
 }
 
+<<<<<<< HEAD
 function reroll(ingredient) {
     // console.log(ingredient)
     const num = Math.floor(Math.random() * ingredient.length);
@@ -135,3 +136,21 @@ function reroll(ingredient) {
 //     console.log(canvi)
 //     div.write = canvi;
 // }
+=======
+function lastWord(words) {
+    let n = words.replace(/[\[\]?.,\/#!$%\^&\*;:{}=\\|_~()]/g, "").split(" ");
+    return n[n.length - 1];
+}
+
+function reroll(ingredient, divID) {
+    let modificat = document.getElementById(divID).innerHTML;
+    console.log(modificat)
+    if (modificat.startsWith("<script>")) {
+        let altre = lastWord(modificat)
+        console.log(altre)
+    }
+    const num = Math.floor(Math.random() * ingredient.length);
+    let ingredientRandom = ingredient[num]
+    document.getElementById(divID).innerHTML = ingredientRandom
+}
+>>>>>>> 4ce354c (reroll)
