@@ -115,28 +115,8 @@ function escollir(ingredient) {
     const num = Math.floor(Math.random() * ingredient.length);
     let ingredientRandom = ingredient[num]
     document.write(ingredientRandom);
-    return ingredientRandom
 }
 
-<<<<<<< HEAD
-function reroll(ingredient) {
-    // console.log(ingredient)
-    const num = Math.floor(Math.random() * ingredient.length);
-    // console.log(num)
-    let ingredientRandom = ingredient[num]
-    console.log(ingredientRandom)
-    // console.log(document.getElementById("pa"))
-    let div = document.getElementById(ingredient);
-    console.log(div)
-}
-
-// function reroll(ingredient) {
-//     let div = document.getElementById(ingredient);
-//     let canvi = escollir(ingredient)
-//     console.log(canvi)
-//     div.write = canvi;
-// }
-=======
 function lastWord(words) {
     let n = words.replace(/[\[\]?.,\/#!$%\^&\*;:{}=\\|_~()]/g, "").split(" ");
     return n[n.length - 1];
@@ -153,4 +133,3 @@ function reroll(ingredient, divID) {
     let ingredientRandom = ingredient[num]
     document.getElementById(divID).innerHTML = ingredientRandom
 }
->>>>>>> 4ce354c (reroll)
