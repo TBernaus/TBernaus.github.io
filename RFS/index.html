@@ -9,7 +9,9 @@
         href="https://github.com/TBernaus/TBernaus.github.io/blob/main/RFS/assets/favicon.png?raw=true">
     <link rel="stylesheet" href="styles.css">
     <title>Roll For Sandwich</title>
+    <script src="js/llista.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/counter.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -80,7 +82,20 @@
     </div>
     <button onclick="reroll(salsa, 'salsa')">Reroll</button>
 
-
+<br><br><br>
+    <!-- Llista -->
+    <h3>Llistat</h3>
+    <div id="Llistat">
+        <p id="Llista">
+            <script> llistar(pa)</script>
+        </p>
+    </div><br>
+    <button class="llistatBTN" onclick="rellistar(pa)">Pa</button>
+    <button class="llistatBTN" onclick="rellistar(formatge)">Formatge</button>
+    <button class="llistatBTN" onclick="rellistar(base)">Base</button>
+    <button class="llistatBTN" onclick="rellistar(verdureta)">Verdureta</button>
+    <button class="llistatBTN" onclick="rellistar(wildMagic)">Wild Magic</button>
+    <button class="llistatBTN" onclick="rellistar(salsa)">Salsa</button>
 </body>
 
 </html>

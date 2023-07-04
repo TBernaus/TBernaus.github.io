@@ -21,3 +21,12 @@ button{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
+#Llistat{
+    background-color: burlywood;
+    max-width: 100%;
+    width: 50em;
+    height: auto;
+}
+.llistatBTN{
+    width: 7em;
+}
