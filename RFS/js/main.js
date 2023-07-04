@@ -122,14 +122,29 @@ function lastWord(words) {
     return n[n.length - 1];
 }
 
+let comptador = 3;
+function counter(){
+    document.getElementById('comptador').innerHTML = comptador
+}
+
 function reroll(ingredient, divID) {
-    let modificat = document.getElementById(divID).innerHTML;
-    console.log(modificat)
-    if (modificat.startsWith("<script>")) {
-        let altre = lastWord(modificat)
-        console.log(altre)
+    if (comptador<=0){
+        alert("no et queden rerolls uwu")
     }
-    const num = Math.floor(Math.random() * ingredient.length);
-    let ingredientRandom = ingredient[num]
-    document.getElementById(divID).innerHTML = ingredientRandom
+    else{
+        comptador--
+        const num = Math.floor(Math.random() * ingredient.length);
+        let ingredientRandom = ingredient[num]
+        document.getElementById(divID).innerHTML = ingredientRandom
+        document.getElementById('comptador').innerHTML = comptador
+    }
+}
+
+function extra(){
+    comptador = comptador+1
+    document.getElementById('comptador').innerHTML = comptador
+}
+function infinit(){
+    comptador = comptador+99
+    document.getElementById('comptador').innerHTML = comptador
 }
