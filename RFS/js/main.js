@@ -1,12 +1,6 @@
 function llistar(ingredient) {
-    // ingredient.forEach(element => {
-    //     document.write(element + ", ")
-    // });
-    document.write(ingredient)
-}
-
-function rellistar(ingredient){
-    document.getElementById('Llista').innerHTML= ingredient;
+    let contingut = ingredient.join(', ')
+    document.getElementById('Llista').innerHTML= contingut;
 }
 
 function escollir(ingredient) {
