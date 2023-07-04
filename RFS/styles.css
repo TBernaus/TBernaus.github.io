@@ -1,13 +1,15 @@
-body{
+body {
     font-family: monospace;
     text-align: center;
     background-color: blanchedalmond;
 }
-h1{
+
+h1 {
     text-align: center;
-    margin: 2em;
+    /* margin: 2em; */
 }
-div{
+
+div {
     border: 1px black solid;
     display: inline-block;
     text-align: center;
@@ -15,18 +17,21 @@ div{
     height: 3em;
     background-color: whitesmoke;
 }
-button{
+
+button {
     height: 3em;
     width: 6em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
-#Llistat{
+
+#Llistat {
     background-color: burlywood;
     max-width: 100%;
     width: 50em;
     height: auto;
 }
-.llistatBTN{
+
+.llistatBTN {
     width: 7em;
 }

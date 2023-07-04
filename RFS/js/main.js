@@ -1,6 +1,6 @@
 function llistar(ingredient) {
     let contingut = ingredient.join(', ')
-    document.getElementById('Llista').innerHTML= contingut;
+    document.getElementById('Llista').innerHTML = contingut;
 }
 
 function escollir(ingredient) {
@@ -10,10 +10,10 @@ function escollir(ingredient) {
 }
 
 function reroll(ingredient, divID) {
-    if (comptador<=0){
+    if (comptador <= 0) {
         alert("no et queden rerolls uwu")
     }
-    else{
+    else {
         comptador--
         const num = Math.floor(Math.random() * ingredient.length);
         let ingredientRandom = ingredient[num]
