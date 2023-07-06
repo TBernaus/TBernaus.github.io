@@ -9,29 +9,30 @@
         href="https://github.com/TBernaus/TBernaus.github.io/blob/main/RFS/assets/favicon.png?raw=true">
     <link rel="stylesheet" href="styles.css">
     <title>Roll For Sandwich</title>
-    <script src="js/llista.js"></script>
+    
     <script src="js/main.js"></script>
+    <script src="js/llista.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/roll.js"></script>
     <script src="js/counter.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-    
     <!-- TITOL -->
     <h1>Roll For Sandwich</h1>
     <h2><span> Tirades restants:</span> <span id="comptador"></span></h2>
     <script> counter() </script>
     <button onclick="extra()"> +1 rerolls</button>
     <button onclick="infinit()"> +99 rerolls</button>
-    <br>
 
     <!-- CONTINGUT -->
     <span id="container">
-        <script> crear()</script>
+        <script> crearIngredients()</script>
     </span>
-        
-    <!-- Llista -->
+
+    <!-- LLISTAT -->
     <h3>Llistat</h3>
     <div id="Llistat">
         <p id="Llista">
