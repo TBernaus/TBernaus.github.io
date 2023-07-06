@@ -1,3 +1,5 @@
+/* BODY */
+
 body {
     font-family: monospace;
     text-align: center;
@@ -24,18 +26,6 @@ button {
 
 }
 
-#Llistat {
-    background-color: burlywood;
-    max-width: 100%;
-    width: 50em;
-    height: auto;
-}
-
-.llistatBTN {
-    width: 7em;
-    margin-top: 0.5em;
-    margin-left: 1em;
-}
 
 .descobreix{
     width: 100%;
@@ -49,4 +39,23 @@ button {
     width: 6em;
     border: none;
     height: 3em;
+}
+
+
+/* LLISTAT */
+
+#botonsLlista{
+    display: block;
+}
+
+#Llistat {
+    background-color: burlywood;
+    max-width: 100%;
+    width: 50em;
+    height: auto;
+}
+
+.llistatBTN {
+    width: 7em;
+    margin: 0.5em;
 }
