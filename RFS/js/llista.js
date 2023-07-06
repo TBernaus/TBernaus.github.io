@@ -4,7 +4,8 @@ let ingredients = [
     "base",
     "verdureta",
     "wildMagic",
-    "salsa"
+    "salsa", 
+    "pizza"
 ]
 
 let pa = [
@@ -103,4 +104,13 @@ let salsa = [
     "Quètxup",
     "Hummus",
     "Espinaler"
+]
+
+let pizza = [
+    "tonyina",
+    "baco",
+    "pernil",
+    "bolets",
+    "vedella",
+    "peperonni"
 ]
