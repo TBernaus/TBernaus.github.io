@@ -1,0 +1,94 @@
+###################################################################################################
+########################################### INGREDIENTS ###########################################
+###################################################################################################
+    <!-- PA -->
+    <h3>Pa</h3>
+    <div id="paDIV">
+        <p id="pa">
+            Descobreix el teu pa
+        </p>
+    </div>
+    <div class="boto" id="botopa">
+        <button onclick="descobreix(pa, 'pa', 'botopa')">Pa</button>
+    </div>
+
+
+    <!-- FORMATGE -->
+    <h3>Formatge</h3>
+    <div id="formatgeDIV">
+        <p id="formatge">
+            <script> escollir(formatge)</script>
+        </p>
+    </div>
+
+    <div class="boto" id="botoformatge">
+        <button onclick="reroll(formatge, 'formatge')">Reroll</button>
+    </div>
+
+
+    <!-- BASE -->
+    <h3>Base</h3>
+    <div id="baseDIV">
+        <p id="base">
+            <script> escollir(base)</script>
+        </p>
+    </div>
+
+    <div class="boto" id="botobase">
+        <button onclick="reroll(base, 'base')">Reroll</button>
+    </div>
+
+
+    <!-- VERDURETA -->
+    <h3>Verdureta</h3>
+    <div id="verduretaDIV">
+        <p id="verdureta">
+            <script> escollir(verdureta)</script>
+        </p>
+    </div>
+
+    <div class="boto" id="botoverdureta">
+        <button onclick="reroll(verdureta,'verdureta')">Reroll</button>
+    </div>
+
+
+    <!-- WILD MAGIC -->
+    <h3>Wild Magic</h3>
+    <div id="wildMagicDIV">
+        <p id="wildMagic">
+            <script> escollir(wildMagic)</script>
+        </p>
+    </div>
+
+    <div class="boto" id="botowildmagic">
+        <button onclick="reroll(wildMagic,'wildMagic')">Reroll</button>
+    </div>
+
+
+    <!-- SALSA -->
+    <h3>Salsa</h3>
+    <div id="salsaDIV">
+        <p id="salsa">
+            <script> escollir(salsa)</script>
+        </p>
+    </div>
+
+    <div class="boto" id="botosalsa">
+        <button onclick="reroll(salsa, 'salsa')">Reroll</button>
+    </div>
+
+
+
+###################################################################################################
+########################################## BOTONS LLISTA ##########################################
+###################################################################################################
+
+
+    <!-- BOTONS LLISTAT -->
+
+    <button class="llistatBTN" onclick="llistar(pa)">Pa</button>
+    <button class="llistatBTN" onclick="llistar(formatge)">Formatge</button>
+    <button class="llistatBTN" onclick="llistar(base)">Base</button>
+    <button class="llistatBTN" onclick="llistar(verdureta)">Verdureta</button>
+    <button class="llistatBTN" onclick="llistar(wildMagic)">Wild Magic</button>
+    <button class="llistatBTN" onclick="llistar(salsa)">Salsa</button>

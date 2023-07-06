@@ -17,71 +17,20 @@
 </head>
 
 <body>
+    
+    <!-- TITOL -->
     <h1>Roll For Sandwich</h1>
     <h2><span> Tirades restants:</span> <span id="comptador"></span></h2>
     <script> counter() </script>
     <button onclick="extra()"> +1 rerolls</button>
     <button onclick="infinit()"> +99 rerolls</button>
-    <!-- PA -->
-    <h3>Pa</h3>
-    <div id="paDIV">
-        <p id="pa">
-            <script> escollir(pa)</script>
-        </p>
-    </div>
-    <button onclick="reroll(pa, 'pa')">Reroll</button>
+    <br>
 
-
-    <!-- FORMATGE -->
-    <h3>Formatge</h3>
-    <div id="formatgeDIV">
-        <p id="formatge">
-            <script> escollir(formatge)</script>
-        </p>
-    </div>
-    <button onclick="reroll(formatge, 'formatge')">Reroll</button>
-
-
-    <!-- BASE -->
-    <h3>Base</h3>
-    <div id="baseDIV">
-        <p id="base">
-            <script> escollir(base)</script>
-        </p>
-    </div>
-    <button onclick="reroll(base, 'base')">Reroll</button>
-
-
-    <!-- VERDURETA -->
-    <h3>Verdureta</h3>
-    <div id="verduretaDIV">
-        <p id="verdureta">
-            <script> escollir(verdureta)</script>
-        </p>
-    </div>
-    <button onclick="reroll(verdureta,'verdureta')">Reroll</button>
-
-
-    <!-- WILD MAGIC -->
-    <h3>Wild Magic</h3>
-    <div id="wildMagicDIV">
-        <p id="wildMagic">
-            <script> escollir(wildMagic)</script>
-        </p>
-    </div>
-    <button onclick="reroll(wildMagic,'wildMagic')">Reroll</button>
-
-
-    <!-- SALSA -->
-    <h3>Salsa</h3>
-    <div id="salsaDIV">
-        <p id="salsa">
-            <script> escollir(salsa)</script>
-        </p>
-    </div>
-    <button onclick="reroll(salsa, 'salsa')">Reroll</button>
-
-
+    <!-- CONTINGUT -->
+    <span id="container">
+        <script> crear()</script>
+    </span>
+        
     <!-- Llista -->
     <h3>Llistat</h3>
     <div id="Llistat">
@@ -89,12 +38,9 @@
             <script> llistar(pa)</script>
         </p>
     </div><br>
-    <button class="llistatBTN" onclick="llistar(pa)">Pa</button>
-    <button class="llistatBTN" onclick="llistar(formatge)">Formatge</button>
-    <button class="llistatBTN" onclick="llistar(base)">Base</button>
-    <button class="llistatBTN" onclick="llistar(verdureta)">Verdureta</button>
-    <button class="llistatBTN" onclick="llistar(wildMagic)">Wild Magic</button>
-    <button class="llistatBTN" onclick="llistar(salsa)">Salsa</button>
+    <span id="botonsLlista">
+        <script> crearBotonsLlista()</script>
+    </span>
 </body>
 
 </html>
