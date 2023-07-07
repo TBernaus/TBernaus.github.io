@@ -107,10 +107,10 @@ let salsa = [
 ]
 
 let pizza = [
-    "tonyina",
-    "baco",
-    "pernil",
-    "bolets",
-    "vedella",
-    "peperonni"
+    "Tonyina",
+    "Baco",
+    "Pernil",
+    "Bolets",
+    "Vedella",
+    "Peperonni"
 ]
