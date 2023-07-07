@@ -11,7 +11,6 @@ function descobreix(ingredient, ingDIV, botoID) {
 
 function desbloca() {
     if (amagat == true){
-
         let llistat = [pa, formatge, base, verdureta, wildMagic, salsa, pizza]
         let i=0
         ingredients.forEach(el => {
