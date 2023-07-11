@@ -18,7 +18,7 @@ function crearIngredients(){
 function crearBotonsLlista(){
     let botonsLlista = document.getElementById("botonsLlista")
     ingredients.forEach(el => {
-        let botons = `<button class="llistatBTN" onclick="llistar(${el})">${el}</button>`
+        let botons = `<button class="llistatBTN" onclick="llistar(${el}, '${el}')">${el}</button>`
         botonsLlista.innerHTML+=botons
     });
 }

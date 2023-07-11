@@ -36,8 +36,19 @@ function reroll(ingredient, divID) {
         document.getElementById('comptador').innerHTML = comptador
     }
 }
+let modificaActiu;
 
-function llistar(ingredient) {
+function llistar(ingredient, ingStr) {
     let contingut = ingredient.join(', ')
     document.getElementById('Llista').innerHTML = contingut;
+    modificaActiu=ingStr
+}
+
+function modifica(){
+    if(modificaActiu == undefined){
+        console.log('no furula')
+    }else{
+        console.log('sí furula bro '+modificaActiu)
+    }
+
 }
