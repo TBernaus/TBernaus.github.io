@@ -17,8 +17,6 @@ function desbloca() {
             descobreix(llistat[i], el, 'boto'+el)
             i++
         });
-        // let boto = document.getElementById("desbloca");
-        // boto.remove();
         amagat = false
     }
     else(
