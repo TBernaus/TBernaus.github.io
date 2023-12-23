@@ -1,8 +1,7 @@
-<html lang="en">
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Match Slips - [2024] MSS Dystopian Hobbies[Figueres] - 23/12/2023 05:14:10</title>
-
+    <title>Pairings - [2024] MSS Dystopian Hobbies[Figueres] - 23/12/2023 05:14:11</title>
     <!--@formatter:off-->
     <style>
         body.report {
@@ -43,1146 +42,270 @@ th.footer {
 
     </style>
     <!--@formatter:on-->
-
-    <!--@formatter:off-->
-    <style>
-        .match_slip {
-            width: 700px;
-            padding: 0;
-            page-break-before: avoid;
-            page-break-inside: avoid;
-            page-break-after: avoid;
-            orphans: 0;
-            widows: 0;
+    <style type="text/css">
+        td.left, th.left {
+            border: 0px none black;
+            border-left: thin solid black;
+            border-bottom: thin solid black;
+            border-top: thin solid black;
         }
 
-        .table-font-size {
-            font-size: [[TABLE_FONT_SIZE]]pt;
+        td.center, th.center {
+            border: 0px none black;
+            border-bottom: thin solid black;
+            border-top: thin solid black;
         }
 
-        /* the barcode must have a quiet zone */
-        .barcode {
-            padding: 15px 5px;
-
-            border: none;
+        td.right, th.right {
+            border: 0px none black;
+            border-right: thin solid black;
+            border-bottom: thin solid black;
+            border-top: thin solid black;
         }
 
+        td.full, th.full {
+            border: thin solid black;
+        }
     </style>
-    <!--@formatter:on-->
-    <style media="all">
-        body {
-            font-size: 12px;
-            margin: 0;
-        }
-
-        .player-1-barcode img {
-            transform: rotate(90deg) translate(-86px, 15px);
-            position: absolute;
-            width: 25px;
-            height: 200px;
-        }
-
-        .player-2-barcode img {
-            transform: rotate(90deg) translate(-86px, 15px);
-            position: absolute;
-            width: 25px;
-            height: 200px;
-        }
-
-        .tie-barcode img {
-            transform: rotate(90deg) translate(-86px, 15px);
-            position: absolute;
-            width: 25px;
-            height: 200px;
-        }
-
-        table {
-            font-family: Verdana, Arial, Helvetica, sans-serif;
-            padding: 0;
-            border-spacing: 0;
-            border-collapse: collapse;
-        }
-
-        td {
-            font-family: Verdana, Arial, Helvetica, sans-serif;
-            border: 1px inset black;
-            background: white;
-            color: black;
-        }
-
-        @page {
-            size: 8.5in 11in;
-            margin: 0.22in 0.0in 0.0in 0.0in;
-        }
-
-        /* 
-            1 inch = 96 CSS-defined px (not pixels) so a 700px form 
-            is actually 7.29167 inches wide.  I am using 700px for
-            easier math and finer adjustments. -- Jeff
-        */
-
-        .heading {
-            font-variant: small-caps;
-            text-align: center;
-            vertical-align: middle;
-        }
-
-        .small {
-            font-size: 10px;
-        }
-        
-        .pagebreak {
-            height: 0px;
-            page-break-before: always;
-        }
-
-        td.matchrecord {
-            height: 50px;
-        }
-
-        tr.nobottomborder td {
-            border-bottom: none;
-        }
-
-        tr.noleftborder td {
-            border-left: none;
-        }
-
-        tr.norightborder td {
-            border-right: none;
-        }
-
-        .noborders {
-            border: none;
-        }
-
-        tr.notopborder td {
-            border-top: none;
-        }
-
-        .debug {
-            border-color: red;
-        }
-
-        .match_slip_format {
-            height: 216px;
-            margin: 0 auto;
-            border-collapse: separate;
-        }
-
-        .player-1-win {
-            width: 40px;
-            border-width: 0;
-            border-style: solid none;
-            border-color: rgb(0, 0, 0);
-            position: relative;
-        }
-
-        .player-1-win-details {
-            position: absolute;
-            margin-top: 2px;
-            width: 208px;
-            height: 100px;
-            text-align: left;
-            overflow: hidden;
-            top: 0;
-            left: 0;
-            transform-origin: left top;
-            transform: rotate(90deg) translate(0px, -40px);
-        }
-
-        .player-1-info {
-            width: 180px;
-            border-width: 2px 1px 2px 2px;
-            border-style: none none none solid;
-            border-color: rgb(0, 0, 0);
-            position: relative;
-        }
-
-        .player-1-info-details {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 212px;
-            height: 180px;
-            text-align: center;
-            padding: 0;
-            overflow: hidden;
-            transform-origin: right top;
-            transform: rotate(-90deg) translate(0px, -212px);
-        }
-
-        .tied-info {
-            width: 260px;
-            vertical-align: middle;
-            border: 1px dashed rgb(0, 0, 0);
-            position: relative;
-        }
-
-        .tied-info-details {
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-            padding: 0;
-            overflow: auto;
-            width: 100%;
-            vertical-align: bottom;
-        }
-
-        .player-2-info {
-            width: 180px;
-            border-width: 2px 2px 2px 1px;
-            border-style: none solid none none;
-            border-color: rgb(0, 0, 0);
-            position: relative;
-        }
-
-        .player-2-info-details {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 212px;
-            height: 180px;
-            text-align: center;
-            padding: 0;
-            overflow: hidden;
-            transform-origin: left top;
-            transform: rotate(90deg) translate(0px, -177px);
-        }
-
-        .player-2-win {
-            width: 40px;
-            border-width: 0;
-            border-style: solid none;
-            border-color: rgb(0, 0, 0);
-            position: relative;
-        }
-
-        .player-2-win-details {
-            position: absolute;
-            margin-top: 2px;
-            width: 208px;
-            height: 100px;
-            text-align: left;
-            overflow: hidden;
-            top: 0;
-            right: 0;
-            transform-origin: right top;
-            transform: rotate(-90deg) translate(0px, -40px);
-        }
-
-        .below-barcode-padding {
-            padding-top: 25px;
-        }
-
-        .tie-instructions {
-            margin-top: 4px;
-        }
-        
-        div.pagebreak {
-            height: 0px;
-        }
-        
-        hr {
-            margin: 24px;
-        }
-
-    </style>
-    <script>
-        let display = function displayAlert() {
-            alert("For match slips to print correctly, make sure your page layout is portrait and your headers and footers are turned OFF.\n\n\n\nView your first report in Print Preview to verify margins and ensure slips are fitting properly on the page.");
-        }
-    </script>
 </head>
-<body onload="display()" class="report">
+<body class="report">
 <!-- [[BEGIN_REPORT]] -->
 
+<p>
+<h3>Pairings - Round 2</h3>
+Tournament: <b>[2024] MSS Dystopian Hobbies[Figueres]</b>
+</p>
+<BR>
+<H3>Todas</H3>
+<table class="report">
+    <tr>
+        <th scope="col" class="full"><strong>Table</strong></th>
+        <th scope="col" class="left"><strong>Name</strong></th>
+        <th scope="col" class="center"></th>
+        <th scope="col" class="right"><strong>Opponent</strong></th>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">12</td>
+        <td align="left" class="left">adrian albero&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">mar balaguer&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">11</td>
+        <td align="left" class="left">aleix costa&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">mateo cerna&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">1</td>
+        <td align="left" class="left">Alex Moreno&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">Alex Soto&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">1</td>
+        <td align="left" class="left">Alex Soto&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">Alex Moreno&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">5</td>
+        <td align="left" class="left">alexis mariano&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">Luis Sotelo&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">10</td>
+        <td align="left" class="left">clara camps&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">pedro sanchez&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">4</td>
+        <td align="left" class="left">clara case&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">pere vila&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">9</td>
+        <td align="left" class="left">claudia garcia&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">juan carlos heras&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">6</td>
+        <td align="left" class="left">David Nicodemus&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">Olga Elias&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">2</td>
+        <td align="left" class="left">forhad chodhoury&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">oscar porras&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">3</td>
+        <td align="left" class="left">Iago Pardo&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">santiago pujol&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">13</td>
+        <td align="left" class="left">Ivan Aguilar Vazquez&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">Kai Sanchez Pastor&nbsp;(1/0/0 (3) - SR)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">15</td>
+        <td align="left" class="left">joan garcia&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">Louis Fontvieille&nbsp;(1/0/0 (3) - SR)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">9</td>
+        <td align="left" class="left">juan carlos heras&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">claudia garcia&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">13</td>
+        <td align="left" class="left">Kai Sanchez Pastor&nbsp;(1/0/0 (3) - SR)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">Ivan Aguilar Vazquez&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">14</td>
+        <td align="left" class="left">Lluc Sanchez Pastor&nbsp;(0/1/0 (0) - SR)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">xavier vazquez&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">15</td>
+        <td align="left" class="left">Louis Fontvieille&nbsp;(1/0/0 (3) - SR)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">joan garcia&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">5</td>
+        <td align="left" class="left">Luis Sotelo&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">alexis mariano&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">12</td>
+        <td align="left" class="left">mar balaguer&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">adrian albero&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">7</td>
+        <td align="left" class="left">Marc Balboa&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">marina jimenez&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">8</td>
+        <td align="left" class="left">Marc Morales&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">pau bragulat&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">7</td>
+        <td align="left" class="left">marina jimenez&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">Marc Balboa&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">11</td>
+        <td align="left" class="left">mateo cerna&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">aleix costa&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">6</td>
+        <td align="left" class="left">Olga Elias&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">David Nicodemus&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">2</td>
+        <td align="left" class="left">oscar porras&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">forhad chodhoury&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">8</td>
+        <td align="left" class="left">pau bragulat&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">Marc Morales&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">10</td>
+        <td align="left" class="left">pedro sanchez&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">clara camps&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">4</td>
+        <td align="left" class="left">pere vila&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">clara case&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">3</td>
+        <td align="left" class="left">santiago pujol&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">Iago Pardo&nbsp;(1/0/0 (3) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td align="left" class="full">14</td>
+        <td align="left" class="left">xavier vazquez&nbsp;(0/1/0 (0) - MA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td align="center" class="center">vs.&nbsp;&nbsp;</td>
+        <td align="left" class="right">Lluc Sanchez Pastor&nbsp;(0/1/0 (0) - SR)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    
+</table>
+<p>&nbsp;</p>
+<P>* This player has received one or more losses for tardiness and will always be ordered, in Swiss rounds, after players with the same match record who were on time.</P>
+<table class="footer" width="100%">
+    <tr>
+        <td class="footer" width="33%" align="left"><b>[2024] MSS Dystopian Hobbies[Figueres]</b></td>
+        <td class="footer" width="33%" align="center"><b>Marc Muñoz</b></td>
+        <td class="footer" width="33%" align="right"><b>23/12/2023 05:14:11</b></td>
+    </tr>
+</table>
 
-<table class="match_slip match_slip_format">
-    <tbody>
-    <tr class="noborders">
-        <td class="player-1-win">
-            <div class="barcode1 small rotate-left player-1-win-details">
-                <span style="float: right; text-align: right;">1/0/0 (3)<br><u>Initial below:</u></span>Alex Soto<br><span
-                    style="font-size: 18px">1422635  - MA <span></span></span></div>
-        </td>
-        <td class="player-1-info">
-            <div class="player1 player-1-info-details">
-                <i style="font-size: 10px;">key: 1020114</i>
-                <!-- player1 barcode -->
-                <div class="player-1-barcode"><img src='images/1020114.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #1</span><br><b
-                        style="font-size: 20px;">Alex Soto</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 1</b></div>
-            </div>
-        </td>
-        <td class="tied-info">
-            <div class="barcode3 small tied-info-details">
-                <i>key: 1020130</i><br>
-                <!-- tie image -->
-                <div class="tie-barcode"><img src='images/1020130.png'></div>
-                <div class="below-barcode-padding">
-                    <b>[2024] MSS Dystopian Hobbies[Figueres]<br>
-                        Round 
-                        2 </b>
-                    <div class="tie-instructions">
-                        <i>checkmark who wins each game,<br>
-                            circle <b>WINNER</b> or <b>TIE</b> for the match,<br>
-                            then both players initial their end</i>
-                    </div>
-                    <div>
-                        <span style="font-size: 14px;">_______ ▢ game 1 ▢ _______<br>_______ ▢ game 2 ▢ _______<br>_______ ▢ game 3 ▢ _______</span><br><br><span style="font-size: 16px;"><b>TIE</b></span>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td class="player-2-info">
-            <div class="player2 player-2-info-details">
-                <i style="font-size: 10px;">key: 1020122</i>
-                <!-- player 2 barcode-->
-                <div class="player-2-barcode"><img src='images/1020122.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #1</span><br><b
-                        style="font-size: 20px;">Alex Moreno</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 2</b></div>
-            </div>
-        </td>
-        <td class="player-2-win">
-            <div class="barcode2 small player-2-win-details">
-                <span style="float: right; text-align: right;">1/0/0 (3)<br><u>Initial below:</u></span>Alex Moreno<br><span
-                    style="font-size: 18px">2582994  - MA<span></span></span></div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<hr>
-<table class="match_slip match_slip_format">
-    <tbody>
-    <tr class="noborders">
-        <td class="player-1-win">
-            <div class="barcode1 small rotate-left player-1-win-details">
-                <span style="float: right; text-align: right;">1/0/0 (3)<br><u>Initial below:</u></span>Luis Sotelo<br><span
-                    style="font-size: 18px">1275002  - MA <span></span></span></div>
-        </td>
-        <td class="player-1-info">
-            <div class="player1 player-1-info-details">
-                <i style="font-size: 10px;">key: 1020510</i>
-                <!-- player1 barcode -->
-                <div class="player-1-barcode"><img src='images/1020510.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #5</span><br><b
-                        style="font-size: 20px;">Luis Sotelo</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 1</b></div>
-            </div>
-        </td>
-        <td class="tied-info">
-            <div class="barcode3 small tied-info-details">
-                <i>key: 1020536</i><br>
-                <!-- tie image -->
-                <div class="tie-barcode"><img src='images/1020536.png'></div>
-                <div class="below-barcode-padding">
-                    <b>[2024] MSS Dystopian Hobbies[Figueres]<br>
-                        Round 
-                        2 </b>
-                    <div class="tie-instructions">
-                        <i>checkmark who wins each game,<br>
-                            circle <b>WINNER</b> or <b>TIE</b> for the match,<br>
-                            then both players initial their end</i>
-                    </div>
-                    <div>
-                        <span style="font-size: 14px;">_______ ▢ game 1 ▢ _______<br>_______ ▢ game 2 ▢ _______<br>_______ ▢ game 3 ▢ _______</span><br><br><span style="font-size: 16px;"><b>TIE</b></span>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td class="player-2-info">
-            <div class="player2 player-2-info-details">
-                <i style="font-size: 10px;">key: 1020528</i>
-                <!-- player 2 barcode-->
-                <div class="player-2-barcode"><img src='images/1020528.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #5</span><br><b
-                        style="font-size: 20px;">alexis mariano</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 2</b></div>
-            </div>
-        </td>
-        <td class="player-2-win">
-            <div class="barcode2 small player-2-win-details">
-                <span style="float: right; text-align: right;">1/0/0 (3)<br><u>Initial below:</u></span>alexis mariano<br><span
-                    style="font-size: 18px">4669217  - MA<span></span></span></div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<hr>
-<table class="match_slip match_slip_format">
-    <tbody>
-    <tr class="noborders">
-        <td class="player-1-win">
-            <div class="barcode1 small rotate-left player-1-win-details">
-                <span style="float: right; text-align: right;">0/1/0 (0)<br><u>Initial below:</u></span>juan carlos heras<br><span
-                    style="font-size: 18px">4189477  - MA <span></span></span></div>
-        </td>
-        <td class="player-1-info">
-            <div class="player1 player-1-info-details">
-                <i style="font-size: 10px;">key: 1020916</i>
-                <!-- player1 barcode -->
-                <div class="player-1-barcode"><img src='images/1020916.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #9</span><br><b
-                        style="font-size: 20px;">juan carlos heras</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 1</b></div>
-            </div>
-        </td>
-        <td class="tied-info">
-            <div class="barcode3 small tied-info-details">
-                <i>key: 1020932</i><br>
-                <!-- tie image -->
-                <div class="tie-barcode"><img src='images/1020932.png'></div>
-                <div class="below-barcode-padding">
-                    <b>[2024] MSS Dystopian Hobbies[Figueres]<br>
-                        Round 
-                        2 </b>
-                    <div class="tie-instructions">
-                        <i>checkmark who wins each game,<br>
-                            circle <b>WINNER</b> or <b>TIE</b> for the match,<br>
-                            then both players initial their end</i>
-                    </div>
-                    <div>
-                        <span style="font-size: 14px;">_______ ▢ game 1 ▢ _______<br>_______ ▢ game 2 ▢ _______<br>_______ ▢ game 3 ▢ _______</span><br><br><span style="font-size: 16px;"><b>TIE</b></span>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td class="player-2-info">
-            <div class="player2 player-2-info-details">
-                <i style="font-size: 10px;">key: 1020924</i>
-                <!-- player 2 barcode-->
-                <div class="player-2-barcode"><img src='images/1020924.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #9</span><br><b
-                        style="font-size: 20px;">claudia garcia</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 2</b></div>
-            </div>
-        </td>
-        <td class="player-2-win">
-            <div class="barcode2 small player-2-win-details">
-                <span style="float: right; text-align: right;">0/1/0 (0)<br><u>Initial below:</u></span>claudia garcia<br><span
-                    style="font-size: 18px">4616793  - MA<span></span></span></div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<hr>
-<table class="match_slip match_slip_format">
-    <tbody>
-    <tr class="noborders">
-        <td class="player-1-win">
-            <div class="barcode1 small rotate-left player-1-win-details">
-                <span style="float: right; text-align: right;">1/0/0 (3)<br><u>Initial below:</u></span>Ivan Aguilar Vazquez<br><span
-                    style="font-size: 18px">1480154  - MA <span></span></span></div>
-        </td>
-        <td class="player-1-info">
-            <div class="player1 player-1-info-details">
-                <i style="font-size: 10px;">key: 1021310</i>
-                <!-- player1 barcode -->
-                <div class="player-1-barcode"><img src='images/1021310.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #13</span><br><b
-                        style="font-size: 20px;">Ivan Aguilar Vazquez</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 1</b></div>
-            </div>
-        </td>
-        <td class="tied-info">
-            <div class="barcode3 small tied-info-details">
-                <i>key: 1021336</i><br>
-                <!-- tie image -->
-                <div class="tie-barcode"><img src='images/1021336.png'></div>
-                <div class="below-barcode-padding">
-                    <b>[2024] MSS Dystopian Hobbies[Figueres]<br>
-                        Round 
-                        2 </b>
-                    <div class="tie-instructions">
-                        <i>checkmark who wins each game,<br>
-                            circle <b>WINNER</b> or <b>TIE</b> for the match,<br>
-                            then both players initial their end</i>
-                    </div>
-                    <div>
-                        <span style="font-size: 14px;">_______ ▢ game 1 ▢ _______<br>_______ ▢ game 2 ▢ _______<br>_______ ▢ game 3 ▢ _______</span><br><br><span style="font-size: 16px;"><b>TIE</b></span>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td class="player-2-info">
-            <div class="player2 player-2-info-details">
-                <i style="font-size: 10px;">key: 1021328</i>
-                <!-- player 2 barcode-->
-                <div class="player-2-barcode"><img src='images/1021328.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #13</span><br><b
-                        style="font-size: 20px;">Kai Sanchez Pastor</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 2</b></div>
-            </div>
-        </td>
-        <td class="player-2-win">
-            <div class="barcode2 small player-2-win-details">
-                <span style="float: right; text-align: right;">1/0/0 (3)<br><u>Initial below:</u></span>Kai Sanchez Pastor<br><span
-                    style="font-size: 18px">3949959  - SR<span></span></span></div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<div class="pagebreak">&nbsp;</div>
-<table class="match_slip match_slip_format">
-    <tbody>
-    <tr class="noborders">
-        <td class="player-1-win">
-            <div class="barcode1 small rotate-left player-1-win-details">
-                <span style="float: right; text-align: right;">1/0/0 (3)<br><u>Initial below:</u></span>forhad chodhoury<br><span
-                    style="font-size: 18px">2743200  - MA <span></span></span></div>
-        </td>
-        <td class="player-1-info">
-            <div class="player1 player-1-info-details">
-                <i style="font-size: 10px;">key: 1020213</i>
-                <!-- player1 barcode -->
-                <div class="player-1-barcode"><img src='images/1020213.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #2</span><br><b
-                        style="font-size: 20px;">forhad chodhoury</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 1</b></div>
-            </div>
-        </td>
-        <td class="tied-info">
-            <div class="barcode3 small tied-info-details">
-                <i>key: 1020239</i><br>
-                <!-- tie image -->
-                <div class="tie-barcode"><img src='images/1020239.png'></div>
-                <div class="below-barcode-padding">
-                    <b>[2024] MSS Dystopian Hobbies[Figueres]<br>
-                        Round 
-                        2 </b>
-                    <div class="tie-instructions">
-                        <i>checkmark who wins each game,<br>
-                            circle <b>WINNER</b> or <b>TIE</b> for the match,<br>
-                            then both players initial their end</i>
-                    </div>
-                    <div>
-                        <span style="font-size: 14px;">_______ ▢ game 1 ▢ _______<br>_______ ▢ game 2 ▢ _______<br>_______ ▢ game 3 ▢ _______</span><br><br><span style="font-size: 16px;"><b>TIE</b></span>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td class="player-2-info">
-            <div class="player2 player-2-info-details">
-                <i style="font-size: 10px;">key: 1020221</i>
-                <!-- player 2 barcode-->
-                <div class="player-2-barcode"><img src='images/1020221.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #2</span><br><b
-                        style="font-size: 20px;">oscar porras</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 2</b></div>
-            </div>
-        </td>
-        <td class="player-2-win">
-            <div class="barcode2 small player-2-win-details">
-                <span style="float: right; text-align: right;">1/0/0 (3)<br><u>Initial below:</u></span>oscar porras<br><span
-                    style="font-size: 18px">2392298  - MA<span></span></span></div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<hr>
-<table class="match_slip match_slip_format">
-    <tbody>
-    <tr class="noborders">
-        <td class="player-1-win">
-            <div class="barcode1 small rotate-left player-1-win-details">
-                <span style="float: right; text-align: right;">1/0/0 (3)<br><u>Initial below:</u></span>Olga Elias<br><span
-                    style="font-size: 18px">4430020  - MA <span></span></span></div>
-        </td>
-        <td class="player-1-info">
-            <div class="player1 player-1-info-details">
-                <i style="font-size: 10px;">key: 1020619</i>
-                <!-- player1 barcode -->
-                <div class="player-1-barcode"><img src='images/1020619.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #6</span><br><b
-                        style="font-size: 20px;">Olga Elias</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 1</b></div>
-            </div>
-        </td>
-        <td class="tied-info">
-            <div class="barcode3 small tied-info-details">
-                <i>key: 1020635</i><br>
-                <!-- tie image -->
-                <div class="tie-barcode"><img src='images/1020635.png'></div>
-                <div class="below-barcode-padding">
-                    <b>[2024] MSS Dystopian Hobbies[Figueres]<br>
-                        Round 
-                        2 </b>
-                    <div class="tie-instructions">
-                        <i>checkmark who wins each game,<br>
-                            circle <b>WINNER</b> or <b>TIE</b> for the match,<br>
-                            then both players initial their end</i>
-                    </div>
-                    <div>
-                        <span style="font-size: 14px;">_______ ▢ game 1 ▢ _______<br>_______ ▢ game 2 ▢ _______<br>_______ ▢ game 3 ▢ _______</span><br><br><span style="font-size: 16px;"><b>TIE</b></span>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td class="player-2-info">
-            <div class="player2 player-2-info-details">
-                <i style="font-size: 10px;">key: 1020627</i>
-                <!-- player 2 barcode-->
-                <div class="player-2-barcode"><img src='images/1020627.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #6</span><br><b
-                        style="font-size: 20px;">David Nicodemus</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 2</b></div>
-            </div>
-        </td>
-        <td class="player-2-win">
-            <div class="barcode2 small player-2-win-details">
-                <span style="float: right; text-align: right;">1/0/0 (3)<br><u>Initial below:</u></span>David Nicodemus<br><span
-                    style="font-size: 18px">2747945  - MA<span></span></span></div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<hr>
-<table class="match_slip match_slip_format">
-    <tbody>
-    <tr class="noborders">
-        <td class="player-1-win">
-            <div class="barcode1 small rotate-left player-1-win-details">
-                <span style="float: right; text-align: right;">0/1/0 (0)<br><u>Initial below:</u></span>pedro sanchez<br><span
-                    style="font-size: 18px">4613308  - MA <span></span></span></div>
-        </td>
-        <td class="player-1-info">
-            <div class="player1 player-1-info-details">
-                <i style="font-size: 10px;">key: 1021013</i>
-                <!-- player1 barcode -->
-                <div class="player-1-barcode"><img src='images/1021013.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #10</span><br><b
-                        style="font-size: 20px;">pedro sanchez</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 1</b></div>
-            </div>
-        </td>
-        <td class="tied-info">
-            <div class="barcode3 small tied-info-details">
-                <i>key: 1021039</i><br>
-                <!-- tie image -->
-                <div class="tie-barcode"><img src='images/1021039.png'></div>
-                <div class="below-barcode-padding">
-                    <b>[2024] MSS Dystopian Hobbies[Figueres]<br>
-                        Round 
-                        2 </b>
-                    <div class="tie-instructions">
-                        <i>checkmark who wins each game,<br>
-                            circle <b>WINNER</b> or <b>TIE</b> for the match,<br>
-                            then both players initial their end</i>
-                    </div>
-                    <div>
-                        <span style="font-size: 14px;">_______ ▢ game 1 ▢ _______<br>_______ ▢ game 2 ▢ _______<br>_______ ▢ game 3 ▢ _______</span><br><br><span style="font-size: 16px;"><b>TIE</b></span>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td class="player-2-info">
-            <div class="player2 player-2-info-details">
-                <i style="font-size: 10px;">key: 1021021</i>
-                <!-- player 2 barcode-->
-                <div class="player-2-barcode"><img src='images/1021021.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #10</span><br><b
-                        style="font-size: 20px;">clara camps</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 2</b></div>
-            </div>
-        </td>
-        <td class="player-2-win">
-            <div class="barcode2 small player-2-win-details">
-                <span style="float: right; text-align: right;">0/1/0 (0)<br><u>Initial below:</u></span>clara camps<br><span
-                    style="font-size: 18px">4429895  - MA<span></span></span></div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<hr>
-<table class="match_slip match_slip_format">
-    <tbody>
-    <tr class="noborders">
-        <td class="player-1-win">
-            <div class="barcode1 small rotate-left player-1-win-details">
-                <span style="float: right; text-align: right;">0/1/0 (0)<br><u>Initial below:</u></span>xavier vazquez<br><span
-                    style="font-size: 18px">4190227  - MA <span></span></span></div>
-        </td>
-        <td class="player-1-info">
-            <div class="player1 player-1-info-details">
-                <i style="font-size: 10px;">key: 1021419</i>
-                <!-- player1 barcode -->
-                <div class="player-1-barcode"><img src='images/1021419.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #14</span><br><b
-                        style="font-size: 20px;">xavier vazquez</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 1</b></div>
-            </div>
-        </td>
-        <td class="tied-info">
-            <div class="barcode3 small tied-info-details">
-                <i>key: 1021435</i><br>
-                <!-- tie image -->
-                <div class="tie-barcode"><img src='images/1021435.png'></div>
-                <div class="below-barcode-padding">
-                    <b>[2024] MSS Dystopian Hobbies[Figueres]<br>
-                        Round 
-                        2 </b>
-                    <div class="tie-instructions">
-                        <i>checkmark who wins each game,<br>
-                            circle <b>WINNER</b> or <b>TIE</b> for the match,<br>
-                            then both players initial their end</i>
-                    </div>
-                    <div>
-                        <span style="font-size: 14px;">_______ ▢ game 1 ▢ _______<br>_______ ▢ game 2 ▢ _______<br>_______ ▢ game 3 ▢ _______</span><br><br><span style="font-size: 16px;"><b>TIE</b></span>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td class="player-2-info">
-            <div class="player2 player-2-info-details">
-                <i style="font-size: 10px;">key: 1021427</i>
-                <!-- player 2 barcode-->
-                <div class="player-2-barcode"><img src='images/1021427.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #14</span><br><b
-                        style="font-size: 20px;">Lluc Sanchez Pastor</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 2</b></div>
-            </div>
-        </td>
-        <td class="player-2-win">
-            <div class="barcode2 small player-2-win-details">
-                <span style="float: right; text-align: right;">0/1/0 (0)<br><u>Initial below:</u></span>Lluc Sanchez Pastor<br><span
-                    style="font-size: 18px">3948199  - SR<span></span></span></div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<div class="pagebreak">&nbsp;</div>
-<table class="match_slip match_slip_format">
-    <tbody>
-    <tr class="noborders">
-        <td class="player-1-win">
-            <div class="barcode1 small rotate-left player-1-win-details">
-                <span style="float: right; text-align: right;">1/0/0 (3)<br><u>Initial below:</u></span>Iago Pardo<br><span
-                    style="font-size: 18px">2352844  - MA <span></span></span></div>
-        </td>
-        <td class="player-1-info">
-            <div class="player1 player-1-info-details">
-                <i style="font-size: 10px;">key: 1020312</i>
-                <!-- player1 barcode -->
-                <div class="player-1-barcode"><img src='images/1020312.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #3</span><br><b
-                        style="font-size: 20px;">Iago Pardo</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 1</b></div>
-            </div>
-        </td>
-        <td class="tied-info">
-            <div class="barcode3 small tied-info-details">
-                <i>key: 1020338</i><br>
-                <!-- tie image -->
-                <div class="tie-barcode"><img src='images/1020338.png'></div>
-                <div class="below-barcode-padding">
-                    <b>[2024] MSS Dystopian Hobbies[Figueres]<br>
-                        Round 
-                        2 </b>
-                    <div class="tie-instructions">
-                        <i>checkmark who wins each game,<br>
-                            circle <b>WINNER</b> or <b>TIE</b> for the match,<br>
-                            then both players initial their end</i>
-                    </div>
-                    <div>
-                        <span style="font-size: 14px;">_______ ▢ game 1 ▢ _______<br>_______ ▢ game 2 ▢ _______<br>_______ ▢ game 3 ▢ _______</span><br><br><span style="font-size: 16px;"><b>TIE</b></span>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td class="player-2-info">
-            <div class="player2 player-2-info-details">
-                <i style="font-size: 10px;">key: 1020320</i>
-                <!-- player 2 barcode-->
-                <div class="player-2-barcode"><img src='images/1020320.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #3</span><br><b
-                        style="font-size: 20px;">santiago pujol</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 2</b></div>
-            </div>
-        </td>
-        <td class="player-2-win">
-            <div class="barcode2 small player-2-win-details">
-                <span style="float: right; text-align: right;">1/0/0 (3)<br><u>Initial below:</u></span>santiago pujol<br><span
-                    style="font-size: 18px">4423187  - MA<span></span></span></div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<hr>
-<table class="match_slip match_slip_format">
-    <tbody>
-    <tr class="noborders">
-        <td class="player-1-win">
-            <div class="barcode1 small rotate-left player-1-win-details">
-                <span style="float: right; text-align: right;">0/1/0 (0)<br><u>Initial below:</u></span>marina jimenez<br><span
-                    style="font-size: 18px">4429927  - MA <span></span></span></div>
-        </td>
-        <td class="player-1-info">
-            <div class="player1 player-1-info-details">
-                <i style="font-size: 10px;">key: 1020718</i>
-                <!-- player1 barcode -->
-                <div class="player-1-barcode"><img src='images/1020718.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #7</span><br><b
-                        style="font-size: 20px;">marina jimenez</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 1</b></div>
-            </div>
-        </td>
-        <td class="tied-info">
-            <div class="barcode3 small tied-info-details">
-                <i>key: 1020734</i><br>
-                <!-- tie image -->
-                <div class="tie-barcode"><img src='images/1020734.png'></div>
-                <div class="below-barcode-padding">
-                    <b>[2024] MSS Dystopian Hobbies[Figueres]<br>
-                        Round 
-                        2 </b>
-                    <div class="tie-instructions">
-                        <i>checkmark who wins each game,<br>
-                            circle <b>WINNER</b> or <b>TIE</b> for the match,<br>
-                            then both players initial their end</i>
-                    </div>
-                    <div>
-                        <span style="font-size: 14px;">_______ ▢ game 1 ▢ _______<br>_______ ▢ game 2 ▢ _______<br>_______ ▢ game 3 ▢ _______</span><br><br><span style="font-size: 16px;"><b>TIE</b></span>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td class="player-2-info">
-            <div class="player2 player-2-info-details">
-                <i style="font-size: 10px;">key: 1020726</i>
-                <!-- player 2 barcode-->
-                <div class="player-2-barcode"><img src='images/1020726.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #7</span><br><b
-                        style="font-size: 20px;">Marc Balboa</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 2</b></div>
-            </div>
-        </td>
-        <td class="player-2-win">
-            <div class="barcode2 small player-2-win-details">
-                <span style="float: right; text-align: right;">0/1/0 (0)<br><u>Initial below:</u></span>Marc Balboa<br><span
-                    style="font-size: 18px">3190833  - MA<span></span></span></div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<hr>
-<table class="match_slip match_slip_format">
-    <tbody>
-    <tr class="noborders">
-        <td class="player-1-win">
-            <div class="barcode1 small rotate-left player-1-win-details">
-                <span style="float: right; text-align: right;">0/1/0 (0)<br><u>Initial below:</u></span>aleix costa<br><span
-                    style="font-size: 18px">4277168  - MA <span></span></span></div>
-        </td>
-        <td class="player-1-info">
-            <div class="player1 player-1-info-details">
-                <i style="font-size: 10px;">key: 1021112</i>
-                <!-- player1 barcode -->
-                <div class="player-1-barcode"><img src='images/1021112.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #11</span><br><b
-                        style="font-size: 20px;">aleix costa</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 1</b></div>
-            </div>
-        </td>
-        <td class="tied-info">
-            <div class="barcode3 small tied-info-details">
-                <i>key: 1021138</i><br>
-                <!-- tie image -->
-                <div class="tie-barcode"><img src='images/1021138.png'></div>
-                <div class="below-barcode-padding">
-                    <b>[2024] MSS Dystopian Hobbies[Figueres]<br>
-                        Round 
-                        2 </b>
-                    <div class="tie-instructions">
-                        <i>checkmark who wins each game,<br>
-                            circle <b>WINNER</b> or <b>TIE</b> for the match,<br>
-                            then both players initial their end</i>
-                    </div>
-                    <div>
-                        <span style="font-size: 14px;">_______ ▢ game 1 ▢ _______<br>_______ ▢ game 2 ▢ _______<br>_______ ▢ game 3 ▢ _______</span><br><br><span style="font-size: 16px;"><b>TIE</b></span>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td class="player-2-info">
-            <div class="player2 player-2-info-details">
-                <i style="font-size: 10px;">key: 1021120</i>
-                <!-- player 2 barcode-->
-                <div class="player-2-barcode"><img src='images/1021120.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #11</span><br><b
-                        style="font-size: 20px;">mateo cerna</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 2</b></div>
-            </div>
-        </td>
-        <td class="player-2-win">
-            <div class="barcode2 small player-2-win-details">
-                <span style="float: right; text-align: right;">0/1/0 (0)<br><u>Initial below:</u></span>mateo cerna<br><span
-                    style="font-size: 18px">4669130  - MA<span></span></span></div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<hr>
-<table class="match_slip match_slip_format">
-    <tbody>
-    <tr class="noborders">
-        <td class="player-1-win">
-            <div class="barcode1 small rotate-left player-1-win-details">
-                <span style="float: right; text-align: right;">1/0/0 (3)<br><u>Initial below:</u></span>Louis Fontvieille<br><span
-                    style="font-size: 18px">3357153  - SR <span></span></span></div>
-        </td>
-        <td class="player-1-info">
-            <div class="player1 player-1-info-details">
-                <i style="font-size: 10px;">key: 1021518</i>
-                <!-- player1 barcode -->
-                <div class="player-1-barcode"><img src='images/1021518.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #15</span><br><b
-                        style="font-size: 20px;">Louis Fontvieille</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 1</b></div>
-            </div>
-        </td>
-        <td class="tied-info">
-            <div class="barcode3 small tied-info-details">
-                <i>key: 1021534</i><br>
-                <!-- tie image -->
-                <div class="tie-barcode"><img src='images/1021534.png'></div>
-                <div class="below-barcode-padding">
-                    <b>[2024] MSS Dystopian Hobbies[Figueres]<br>
-                        Round 
-                        2 </b>
-                    <div class="tie-instructions">
-                        <i>checkmark who wins each game,<br>
-                            circle <b>WINNER</b> or <b>TIE</b> for the match,<br>
-                            then both players initial their end</i>
-                    </div>
-                    <div>
-                        <span style="font-size: 14px;">_______ ▢ game 1 ▢ _______<br>_______ ▢ game 2 ▢ _______<br>_______ ▢ game 3 ▢ _______</span><br><br><span style="font-size: 16px;"><b>TIE</b></span>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td class="player-2-info">
-            <div class="player2 player-2-info-details">
-                <i style="font-size: 10px;">key: 1021526</i>
-                <!-- player 2 barcode-->
-                <div class="player-2-barcode"><img src='images/1021526.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #15</span><br><b
-                        style="font-size: 20px;">joan garcia</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 2</b></div>
-            </div>
-        </td>
-        <td class="player-2-win">
-            <div class="barcode2 small player-2-win-details">
-                <span style="float: right; text-align: right;">0/1/0 (0)<br><u>Initial below:</u></span>joan garcia<br><span
-                    style="font-size: 18px">3205870  - MA<span></span></span></div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<div class="pagebreak">&nbsp;</div>
-<table class="match_slip match_slip_format">
-    <tbody>
-    <tr class="noborders">
-        <td class="player-1-win">
-            <div class="barcode1 small rotate-left player-1-win-details">
-                <span style="float: right; text-align: right;">1/0/0 (3)<br><u>Initial below:</u></span>pere vila<br><span
-                    style="font-size: 18px">4040888  - MA <span></span></span></div>
-        </td>
-        <td class="player-1-info">
-            <div class="player1 player-1-info-details">
-                <i style="font-size: 10px;">key: 1020411</i>
-                <!-- player1 barcode -->
-                <div class="player-1-barcode"><img src='images/1020411.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #4</span><br><b
-                        style="font-size: 20px;">pere vila</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 1</b></div>
-            </div>
-        </td>
-        <td class="tied-info">
-            <div class="barcode3 small tied-info-details">
-                <i>key: 1020437</i><br>
-                <!-- tie image -->
-                <div class="tie-barcode"><img src='images/1020437.png'></div>
-                <div class="below-barcode-padding">
-                    <b>[2024] MSS Dystopian Hobbies[Figueres]<br>
-                        Round 
-                        2 </b>
-                    <div class="tie-instructions">
-                        <i>checkmark who wins each game,<br>
-                            circle <b>WINNER</b> or <b>TIE</b> for the match,<br>
-                            then both players initial their end</i>
-                    </div>
-                    <div>
-                        <span style="font-size: 14px;">_______ ▢ game 1 ▢ _______<br>_______ ▢ game 2 ▢ _______<br>_______ ▢ game 3 ▢ _______</span><br><br><span style="font-size: 16px;"><b>TIE</b></span>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td class="player-2-info">
-            <div class="player2 player-2-info-details">
-                <i style="font-size: 10px;">key: 1020429</i>
-                <!-- player 2 barcode-->
-                <div class="player-2-barcode"><img src='images/1020429.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #4</span><br><b
-                        style="font-size: 20px;">clara case</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 2</b></div>
-            </div>
-        </td>
-        <td class="player-2-win">
-            <div class="barcode2 small player-2-win-details">
-                <span style="float: right; text-align: right;">1/0/0 (3)<br><u>Initial below:</u></span>clara case<br><span
-                    style="font-size: 18px">4429562  - MA<span></span></span></div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<hr>
-<table class="match_slip match_slip_format">
-    <tbody>
-    <tr class="noborders">
-        <td class="player-1-win">
-            <div class="barcode1 small rotate-left player-1-win-details">
-                <span style="float: right; text-align: right;">0/1/0 (0)<br><u>Initial below:</u></span>Marc Morales<br><span
-                    style="font-size: 18px">4324236  - MA <span></span></span></div>
-        </td>
-        <td class="player-1-info">
-            <div class="player1 player-1-info-details">
-                <i style="font-size: 10px;">key: 1020817</i>
-                <!-- player1 barcode -->
-                <div class="player-1-barcode"><img src='images/1020817.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #8</span><br><b
-                        style="font-size: 20px;">Marc Morales</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 1</b></div>
-            </div>
-        </td>
-        <td class="tied-info">
-            <div class="barcode3 small tied-info-details">
-                <i>key: 1020833</i><br>
-                <!-- tie image -->
-                <div class="tie-barcode"><img src='images/1020833.png'></div>
-                <div class="below-barcode-padding">
-                    <b>[2024] MSS Dystopian Hobbies[Figueres]<br>
-                        Round 
-                        2 </b>
-                    <div class="tie-instructions">
-                        <i>checkmark who wins each game,<br>
-                            circle <b>WINNER</b> or <b>TIE</b> for the match,<br>
-                            then both players initial their end</i>
-                    </div>
-                    <div>
-                        <span style="font-size: 14px;">_______ ▢ game 1 ▢ _______<br>_______ ▢ game 2 ▢ _______<br>_______ ▢ game 3 ▢ _______</span><br><br><span style="font-size: 16px;"><b>TIE</b></span>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td class="player-2-info">
-            <div class="player2 player-2-info-details">
-                <i style="font-size: 10px;">key: 1020825</i>
-                <!-- player 2 barcode-->
-                <div class="player-2-barcode"><img src='images/1020825.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #8</span><br><b
-                        style="font-size: 20px;">pau bragulat</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 2</b></div>
-            </div>
-        </td>
-        <td class="player-2-win">
-            <div class="barcode2 small player-2-win-details">
-                <span style="float: right; text-align: right;">0/1/0 (0)<br><u>Initial below:</u></span>pau bragulat<br><span
-                    style="font-size: 18px">4620699  - MA<span></span></span></div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<hr>
-<table class="match_slip match_slip_format">
-    <tbody>
-    <tr class="noborders">
-        <td class="player-1-win">
-            <div class="barcode1 small rotate-left player-1-win-details">
-                <span style="float: right; text-align: right;">0/1/0 (0)<br><u>Initial below:</u></span>adrian albero<br><span
-                    style="font-size: 18px">4585854  - MA <span></span></span></div>
-        </td>
-        <td class="player-1-info">
-            <div class="player1 player-1-info-details">
-                <i style="font-size: 10px;">key: 1021211</i>
-                <!-- player1 barcode -->
-                <div class="player-1-barcode"><img src='images/1021211.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #12</span><br><b
-                        style="font-size: 20px;">adrian albero</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 1</b></div>
-            </div>
-        </td>
-        <td class="tied-info">
-            <div class="barcode3 small tied-info-details">
-                <i>key: 1021237</i><br>
-                <!-- tie image -->
-                <div class="tie-barcode"><img src='images/1021237.png'></div>
-                <div class="below-barcode-padding">
-                    <b>[2024] MSS Dystopian Hobbies[Figueres]<br>
-                        Round 
-                        2 </b>
-                    <div class="tie-instructions">
-                        <i>checkmark who wins each game,<br>
-                            circle <b>WINNER</b> or <b>TIE</b> for the match,<br>
-                            then both players initial their end</i>
-                    </div>
-                    <div>
-                        <span style="font-size: 14px;">_______ ▢ game 1 ▢ _______<br>_______ ▢ game 2 ▢ _______<br>_______ ▢ game 3 ▢ _______</span><br><br><span style="font-size: 16px;"><b>TIE</b></span>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td class="player-2-info">
-            <div class="player2 player-2-info-details">
-                <i style="font-size: 10px;">key: 1021229</i>
-                <!-- player 2 barcode-->
-                <div class="player-2-barcode"><img src='images/1021229.png'></div>
-                <div class="below-barcode-padding"><span style="font-size: 20px;" class="heading">Table #12</span><br><b
-                        style="font-size: 20px;">mar balaguer</b><br><br><b
-                        style="font-size: 16px;">WINNER</b><br><b
-                        style="font-size: 12px;">Player 2</b></div>
-            </div>
-        </td>
-        <td class="player-2-win">
-            <div class="barcode2 small player-2-win-details">
-                <span style="float: right; text-align: right;">0/1/0 (0)<br><u>Initial below:</u></span>mar balaguer<br><span
-                    style="font-size: 18px">4314926  - MA<span></span></span></div>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<hr>
 
 <!-- [[END_REPORT]] -->
 </body>
