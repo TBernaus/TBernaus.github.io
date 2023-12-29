@@ -5,7 +5,8 @@ let ingredients = [
     "verdureta",
     "wildMagic",
     "salsa", 
-    "pizza"
+    "pizza",
+    "pelis",
 ]
 
 let pa = [
