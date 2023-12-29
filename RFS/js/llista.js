@@ -117,7 +117,6 @@ let pizza = [
 ]
 
 let pelis = [
-"Amelie",
 "El Príncipe de Egipto",
 "500 días con Summer",
 "Seven",
@@ -127,7 +126,6 @@ let pelis = [
 "Pokémon 1",
 "Mulan",
 "patrulla canina la superpelicula",
-"Mariopelícula",
 "La lista de Schindler",
 "El pianista",
 "Cadena perpetua",
@@ -139,10 +137,7 @@ let pelis = [
 "Batman 1",
 "Batman 2",
 "Rec",
-"El nombre de la rosa",
 "La Legopelícula 1", 
 "la legopelicula 2",
 "Batman: la legopelícula",
-"Klaus",
-"Leo",
 ]
