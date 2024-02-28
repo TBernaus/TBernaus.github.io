@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const colorFilters = document.querySelectorAll('.color-filter');
     const toggleSizeButton = document.getElementById('toggle-size');
     const searchInput = document.getElementById('search-input');
+    const inkableSelect = document.getElementById('inkable-select');
     let isLargeSize = true;
     let cardsData = [];
 
@@ -21,6 +22,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const searchTerm = searchInput.value.toLowerCase();
         if (searchTerm) {
             filteredCards = filteredCards.filter(card => card.name.toLowerCase().includes(searchTerm));
+        }
+
+        const inkableValue = inkableSelect.value;
+        if (inkableValue !== 'any') {
+            const inkableBoolean = inkableValue === 'true';
+            filteredCards = filteredCards.filter(card => card.inkable === inkableBoolean);
         }
 
         const sortBy = sortSelect.value;
@@ -113,6 +120,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     searchInput.addEventListener('input', function() {
+        filterAndDisplayCards();
+    });
+
+    inkableSelect.addEventListener('change', function() {
         filterAndDisplayCards();
     });
 
