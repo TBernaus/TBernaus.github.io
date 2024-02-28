@@ -19,9 +19,17 @@
         <option value="name">Nom</option>
         <option value="card-number">Número de Carta</option>
     </select>
-    <button id="toggle-size">Baixa la qualitat</button>
-
-
+    <br>
+    <input type="text" id="search-input" placeholder="Busca">
+    <br>
+    
+    <!-- Modal para mostrar la carta en grande -->
+<div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+  
+    
     <!-- Filtros por color -->
     <div id="color-filters">
         <button class="color-filter" data-color="Amethyst">Lila</button>
@@ -31,6 +39,8 @@
         <button class="color-filter" data-color="Amber">Groc</button>
         <button class="color-filter" data-color="Sapphire">Blau</button>
     </div>
+    <br>
+    <button id="toggle-size">Canvia la qualitat</button>
 
     <ul id="file-list"></ul>
 
