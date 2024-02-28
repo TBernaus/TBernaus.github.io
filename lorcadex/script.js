@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const imageElement = document.createElement('img');
           imageElement.src = cardData['image-urls']['small'];
           imageElement.alt = cardData.name;
-          listItem.textContent = `${cardData.name} - ${cardData.color}`;
+          listItem.textContent = `${cardData.name}`;
           listItem.appendChild(imageElement);
           fileListElement.appendChild(listItem);
       });
