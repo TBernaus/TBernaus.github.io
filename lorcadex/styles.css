@@ -53,7 +53,7 @@
 .modal-content {
   border-radius: 5%;
   margin: auto;
-  margin-top: 5%;
+  margin-top: 2%;
   display: block;
   width: auto; /* Cambiar el ancho a automático */
   max-width: 70%; /* Reducir el máximo ancho para evitar que la imagen se expanda demasiado */
