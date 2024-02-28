@@ -3,10 +3,11 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between; /* Añadir este estilo para distribuir el espacio entre los elementos */
 }
 
 #file-list li {
-  width: 20%; /* Cada elemento li ocupa el 20% del ancho del contenedor */
+  width: calc(16.666% - 20px); /* Cálculo del ancho para mostrar 6 cartas por fila */
   text-align: center;
   margin-bottom: 20px; /* Espacio entre filas */
 }
@@ -16,4 +17,17 @@
   height: auto;
   border: 1px solid #ddd; /* Borde para las imágenes */
   border-radius: 15px; /* Borde redondeado */
+}
+
+/* Media queries para ajustar el número de cartas por fila en diferentes tamaños de pantalla */
+@media screen and (max-width: 1200px) {
+  #file-list li {
+    width: calc(20% - 20px); /* Mostrar 5 cartas por fila en pantallas medianas */
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #file-list li {
+    width: calc(33.333% - 20px); /* Mostrar 3 cartas por fila en pantallas pequeñas */
+  }
 }
