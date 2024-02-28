@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,33 @@
     <!-- Vincular el archivo CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <h1>LorcanaDex</h1>
-    
+
     <!-- Filtro de ordenamiento -->
-    <label for="sort-select">Ordenar por:</label>
+    <label for="sort-select">Endreça per:</label>
     <select id="sort-select">
-        <option value="ink-cost">Costo de Tinta</option>
-        <option value="name">Nombre</option>
+        <option value="ink-cost">Cost</option>
+        <option value="name">Nom</option>
         <option value="card-number">Número de Carta</option>
     </select>
+    <button id="toggle-size">Baixa la qualitat</button>
+
 
     <!-- Filtros por color -->
     <div id="color-filters">
-        <button class="color-filter" data-color="Amethyst">Amethyst</button>
-        <button class="color-filter" data-color="Emerald">Emerald</button>
-        <button class="color-filter" data-color="Ruby">Ruby</button>
-        <button class="color-filter" data-color="Steel">Steel</button>
-        <button class="color-filter" data-color="Amber">Amber</button>
-        <button class="color-filter" data-color="Sapphire">Sapphire</button>
+        <button class="color-filter" data-color="Amethyst">Lila</button>
+        <button class="color-filter" data-color="Emerald">Verd</button>
+        <button class="color-filter" data-color="Ruby">Vermell</button>
+        <button class="color-filter" data-color="Steel">Gris</button>
+        <button class="color-filter" data-color="Amber">Groc</button>
+        <button class="color-filter" data-color="Sapphire">Blau</button>
     </div>
 
     <ul id="file-list"></ul>
 
     <script src="script.js"></script>
 </body>
+
 </html>
