@@ -22,6 +22,12 @@ body {
   display: flex; /* Mostrar como flexbox para centrar el contenido verticalmente */
   flex-direction: column; /* Alinear el contenido en columna */
   justify-content: center; /* Centrar el contenido verticalmente */
+  position: relative; /* Establecer posición relativa */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Agregar transición */
+}
+
+#file-list li:hover {
+  transform: translateY(-5px); /* Mover hacia arriba al hacer hover */
 }
 
 #file-list img {
