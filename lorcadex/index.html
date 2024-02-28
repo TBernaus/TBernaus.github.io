@@ -1,1 +1,35 @@
-a
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LorcanaDex</title>
+    <!-- Vincular el archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>LorcanaDex</h1>
+    
+    <!-- Filtro de ordenamiento -->
+    <label for="sort-select">Ordenar por:</label>
+    <select id="sort-select">
+        <option value="ink-cost">Costo de Tinta</option>
+        <option value="name">Nombre</option>
+        <option value="card-number">Número de Carta</option>
+    </select>
+
+    <!-- Filtros por color -->
+    <div id="color-filters">
+        <button class="color-filter" data-color="Amethyst">Amethyst</button>
+        <button class="color-filter" data-color="Emerald">Emerald</button>
+        <button class="color-filter" data-color="Ruby">Ruby</button>
+        <button class="color-filter" data-color="Steel">Steel</button>
+        <button class="color-filter" data-color="Amber">Amber</button>
+        <button class="color-filter" data-color="Sapphire">Sapphire</button>
+    </div>
+
+    <ul id="file-list"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>

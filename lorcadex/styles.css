@@ -1,0 +1,19 @@
+#file-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#file-list li {
+  width: 20%; /* Cada elemento li ocupa el 20% del ancho del contenedor */
+  text-align: center;
+  margin-bottom: 20px; /* Espacio entre filas */
+}
+
+#file-list img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd; /* Borde para las imágenes */
+  border-radius: 15px; /* Borde redondeado */
+}
