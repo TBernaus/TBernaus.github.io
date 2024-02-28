@@ -4,13 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const sortSelect = document.getElementById('sort-select');
     const colorFilters = document.querySelectorAll('.color-filter');
     const toggleSizeButton = document.getElementById('toggle-size');
-    let isLargeSize = false; // Variable para rastrear el estado del tamaño de la carta
-
+    const searchInput = document.getElementById('search-input');
+    let isLargeSize = true;
     let cardsData = [];
 
-    // Función para filtrar y mostrar las cartas
     function filterAndDisplayCards() {
-        // Filtrar las cartas según los colores seleccionados
         const activeColors = Array.from(colorFilters)
             .filter(filter => filter.classList.contains('active'))
             .map(filter => filter.getAttribute('data-color'));
@@ -20,19 +18,21 @@ document.addEventListener('DOMContentLoaded', function() {
             filteredCards = cardsData.filter(card => activeColors.includes(card.color));
         }
 
-        // Ordenar las cartas según la selección del usuario
+        const searchTerm = searchInput.value.toLowerCase();
+        if (searchTerm) {
+            filteredCards = filteredCards.filter(card => card.name.toLowerCase().includes(searchTerm));
+        }
+
         const sortBy = sortSelect.value;
         sortAndDisplayCards(filteredCards, sortBy);
     }
 
-    // Función para mostrar las cartas en el tamaño adecuado
     function displayCardsWithSize(cards) {
-        fileListElement.innerHTML = ''; // Limpiar la lista de cartas
+        fileListElement.innerHTML = '';
         cards.forEach(cardData => {
             const listItem = document.createElement('li');
             const imageElement = document.createElement('img');
-            // Asignar el tamaño de la imagen según el estado de isLargeSize
-            imageElement.src = isLargeSize ? cardData['image-urls']['small'] : cardData['image-urls']['large'];
+            imageElement.src = isLargeSize ? cardData['image-urls']['large'] : cardData['image-urls']['small'];
             imageElement.alt = cardData.name;
             listItem.textContent = `${cardData.name}`;
             listItem.appendChild(imageElement);
@@ -40,13 +40,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Función para alternar el tamaño de las cartas
     toggleSizeButton.addEventListener('click', function() {
-        isLargeSize = !isLargeSize; // Cambiar el estado del tamaño de la carta
-        filterAndDisplayCards(); // Volver a mostrar las cartas con el nuevo tamaño
+        isLargeSize = !isLargeSize;
+        filterAndDisplayCards();
     });
 
-    // Cargar y mostrar las cartas al cargar la página
+    function showModal(imageSrc) {
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+
+        modalImg.src = imageSrc;
+        modal.style.display = 'block';
+
+        modal.addEventListener('click', closeModal);
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('modal');
+        modal.style.display = 'none';
+        modal.removeEventListener('click', closeModal);
+    }
+
+    fileListElement.addEventListener('click', function(event) {
+        if (event.target.tagName === 'IMG') {
+            const imageSrc = event.target.src;
+            showModal(imageSrc);
+        }
+    });
+
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
@@ -57,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         .then(cardData => {
                             cardsData.push(cardData);
                             if (cardsData.length === data.filter(file => file.name.endsWith('.txt')).length) {
-                                filterAndDisplayCards(); // Mostrar las cartas al completar la carga
+                                filterAndDisplayCards();
                             }
                         })
                         .catch(error => console.error('Error obteniendo datos del archivo:', error));
@@ -66,9 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error obteniendo lista de archivos:', error));
 
-    // Función para ordenar y mostrar las cartas
     function sortAndDisplayCards(cards, sortBy) {
-        // Ordenar las cartas según el criterio seleccionado
         cards.sort((a, b) => {
             if (sortBy === 'card-number') {
                 return a['card-number'] - b['card-number'];
@@ -79,20 +98,37 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Mostrar las cartas con el tamaño adecuado
         displayCardsWithSize(cards);
     }
 
-    // Evento para el cambio en el filtro de ordenamiento
     sortSelect.addEventListener('change', function() {
-        filterAndDisplayCards(); // Volver a mostrar las cartas al cambiar el filtro
+        filterAndDisplayCards();
     });
 
-    // Evento para el clic en los filtros de color
     colorFilters.forEach(filter => {
         filter.addEventListener('click', function() {
-            this.classList.toggle('active'); // Alternar la clase "active" al hacer clic
-            filterAndDisplayCards(); // Volver a mostrar las cartas al cambiar los filtros
+            this.classList.toggle('active');
+            filterAndDisplayCards();
         });
     });
+
+    searchInput.addEventListener('input', function() {
+        filterAndDisplayCards();
+    });
+
+    // Evento para cerrar la modal al hacer clic fuera de la imagen
+    window.addEventListener('click', function(event) {
+        const modal = document.getElementById('modal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Ajuste del tamaño de la imagen dentro de la modal al 80% de la pantalla
+    window.addEventListener('resize', function() {
+        const modalImg = document.getElementById('modal-img');
+        const newWidth = window.innerWidth * 0.8;
+        modalImg.style.maxWidth = `${newWidth}px`;
+    });
+
 });
