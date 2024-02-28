@@ -27,7 +27,7 @@ body {
 }
 
 #file-list li:hover {
-  transform: translateY(-5px); /* Mover hacia arriba al hacer hover */
+  transform: translateY(-15px); /* Mover hacia arriba al hacer hover */
 }
 
 #file-list img {
