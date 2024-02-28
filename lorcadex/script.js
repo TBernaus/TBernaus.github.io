@@ -1,103 +1,98 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const apiUrl = 'https://api.github.com/repos/Dogloverblue/Lorcana-API/contents/src/data/legacy_data/cards';
-  const fileListElement = document.getElementById('file-list');
-  const sortSelect = document.getElementById('sort-select');
-  const colorFilters = document.querySelectorAll('.color-filter');
-  let cardsData = [];
+    const apiUrl = 'https://api.github.com/repos/Dogloverblue/Lorcana-API/contents/src/data/legacy_data/cards';
+    const fileListElement = document.getElementById('file-list');
+    const sortSelect = document.getElementById('sort-select');
+    const colorFilters = document.querySelectorAll('.color-filter');
+    const toggleSizeButton = document.getElementById('toggle-size');
+    let isLargeSize = false; // Variable para rastrear el estado del tamaño de la carta
 
-  // Función para filtrar las cartas por color
-  function filterCardsByColor() {
-      const activeColors = Array.from(colorFilters)
-          .filter(filter => filter.classList.contains('active'))
-          .map(filter => filter.getAttribute('data-color'));
+    let cardsData = [];
 
-      if (activeColors.length === 0) {
-          // Si no hay colores activos, mostrar todas las cartas
-          sortAndDisplayCards(cardsData, sortSelect.value);
-      } else {
-          const filteredCards = cardsData.filter(card => !activeColors.includes(card.color));
-          sortAndDisplayCards(filteredCards, sortSelect.value);
-      }
-  }
+    // Función para filtrar y mostrar las cartas
+    function filterAndDisplayCards() {
+        // Filtrar las cartas según los colores seleccionados
+        const activeColors = Array.from(colorFilters)
+            .filter(filter => filter.classList.contains('active'))
+            .map(filter => filter.getAttribute('data-color'));
 
-  // Función para mostrar todas las cartas
-  function showAllCards() {
-      sortAndDisplayCards(cardsData, sortSelect.value);
-  }
+        let filteredCards = cardsData;
+        if (activeColors.length > 0) {
+            filteredCards = cardsData.filter(card => activeColors.includes(card.color));
+        }
 
-  // Evento de clic para cada botón de filtro por color
-  colorFilters.forEach(filter => {
-      filter.addEventListener('click', function() {
-          const isActive = this.classList.contains('active');
+        // Ordenar las cartas según la selección del usuario
+        const sortBy = sortSelect.value;
+        sortAndDisplayCards(filteredCards, sortBy);
+    }
 
-          if (!isActive) {
-              // Si el botón no está activo, activarlo y filtrar las cartas
-              this.classList.add('active');
-          } else {
-              // Si el botón está activo, desactivarlo y actualizar los filtros
-              this.classList.remove('active');
-          }
+    // Función para mostrar las cartas en el tamaño adecuado
+    function displayCardsWithSize(cards) {
+        fileListElement.innerHTML = ''; // Limpiar la lista de cartas
+        cards.forEach(cardData => {
+            const listItem = document.createElement('li');
+            const imageElement = document.createElement('img');
+            // Asignar el tamaño de la imagen según el estado de isLargeSize
+            imageElement.src = isLargeSize ? cardData['image-urls']['small'] : cardData['image-urls']['large'];
+            imageElement.alt = cardData.name;
+            listItem.textContent = `${cardData.name}`;
+            listItem.appendChild(imageElement);
+            fileListElement.appendChild(listItem);
+        });
+    }
 
-          filterCardsByColor();
-      });
-  });
+    // Función para alternar el tamaño de las cartas
+    toggleSizeButton.addEventListener('click', function() {
+        isLargeSize = !isLargeSize; // Cambiar el estado del tamaño de la carta
+        filterAndDisplayCards(); // Volver a mostrar las cartas con el nuevo tamaño
+    });
 
-  // Tu código existente para obtener las cartas y ordenarlas
-  fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-          data.forEach(file => {
-              if (file.name.endsWith('.txt')) {
-                  fetch(file.download_url)
-                      .then(response => response.json())
-                      .then(cardData => {
-                          cardsData.push(cardData);
-                          if (cardsData.length === data.filter(file => file.name.endsWith('.txt')).length) {
-                              sortAndDisplayCards(cardsData, 'ink-cost');
-                          }
-                      })
-                      .catch(error => console.error('Error obteniendo datos del archivo:', error));
-              }
-          });
-      })
-      .catch(error => console.error('Error obteniendo lista de archivos:', error));
+    // Cargar y mostrar las cartas al cargar la página
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(file => {
+                if (file.name.endsWith('.txt')) {
+                    fetch(file.download_url)
+                        .then(response => response.json())
+                        .then(cardData => {
+                            cardsData.push(cardData);
+                            if (cardsData.length === data.filter(file => file.name.endsWith('.txt')).length) {
+                                filterAndDisplayCards(); // Mostrar las cartas al completar la carga
+                            }
+                        })
+                        .catch(error => console.error('Error obteniendo datos del archivo:', error));
+                }
+            });
+        })
+        .catch(error => console.error('Error obteniendo lista de archivos:', error));
 
-  // Función para ordenar las cartas y mostrarlas
-  function sortAndDisplayCards(cardsData, sortBy) {
-      if (sortBy === 'card-number') {
-          cardsData.sort((a, b) => {
-              if (a.set === b.set) {
-                  return a['card-number'] - b['card-number'];
-              } else {
-                  return a.set.localeCompare(b.set);
-              }
-          });
-      } else if (sortBy === 'ink-cost') {
-          cardsData.sort((a, b) => {
-              return a['ink-cost'] - b['ink-cost'];
-          });
-      } else {
-          cardsData.sort((a, b) => {
-              return a.name.localeCompare(b.name);
-          });
-      }
+    // Función para ordenar y mostrar las cartas
+    function sortAndDisplayCards(cards, sortBy) {
+        // Ordenar las cartas según el criterio seleccionado
+        cards.sort((a, b) => {
+            if (sortBy === 'card-number') {
+                return a['card-number'] - b['card-number'];
+            } else if (sortBy === 'ink-cost') {
+                return a['ink-cost'] - b['ink-cost'];
+            } else {
+                return a.name.localeCompare(b.name);
+            }
+        });
 
-      fileListElement.innerHTML = '';
+        // Mostrar las cartas con el tamaño adecuado
+        displayCardsWithSize(cards);
+    }
 
-      cardsData.forEach(cardData => {
-          const listItem = document.createElement('li');
-          const imageElement = document.createElement('img');
-          imageElement.src = cardData['image-urls']['large'];
-          imageElement.alt = cardData.name;
-          listItem.textContent = `${cardData.name}`;
-          listItem.appendChild(imageElement);
-          fileListElement.appendChild(listItem);
-      });
-  }
+    // Evento para el cambio en el filtro de ordenamiento
+    sortSelect.addEventListener('change', function() {
+        filterAndDisplayCards(); // Volver a mostrar las cartas al cambiar el filtro
+    });
 
-  // Evento cuando cambia el valor del filtro de ordenamiento
-  sortSelect.addEventListener('change', function() {
-      const sortBy = sortSelect.value;
-      filterCardsByColor(); // Llamar a la función de filtrado después de cambiar el tipo de orden
-  });
+    // Evento para el clic en los filtros de color
+    colorFilters.forEach(filter => {
+        filter.addEventListener('click', function() {
+            this.classList.toggle('active'); // Alternar la clase "active" al hacer clic
+            filterAndDisplayCards(); // Volver a mostrar las cartas al cambiar los filtros
+        });
+    });
 });
