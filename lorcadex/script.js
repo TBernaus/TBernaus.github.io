@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
       cardsData.forEach(cardData => {
           const listItem = document.createElement('li');
           const imageElement = document.createElement('img');
-          imageElement.src = cardData['image-urls']['small'];
+          imageElement.src = cardData['image-urls']['large'];
           imageElement.alt = cardData.name;
           listItem.textContent = `${cardData.name}`;
           listItem.appendChild(imageElement);
