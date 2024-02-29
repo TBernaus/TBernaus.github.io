@@ -1,5 +1,5 @@
 body {
-  font-family: 'Waltograph', cursive;
+  font-family: 'Waltograph', 'Anta', 'Lato', 'arial', cursive;
 }
 @media screen and (min-width: 1200px) {
   body {
