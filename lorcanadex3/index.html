@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="cat">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LorcanaDex</title>
+    <!-- Vincular el archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>LorcanaDex</h1>
+
+    <!-- Filtro de ordenamiento -->
+    <label for="sort-select">Ordenar por:</label>
+    <select id="sort-select">
+        <option value="name">Nombre</option>
+        <option value="card-number">Número de Carta</option>
+        <option value="ink-cost">Costo de Tinta</option>
+    </select>
+
+    <!-- Filtros por color -->
+    <div id="color-filters">
+        <button class="color-filter" data-color="Amethyst">Lila</button>
+        <button class="color-filter" data-color="Emerald">Verd</button>
+        <button class="color-filter" data-color="Ruby">Vermell</button>
+        <button class="color-filter" data-color="Steel">Gris</button>
+        <button class="color-filter" data-color="Amber">Groc</button>
+        <button class="color-filter" data-color="Sapphire">Blau</button>
+    </div>
+
+    <!-- Dropdown para filtros inkable -->
+    <label for="inkable-select">Tintejable?</label>
+    <select id="inkable-select">
+        <option value="any">-</option>
+        <option value="true">Sí</option>
+        <option value="false">No</option>
+    </select>
+
+    <!-- Campo de búsqueda -->
+    <input type="text" id="search-input" placeholder="Buscar por nombre...">
+
+    <ul id="file-list"></ul>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
