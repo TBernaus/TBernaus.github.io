@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const inkableBoolean = inkableValue === 'true';
             filteredCards = filteredCards.filter(card => card.Inkable === inkableBoolean);
         }
-
+        filteredCards = filteredCards.filter(card => card.Name !== 'TEST' && !card.Name.includes("Bonaparte's Gull") && !card.Name.includes("Bonepart's Gull") && !card.Name.includes("Boneparte's Gull") && !card.Name.includes("Bonapartes Gull"));
         const sortBy = sortSelect.value;
         sortAndDisplayCards(filteredCards, sortBy);
     }
