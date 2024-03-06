@@ -6,7 +6,14 @@ body {
       font-size: 18px;
   }
 }
-
+.color-filter, .clear-filters-button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+}
 #file-list {
   list-style-type: none;
   padding: 0;

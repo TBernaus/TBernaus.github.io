@@ -7,6 +7,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search-input');
     let cardsData = [];
 
+    const colorButtons = document.querySelectorAll('.color-filter');
+const clearFiltersButton = document.querySelector('.clear-filters-button');
+
+function resetFilters() {
+    colorButtons.forEach(button => {
+        button.style.backgroundColor = '#000';
+    });
+    colorFilters.forEach(filter => {
+        filter.classList.remove('active');
+    });
+    filterAndDisplayCards();
+}
+
+// Agrega un evento de clic al botón "Esborra els filtres" para restablecer los filtros
+clearFiltersButton.addEventListener('click', function() {
+    resetFilters();
+});
+
+        colorButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const color = this.getAttribute('btn-color');
+                if (this.style.backgroundColor === color) {
+                    this.style.backgroundColor = '#000';
+                } else {
+                    this.style.backgroundColor = color;
+                }
+            });
+        });
+
     function filterAndDisplayCards() {
         const activeColors = Array.from(colorFilters)
             .filter(filter => filter.classList.contains('active'))
