@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     const apiUrl = 'https://api.lorcana-api.com/cards/all';
-    const fileListElement = document.getElementById('file-list');
     const sortSelect = document.getElementById('sort-select');
     const colorFilters = document.querySelectorAll('.color-filter');
     const inkableSelect = document.getElementById('inkable-select');
@@ -8,22 +7,22 @@ document.addEventListener('DOMContentLoaded', function() {
     let cardsData = [];
 
     const colorButtons = document.querySelectorAll('.color-filter');
-const clearFiltersButton = document.querySelector('.clear-filters-button');
+    const clearFiltersButton = document.querySelector('.clear-filters-button');
 
-function resetFilters() {
-    colorButtons.forEach(button => {
-        button.style.backgroundColor = '#000';
-    });
-    colorFilters.forEach(filter => {
-        filter.classList.remove('active');
-    });
-    filterAndDisplayCards();
+    function resetFilters() {
+      colorButtons.forEach(button => {
+          button.style.backgroundColor = '#000';
+      });
+      colorFilters.forEach(filter => {
+          filter.classList.remove('active');
+      });
+      filterAndDisplayCards();
 }
 
 // Agrega un evento de clic al botón "Esborra els filtres" para restablecer los filtros
-clearFiltersButton.addEventListener('click', function() {
-    resetFilters();
-});
+  clearFiltersButton.addEventListener('click', function() {
+      resetFilters();
+    });
 
         colorButtons.forEach(button => {
             button.addEventListener('click', function() {
@@ -74,29 +73,6 @@ clearFiltersButton.addEventListener('click', function() {
         });
     }
 
-    function showModal(imageSrc) {
-        const modal = document.getElementById('modal');
-        const modalImg = document.getElementById('modal-img');
-
-        modalImg.src = imageSrc;
-        modal.style.display = 'block';
-
-        modal.addEventListener('click', closeModal);
-    }
-
-    function closeModal() {
-        const modal = document.getElementById('modal');
-        modal.style.display = 'none';
-        modal.removeEventListener('click', closeModal);
-    }
-
-    fileListElement.addEventListener('click', function(event) {
-        if (event.target.tagName === 'IMG') {
-            const imageSrc = event.target.src;
-            showModal(imageSrc);
-        }
-    });
-
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
@@ -136,13 +112,5 @@ clearFiltersButton.addEventListener('click', function() {
 
     inkableSelect.addEventListener('change', function() {
         filterAndDisplayCards();
-    });
-
-    // Evento para cerrar la modal al hacer clic fuera de la imagen
-    window.addEventListener('click', function(event) {
-        const modal = document.getElementById('modal');
-        if (event.target === modal) {
-            closeModal();
-        }
     });
 });
