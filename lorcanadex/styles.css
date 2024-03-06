@@ -1,5 +1,6 @@
 body {
   font-family: 'Waltograph', 'Anta', 'Lato', 'arial', cursive;
+  background-color: #f1f6f1
 }
 @media screen and (min-width: 1200px) {
   body {
@@ -15,10 +16,10 @@ body {
     cursor: pointer;
 }
 #color-filters{
-  background-color: #eee;
   display: inline-block;
+  /* background-color: #eee;
   width: auto;
-  height: auto;
+  height: auto; */
 }
 #file-list {
   list-style-type: none;
