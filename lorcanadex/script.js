@@ -6,34 +6,39 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('search-input');
     let cardsData = [];
 
-    const colorButtons = document.querySelectorAll('.color-filter');
-    const clearFiltersButton = document.querySelector('.clear-filters-button');
 
-    function resetFilters() {
-        colorButtons.forEach(button => {
-            button.style.backgroundColor = '#000';
+/*
+    ##############################################
+    ############### OBTENIR CARTES ###############
+    ##############################################
+*/
+    function displayCards(cards) {
+        fileListElement.innerHTML = '';
+        cards.forEach(cardData => {
+            const listItem = document.createElement('li');
+            const imageElement = document.createElement('img');
+            imageElement.src = cardData.Image;
+            imageElement.alt = cardData.Name;
+            listItem.textContent = `${cardData.Name}`;
+            listItem.appendChild(imageElement);
+            fileListElement.appendChild(listItem);
         });
-        colorFilters.forEach(filter => {
-            filter.classList.remove('active');
-        });
-        filterAndDisplayCards();
     }
 
-    // Agrega un evento de clic al botón "Esborra els filtres" para restablecer los filtros
-    clearFiltersButton.addEventListener('click', function () {
-        resetFilters();
-    });
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            cardsData = data;
+            filterAndDisplayCards();
+        })
+        .catch(error => console.error("Error obtenint dades de l'API:", error));
 
-    colorButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const color = this.getAttribute('btn-color');
-            if (this.style.backgroundColor === color) {
-                this.style.backgroundColor = '#000';
-            } else {
-                this.style.backgroundColor = color;
-            }
-        });
-    });
+
+/*
+    ##############################################
+    ############### FILTRAR CARTES ###############
+    ##############################################
+*/
 
     function filterAndDisplayCards() {
         const activeColors = Array.from(colorFilters)
@@ -56,48 +61,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const inkableBoolean = inkableValue === 'true';
             filteredCards = filteredCards.filter(card => card.Inkable === inkableBoolean);
         }
-        const minPrice = parseInt(document.getElementById('min-value').innerHTML);
-        const maxPrice = parseInt(document.getElementById('max-value').innerHTML);
-        filteredCards = filteredCards.filter(card => card.Cost >= minPrice && card.Cost <= maxPrice);
+        const minInk = parseInt(document.getElementById('min-value').innerHTML);
+        const maxInk = parseInt(document.getElementById('max-value').innerHTML);
+        filteredCards = filteredCards.filter(card => card.Cost >= minInk && card.Cost <= maxInk);
 
         filteredCards = filteredCards.filter(card => card.Name !== 'TEST' && !card.Name.includes("Bonaparte's Gull") && !card.Name.includes("Bonepart's Gull") && !card.Name.includes("Boneparte's Gull") && !card.Name.includes("Bonapartes Gull"));
         const sortBy = sortSelect.value;
         sortAndDisplayCards(filteredCards, sortBy);
-    }
-
-    function displayCards(cards) {
-        fileListElement.innerHTML = '';
-        cards.forEach(cardData => {
-            const listItem = document.createElement('li');
-            const imageElement = document.createElement('img');
-            imageElement.src = cardData.Image;
-            imageElement.alt = cardData.Name;
-            listItem.textContent = `${cardData.Name}`;
-            listItem.appendChild(imageElement);
-            fileListElement.appendChild(listItem);
-        });
-    }
-
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            cardsData = data;
-            filterAndDisplayCards();
-        })
-        .catch(error => console.error('Error obteniendo datos del API:', error));
-
-    function sortAndDisplayCards(cards, sortBy) {
-        cards.sort((a, b) => {
-            if (sortBy === 'card-number') {
-                return a.Card_Num - b.Card_Num;
-            } else if (sortBy === 'ink-cost') {
-                return a.Cost - b.Cost;
-            } else {
-                return a.Name.localeCompare(b.Name);
-            }
-        });
-
-        displayCards(cards);
     }
 
     sortSelect.addEventListener('change', function () {
@@ -118,41 +88,86 @@ document.addEventListener('DOMContentLoaded', function () {
     inkableSelect.addEventListener('change', function () {
         filterAndDisplayCards();
     });
-/*
- ##################################################
- ###################### RANG ######################
- ##################################################
 
+/*
+    ###############################################
+    ############### ENDREÇAR CARTES ###############
+    ###############################################
+*/
+    function sortAndDisplayCards(cards, sortBy) {
+        cards.sort((a, b) => {
+            if (sortBy === 'card-number') {
+                return a.Card_Num - b.Card_Num;
+            } else if (sortBy === 'ink-cost') {
+                return a.Cost - b.Cost;
+            } else {
+                return a.Name.localeCompare(b.Name);
+            }
+        });
+
+        displayCards(cards);
+    }
+
+/*
+    ##############################################
+    ############# FILTRAR PER COLORS #############
+    ##############################################
+*/
+
+    const colorButtons = document.querySelectorAll('.color-filter');
+    const clearFiltersButton = document.querySelector('.clear-filters-button');
+
+    function resetFilters() {
+        colorButtons.forEach(button => {
+            button.style.backgroundColor = '#000';
+        });
+        colorFilters.forEach(filter => {
+            filter.classList.remove('active');
+        });
+        filterAndDisplayCards();
+    }
+
+    clearFiltersButton.addEventListener('click', function () {
+        resetFilters();
+    });
+
+    colorButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const color = this.getAttribute('btn-color');
+            if (this.style.backgroundColor === color) {
+                this.style.backgroundColor = '#000';
+            } else {
+                this.style.backgroundColor = color;
+            }
+        });
+    });
+
+/*
+    ##################################################
+    ###################### RANG ######################
+    ##################################################
 */
     let minValue = document.getElementById("min-value");
     let maxValue = document.getElementById("max-value");
 
-    const rangeFill = document.querySelector(".range-fill");
-
-    // Function to validate range and update the fill color on slider
     function validateRange() {
-        let minPrice = parseInt(inputElements[0].value);
-        let maxPrice = parseInt(inputElements[1].value);
+        let minInk = parseInt(inputElements[0].value);
+        let maxInk = parseInt(inputElements[1].value);
 
-        if (minPrice > maxPrice) {
-            let tempValue = maxPrice;
-            maxPrice = minPrice;
-            minPrice = tempValue;
+        if (minInk > maxInk) {
+            let tempValue = maxInk;
+            maxInk = minInk;
+            minInk = tempValue;
         }
 
-        minValue.innerHTML = minPrice;
-        maxValue.innerHTML = maxPrice;
+        minValue.innerHTML = minInk;
+        maxValue.innerHTML = maxInk;
 
         filterAndDisplayCards();
     }
 
     const inputElements = document.querySelectorAll("input");
-
-    // Add an event listener to each input element
     inputElements.forEach((element) => {
         element.addEventListener("input", validateRange);
     });
-
-    // Initial call to validateRange
-    validateRange();
 });
