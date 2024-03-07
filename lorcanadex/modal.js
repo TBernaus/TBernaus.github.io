@@ -3,11 +3,8 @@ const fileListElement = document.getElementById('file-list');
 function showModal(imageSrc) {
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modal-img');
-
     modalImg.src = imageSrc;
-    
     modal.style.display = 'block';
-    
     modal.addEventListener('click', closeModal);
 }
 
@@ -23,7 +20,6 @@ fileListElement.addEventListener('click', function(event) {
         showModal(imageSrc);
     }
 });
-// Evento para cerrar la modal al hacer clic fuera de la imagen
 window.addEventListener('click', function(event) {
     const modal = document.getElementById('modal');
     if (event.target === modal) {
