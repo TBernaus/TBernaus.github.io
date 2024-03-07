@@ -4,17 +4,20 @@ document.addEventListener('DOMContentLoaded', function () {
     const colorFilters = document.querySelectorAll('.color-filter');
     const inkableSelect = document.getElementById('inkable-select');
     const searchInput = document.getElementById('search-input');
+    let cardsDisplayed = 30;
+    const fileListElement = document.getElementById('file-list'); // Agregado para la referencia del elemento de la lista de archivos
     let cardsData = [];
 
 
-/*
-    ##############################################
-    ############### OBTENIR CARTES ###############
-    ##############################################
-*/
+    /*
+        ##############################################
+        ############### OBTENIR CARTES ###############
+        ##############################################
+    */
     function displayCards(cards) {
         fileListElement.innerHTML = '';
-        cards.forEach(cardData => {
+        const filteredCards = cards.slice(0, cardsDisplayed);
+        filteredCards.forEach(cardData => {
             const listItem = document.createElement('li');
             const imageElement = document.createElement('img');
             imageElement.src = cardData.Image;
@@ -23,6 +26,28 @@ document.addEventListener('DOMContentLoaded', function () {
             listItem.appendChild(imageElement);
             fileListElement.appendChild(listItem);
         });
+
+        const lazyImages = document.querySelectorAll('img:not([src])');
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const image = entry.target;
+                        image.src = image.getAttribute('data-src');
+                        observer.unobserve(image);
+                    }
+                });
+            });
+
+            lazyImages.forEach(image => {
+                observer.observe(image);
+            });
+        } else {
+            lazyImages.forEach(image => {
+                image.src = image.getAttribute('data-src');
+            });
+        }
     }
 
     fetch(apiUrl)
@@ -33,12 +58,11 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error("Error obtenint dades de l'API:", error));
 
-
-/*
-    ##############################################
-    ############### FILTRAR CARTES ###############
-    ##############################################
-*/
+    /*
+        ##############################################
+        ############### FILTRAR CARTES ###############
+        ##############################################
+    */
 
     function filterAndDisplayCards() {
         const activeColors = Array.from(colorFilters)
@@ -89,11 +113,11 @@ document.addEventListener('DOMContentLoaded', function () {
         filterAndDisplayCards();
     });
 
-/*
-    ###############################################
-    ############### ENDREÇAR CARTES ###############
-    ###############################################
-*/
+    /*
+        ###############################################
+        ############### ENDREÇAR CARTES ###############
+        ###############################################
+    */
     function sortAndDisplayCards(cards, sortBy) {
         cards.sort((a, b) => {
             if (sortBy === 'card-number') {
@@ -108,11 +132,11 @@ document.addEventListener('DOMContentLoaded', function () {
         displayCards(cards);
     }
 
-/*
-    ##############################################
-    ############# FILTRAR PER COLORS #############
-    ##############################################
-*/
+    /*
+        ##############################################
+        ############# FILTRAR PER COLORS #############
+        ##############################################
+    */
 
     const colorButtons = document.querySelectorAll('.color-filter');
     const clearFiltersButton = document.querySelector('.clear-filters-button');
@@ -142,11 +166,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-/*
-    ##################################################
-    ###################### RANG ######################
-    ##################################################
-*/
+    /*
+        ##################################################
+        ###################### RANG ######################
+        ##################################################
+    */
     let minValue = document.getElementById("min-value");
     let maxValue = document.getElementById("max-value");
 
@@ -170,4 +194,20 @@ document.addEventListener('DOMContentLoaded', function () {
     inputElements.forEach((element) => {
         element.addEventListener("input", validateRange);
     });
+    /*
+        ###################################################
+        ############### CARREGAR MÉS CARTES ###############
+        ###################################################
+    */
+
+    const loadMoreButton = document.getElementById('load-more-button');
+    loadMoreButton.addEventListener('click', loadMoreCards);
+
+    function loadMoreCards() {
+        cardsDisplayed += 10;
+        if (cardsDisplayed >= cardsData.length) {
+            loadMoreButton.style.display = 'none';
+        }
+        filterAndDisplayCards();
+    }
 });

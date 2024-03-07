@@ -123,3 +123,10 @@ body {
     margin-top: 20%;
   }
 }
+/* tamaño nombre cartas*/
+#file-list li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
