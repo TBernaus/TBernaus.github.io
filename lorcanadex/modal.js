@@ -5,8 +5,9 @@ function showModal(imageSrc) {
     const modalImg = document.getElementById('modal-img');
 
     modalImg.src = imageSrc;
+    
     modal.style.display = 'block';
-
+    
     modal.addEventListener('click', closeModal);
 }
 
