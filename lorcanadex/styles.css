@@ -8,9 +8,19 @@ body {
     font-size: 18px;
   }
 }
-
+button, select{
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 15px;
+  border: 1px black solid;
+}
 .color-filter,
 .clear-filters-button {
+  width: 80px;
   background-color: #000;
   color: white;
   border: none;
@@ -19,6 +29,9 @@ body {
   cursor: pointer;
 }
 
+.clear-filters-button {
+  width: auto;
+}
 #color-filters {
   display: inline-block;
   /* background-color: #eee;

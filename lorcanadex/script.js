@@ -132,33 +132,37 @@ document.addEventListener("DOMContentLoaded", function () {
         ############### ENDREÇAR CARTES ###############
         ###############################################
     */
-        function sortAndDisplayCards(cards, sortBy) {
-            cards.sort((a, b) => {
-                let comparison = 0;
-        
-                switch (sortBy) {
-                    case 'card-number':
-                        comparison = a.Card_Num - b.Card_Num;
-                        break;
-                    case 'ink-cost':
-                        comparison = a.Cost - b.Cost;
-                        break;
-                    default:
-                        comparison = a.Name.localeCompare(b.Name);
-                        break;
-                }
-        
-                if (isOrderReversed) {
-                    comparison *= -1;
-                }
-        
-                return comparison;
-            });
-        
-            displayCards(cards);
-        }
-        
+  function sortAndDisplayCards(cards, sortBy) {
+    cards.sort((a, b) => {
+      let comparison = 0;
 
+      switch (sortBy) {
+        case "card-number":
+          comparison = a.Card_Num - b.Card_Num;
+          break;
+        case "ink-cost":
+          comparison = a.Cost - b.Cost;
+          break;
+        default:
+          comparison = a.Name.localeCompare(b.Name);
+          break;
+      }
+
+      if (isOrderReversed) {
+        comparison *= -1;
+      }
+
+      return comparison;
+    });
+
+    displayCards(cards);
+  }
+
+  /*
+        ###############################################
+        ################ INVERTIR COST ################
+        ###############################################
+    */
   const invertOrderButton = document.getElementById("invert-order-button");
   let isOrderReversed = false;
 
@@ -166,6 +170,22 @@ document.addEventListener("DOMContentLoaded", function () {
     isOrderReversed = !isOrderReversed;
     filterAndDisplayCards();
   });
+  const colorButtonsInv = document.querySelectorAll("#invert-order-button");
+  colorButtonsInv.forEach((button) => {
+    button.addEventListener("click", function () {
+
+        const computedStyle = window.getComputedStyle(this);
+        const backgroundColor = computedStyle.backgroundColor;
+        if (backgroundColor === "rgb(0, 0, 0)") {
+        this.style.backgroundColor = "#fff";
+        this.style.color = "#000";
+      } else {
+        this.style.backgroundColor = "#000";
+        this.style.color = "#fff"; 
+      }
+    });
+  });
+
 
   /*
         ##############################################
