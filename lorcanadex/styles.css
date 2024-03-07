@@ -2,7 +2,9 @@ body {
   font-family: 'Waltograph', 'Anta', 'Lato', 'arial', cursive;
   background-color: #f1f6f1
 }
-
+.display-cards{
+  background-color: #000;
+}
 @media screen and (min-width: 1200px) {
   body {
     font-size: 18px;
@@ -45,7 +47,6 @@ button, select{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* Añadir este estilo para distribuir el espacio entre los elementos */
 }
 
 #file-list li {
@@ -77,9 +78,7 @@ button, select{
   width: auto;
   height: auto;
   border: 1px solid #ddd;
-  /* Borde para las imágenes */
   border-radius: 15px;
-  /* Borde redondeado */
 }
 
 /* Media queries para ajustar el número de cartas por fila en diferentes tamaños de pantalla */
