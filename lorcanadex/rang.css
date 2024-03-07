@@ -66,3 +66,20 @@ input[type="range"]::-webkit-slider-runnable-track {
 .cost-left{
     padding-right: 80px;
 }
+/* Estilos específicos para Firefox */
+@-moz-document url-prefix() {
+    .range-slider {
+        position: relative; /* Ajusta según tus necesidades */
+    }
+
+    input[type="range"] {
+        position: relative; /* Ajusta según tus necesidades */
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        position: relative; /* Ajusta según tus necesidades */
+    }
+    .cost-left{
+        padding-right: 280px;
+    }
+}
