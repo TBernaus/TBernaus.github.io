@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="cat">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LorcanaDex</title>
-    <!-- Vincular el archivo CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="rang.css">
 </head>
+
 <body>
     <h1>LorcanaDex</h1>
 
-    <!-- Filtro de ordenamiento -->
+    <!-- Filtre per endreçar -->
     <label for="sort-select">Endreça per:</label>
     <select id="sort-select">
         <option value="ink-cost">Cost de tinta</option>
@@ -18,7 +20,7 @@
         <option value="card-number">Número de carta</option>
     </select>
     <br>
-    <!-- Filtros por color -->
+    <!-- Filtres per colors -->
     <div id="color-filters">
         <button class="color-filter" btn-color="purple" data-color="Amethyst">Lila</button>
         <button class="color-filter" btn-color="green" data-color="Emerald">Verd</button>
@@ -30,7 +32,31 @@
     </div>
 
     <br>
-    <!-- Dropdown para filtros inkable -->
+
+    <!-- Filtres per cost -->
+    <div class="card">
+
+        <div class="price-content">
+            <div class="cost-left">
+                <label>Min</label>
+                <p id="min-value">1</p>
+            </div>
+
+            <div>
+                <label>Max</label>
+                <p id="max-value">10</p>
+            </div>
+        </div>
+
+        <div class="range-slider">
+            <div class="range-fill"></div>
+
+            <input type="range" class="min-price" value="1" min="1" max="10" step="1" />
+            <input type="range" class="max-price" value="10" min="1" max="10" step="1" />
+        </div>
+    </div>
+    <br>
+    <!-- Dropdown per a filtres inkable -->
     <label for="inkable-select">Tintejable?</label>
     <select id="inkable-select">
         <option value="any">-</option>
@@ -38,7 +64,7 @@
         <option value="false">No</option>
     </select>
 
-    <!-- Campo de búsqueda -->
+    <!-- Camp de búsqueda -->
     <input type="text" id="search-input" placeholder="Buscar per nom...">
 
     <ul id="file-list"></ul>
@@ -48,8 +74,10 @@
         <span class="close">&times;</span>
         <img class="modal-content" id="modal-img">
     </div>
-    <script src="script.js"></script>
+    <script src="script.js"></script> 
     <script src="modal.js"></script>
     <script src="filtre-colors.js"></script>
+    <script src="rang.js"></script>
 </body>
+
 </html>

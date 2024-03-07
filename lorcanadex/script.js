@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const apiUrl = 'https://api.lorcana-api.com/cards/all';
     const sortSelect = document.getElementById('sort-select');
     const colorFilters = document.querySelectorAll('.color-filter');
@@ -10,30 +10,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const clearFiltersButton = document.querySelector('.clear-filters-button');
 
     function resetFilters() {
-      colorButtons.forEach(button => {
-          button.style.backgroundColor = '#000';
-      });
-      colorFilters.forEach(filter => {
-          filter.classList.remove('active');
-      });
-      filterAndDisplayCards();
-}
+        colorButtons.forEach(button => {
+            button.style.backgroundColor = '#000';
+        });
+        colorFilters.forEach(filter => {
+            filter.classList.remove('active');
+        });
+        filterAndDisplayCards();
+    }
 
-// Agrega un evento de clic al botón "Esborra els filtres" para restablecer los filtros
-  clearFiltersButton.addEventListener('click', function() {
-      resetFilters();
+    // Agrega un evento de clic al botón "Esborra els filtres" para restablecer los filtros
+    clearFiltersButton.addEventListener('click', function () {
+        resetFilters();
     });
 
-        colorButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const color = this.getAttribute('btn-color');
-                if (this.style.backgroundColor === color) {
-                    this.style.backgroundColor = '#000';
-                } else {
-                    this.style.backgroundColor = color;
-                }
-            });
+    colorButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const color = this.getAttribute('btn-color');
+            if (this.style.backgroundColor === color) {
+                this.style.backgroundColor = '#000';
+            } else {
+                this.style.backgroundColor = color;
+            }
         });
+    });
 
     function filterAndDisplayCards() {
         const activeColors = Array.from(colorFilters)
@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .map(filter => filter.getAttribute('data-color'));
 
         let filteredCards = cardsData;
+
         if (activeColors.length > 0) {
             filteredCards = cardsData.filter(card => activeColors.includes(card.Color));
         }
@@ -55,6 +56,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const inkableBoolean = inkableValue === 'true';
             filteredCards = filteredCards.filter(card => card.Inkable === inkableBoolean);
         }
+        const minPrice = parseInt(document.getElementById('min-value').innerHTML);
+        const maxPrice = parseInt(document.getElementById('max-value').innerHTML);
+        filteredCards = filteredCards.filter(card => card.Cost >= minPrice && card.Cost <= maxPrice);
+
         filteredCards = filteredCards.filter(card => card.Name !== 'TEST' && !card.Name.includes("Bonaparte's Gull") && !card.Name.includes("Bonepart's Gull") && !card.Name.includes("Boneparte's Gull") && !card.Name.includes("Bonapartes Gull"));
         const sortBy = sortSelect.value;
         sortAndDisplayCards(filteredCards, sortBy);
@@ -95,22 +100,59 @@ document.addEventListener('DOMContentLoaded', function() {
         displayCards(cards);
     }
 
-    sortSelect.addEventListener('change', function() {
+    sortSelect.addEventListener('change', function () {
         filterAndDisplayCards();
     });
 
     colorFilters.forEach(filter => {
-        filter.addEventListener('click', function() {
+        filter.addEventListener('click', function () {
             this.classList.toggle('active');
             filterAndDisplayCards();
         });
     });
 
-    searchInput.addEventListener('input', function() {
+    searchInput.addEventListener('input', function () {
         filterAndDisplayCards();
     });
 
-    inkableSelect.addEventListener('change', function() {
+    inkableSelect.addEventListener('change', function () {
         filterAndDisplayCards();
     });
+/*
+ ##################################################
+ ###################### RANG ######################
+ ##################################################
+
+*/
+    let minValue = document.getElementById("min-value");
+    let maxValue = document.getElementById("max-value");
+
+    const rangeFill = document.querySelector(".range-fill");
+
+    // Function to validate range and update the fill color on slider
+    function validateRange() {
+        let minPrice = parseInt(inputElements[0].value);
+        let maxPrice = parseInt(inputElements[1].value);
+
+        if (minPrice > maxPrice) {
+            let tempValue = maxPrice;
+            maxPrice = minPrice;
+            minPrice = tempValue;
+        }
+
+        minValue.innerHTML = minPrice;
+        maxValue.innerHTML = maxPrice;
+
+        filterAndDisplayCards();
+    }
+
+    const inputElements = document.querySelectorAll("input");
+
+    // Add an event listener to each input element
+    inputElements.forEach((element) => {
+        element.addEventListener("input", validateRange);
+    });
+
+    // Initial call to validateRange
+    validateRange();
 });
