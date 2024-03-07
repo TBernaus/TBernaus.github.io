@@ -3,7 +3,7 @@ body {
   background-color: #f1f6f1
 }
 .display-cards{
-  background-color: #000;
+ /* background-color: #000;*/
 }
 @media screen and (min-width: 1200px) {
   body {
