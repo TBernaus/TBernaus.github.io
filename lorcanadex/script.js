@@ -99,13 +99,21 @@ document.addEventListener("DOMContentLoaded", function () {
     filteredCards = filteredCards.filter(
       (card) =>
         card.Name !== "TEST" &&
-        !card.Name.includes("Bonaparte's Gull") &&
-        !card.Name.includes("Bonepart's Gull") &&
-        !card.Name.includes("Boneparte's Gull") &&
-        !card.Name.includes("Bonapartes Gull")
+        !card.Name.includes("s Gull") 
     );
     const sortBy = sortSelect.value;
     sortAndDisplayCards(filteredCards, sortBy);
+
+
+    const totalFilteredCards = filteredCards.length;
+    const filteredAndDisplayedCards = filteredCards.slice(0, cardsDisplayed);
+    displayCards(filteredAndDisplayedCards);
+    if (cardsDisplayed >= totalFilteredCards) {
+        loadMoreButton.style.display = "none";
+    } else {
+        loadMoreButton.style.display = "block";
+    }
+
   }
 
   sortSelect.addEventListener("change", function () {
@@ -260,9 +268,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function loadMoreCards() {
     cardsDisplayed += 10;
-    if (cardsDisplayed >= cardsData.length) {
-      loadMoreButton.style.display = "none";
-    }
     filterAndDisplayCards();
   }
 });
