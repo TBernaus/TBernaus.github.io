@@ -72,15 +72,17 @@ input[type="range"]::-webkit-slider-runnable-track {
 /* estils especifics per a firefox */
 @-moz-document url-prefix() {
     .range-slider {
-        position: relative; /* Ajusta según tus necesidades */
+        width: 400px;
+        position: relative;
+        margin: 15px 0 30px 0;
     }
 
     input[type="range"] {
-        position: relative; /* Ajusta según tus necesidades */
+        position: relative; 
     }
 
     input[type="range"]::-moz-range-thumb {
-        position: relative; /* Ajusta según tus necesidades */
+        position: relative; 
     }
     .cost-left{
         padding-right: 280px;
