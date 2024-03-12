@@ -5,63 +5,50 @@ document.addEventListener("DOMContentLoaded", function () {
   const inkableSelect = document.getElementById("inkable-select");
   const searchInput = document.getElementById("search-input");
   let cardsDisplayed = 30;
-  const fileListElement = document.getElementById("file-list"); 
+  const fileListElement = document.getElementById("file-list"); // Agregado para la referencia del elemento de la lista de archivos
   let cardsData = [];
-  const placeholderElement = document.getElementById("placeholder"); 
-
 
   /*
         ##############################################
         ############### OBTENIR CARTES ###############
         ##############################################
     */
-  function displayCards(cards) 
-  {
-      placeholderElement.style.display = "none";
-      fileListElement.innerHTML = "";
-      const filteredCards = cards.slice(0, cardsDisplayed);
-      
-      filteredCards.forEach((cardData) => {
-          const listItem = document.createElement("li");
-          const imageElement = document.createElement("img");
-          imageElement.setAttribute('data-src', cardData.Image);
-          imageElement.alt = cardData.Name;
-          listItem.appendChild(imageElement);
-          fileListElement.appendChild(listItem);
-      });
-  
-      function lazyLoadImages() 
-      {
-          const lazyImages = document.querySelectorAll('img[data-src]');
-          if ("IntersectionObserver" in window) 
-          {
-              const observer = new IntersectionObserver((entries, observer) => {
-                  entries.forEach(entry => {
-                      if (entry.isIntersecting) {
-                          const img = entry.target;
-                          img.src = img.getAttribute('data-src');
-                          img.removeAttribute('data-src');
-                          observer.unobserve(img);
-                      }
-                  });
-              });
-  
-              lazyImages.forEach(img => {
-                  observer.observe(img);
-              });
+  function displayCards(cards) {
+    fileListElement.innerHTML = "";
+    const filteredCards = cards.slice(0, cardsDisplayed);
+    filteredCards.forEach((cardData) => {
+      const listItem = document.createElement("li");
+      const imageElement = document.createElement("img");
+      imageElement.src = cardData.Image;
+      imageElement.alt = cardData.Name;
+      listItem.textContent = `${cardData.Name}`;
+      listItem.appendChild(imageElement);
+      fileListElement.appendChild(listItem);
+    });
 
-          } 
-          else 
-          {
-              lazyImages.forEach(img => {
-                  img.src = img.getAttribute('data-src');
-                  img.removeAttribute('data-src');
-              });
+    const lazyImages = document.querySelectorAll("img:not([src])");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const image = entry.target;
+            image.src = image.getAttribute("data-src");
+            observer.unobserve(image);
           }
-      }
-      lazyLoadImages();
+        });
+      });
+
+      lazyImages.forEach((image) => {
+        observer.observe(image);
+      });
+    } else {
+      lazyImages.forEach((image) => {
+        image.src = image.getAttribute("data-src");
+      });
+    }
   }
-  placeholderElement.style.display = "block";
+
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {

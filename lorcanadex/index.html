@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/rang.css">
     <link rel="stylesheet" href="styles/modal.css">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="resources/favicon.png">
 </head>
 
 <body>
@@ -70,11 +70,19 @@
     <!-- Camp de búsqueda -->
     <input type="text" id="search-input" placeholder="Buscar per nom...">
 
+    <!-- placeholder -->
+    <div id="placeholder">
+        <br>
+        S'estan carregant les cartes, un moment siusplau...
+        <img id="loading-placeholder" src="resources/load.gif" alt="loading">
+    </div>
+
     <!-- cartes -->
     <div class="display-cards">
         <ul id="file-list"></ul>
     </div>
 
+    <!-- carrga més -->
     <button id="load-more-button">Carrega més cartes</button>
     <!-- Modal -->
     <div id="modal" class="modal">

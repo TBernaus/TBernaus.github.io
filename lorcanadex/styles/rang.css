@@ -1,3 +1,5 @@
+/* estils per al selector de rang (cost de cartes) */
+
 .card {
     display: inline-block;
     /* background-color: #fff; */
@@ -66,7 +68,8 @@ input[type="range"]::-webkit-slider-runnable-track {
 .cost-left{
     padding-right: 80px;
 }
-/* Estilos específicos para Firefox */
+
+/* estils especifics per a firefox */
 @-moz-document url-prefix() {
     .range-slider {
         position: relative; /* Ajusta según tus necesidades */

@@ -2,8 +2,16 @@ body {
   font-family: 'Waltograph', 'Anta', 'Lato', 'arial', cursive;
   background-color: #f1f6f1
 }
+
+#loading-placeholder{
+  width: auto;
+  height: 30px;
+}
 .display-cards{
- /* background-color: #000;*/
+ padding: 2px;
+ padding-left: 5px;
+ padding-right: 5px;
+ border-radius: 15px;
 }
 @media screen and (min-width: 1200px) {
   body {
@@ -13,7 +21,6 @@ body {
 button, select{
   background-color: #000;
   color: white;
-  border: none;
   padding: 5px 10px;
   margin: 5px;
   cursor: pointer;
@@ -36,9 +43,6 @@ button, select{
 }
 #color-filters {
   display: inline-block;
-  /* background-color: #eee;
-  width: auto;
-  height: auto; */
 }
 
 #file-list {
@@ -50,26 +54,19 @@ button, select{
 }
 
 #file-list li {
+  /* 6 cartes er fila */
   width: calc(16.666% - 20px);
-  /* Cálculo del ancho para mostrar 6 cartas por fila */
   text-align: center;
   margin-bottom: 20px;
-  /* Espacio entre filas */
   display: flex;
-  /* Mostrar como flexbox para centrar el contenido verticalmente */
   flex-direction: column;
-  /* Alinear el contenido en columna */
   justify-content: center;
-  /* Centrar el contenido verticalmente */
   position: relative;
-  /* Establecer posición relativa */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* Agregar transición */
 }
 
 #file-list li:hover {
   transform: translateY(-15px);
-  /* Mover hacia arriba al hacer hover */
 }
 
 #file-list img {
@@ -81,29 +78,22 @@ button, select{
   border-radius: 15px;
 }
 
-/* Media queries para ajustar el número de cartas por fila en diferentes tamaños de pantalla */
+/* pantalles mitjanes i petites */
+/*5 cartes en pantalles mitjanes */
 @media screen and (max-width: 1200px) {
   #file-list li {
     width: calc(20% - 20px);
-    /* Mostrar 5 cartas por fila en pantallas medianas */
   }
 }
 
+/*3 cartes en pantalles mitjanes */
 @media screen and (max-width: 800px) {
   #file-list li {
     width: calc(33.333% - 20px);
-    /* Mostrar 3 cartas por fila en pantallas pequeñas */
   }
 }
 
-@media screen and (max-width: 800px) {
-  #file-list li {
-    width: calc(33.333% - 20px);
-    /* Mostrar 3 cartas por fila en pantallas pequeñas */
-  }
-}
-
-/* tamaño nombre cartas*/
+/* tamany del nom de les cartes*/
 #file-list li {
   white-space: nowrap;
   overflow: hidden;
