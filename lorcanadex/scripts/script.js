@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const imageElement = document.createElement("img");
           imageElement.setAttribute('data-src', cardData.Image);
           imageElement.alt = cardData.Name;
+          listItem.textContent = `${cardData.Name}`;
           listItem.appendChild(imageElement);
           fileListElement.appendChild(listItem);
       });
@@ -70,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.error("Error obtenint dades de l'API:", error));
 
+    
   /*
         ##############################################
         ############### FILTRAR CARTES ###############
@@ -126,6 +128,12 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         loadMoreButton.style.display = "block";
     }
+
+    // Chernabog's Followers de lila a groc per error de la API
+const chernabogsFollowersCard = cardsData.find(card => card.Name === "Chernabog's Followers");
+if (chernabogsFollowersCard) {
+    chernabogsFollowersCard.Color = "Amethyst";
+} 
 
   }
 

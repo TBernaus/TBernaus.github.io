@@ -6,6 +6,7 @@ function showModal(imageSrc)
 {
     modalImg.src = imageSrc;
     modal.style.display = 'block';
+    
 }
 
 function closeModal() 
