@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const colorFilters = document.querySelectorAll(".color-filter");
   const inkableSelect = document.getElementById("inkable-select");
   const searchInput = document.getElementById("search-input");
+  const searchInputAtt = document.getElementById("search-input-att");
   let cardsDisplayed = 30;
   const fileListElement = document.getElementById("file-list"); 
   let cardsData = [];
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const filteredCards = cards.slice(0, cardsDisplayed);
       
       filteredCards.forEach((cardData) => {
+        console.log(cardData)
           const listItem = document.createElement("li");
           const imageElement = document.createElement("img");
           imageElement.setAttribute('data-src', cardData.Image);
@@ -96,6 +98,21 @@ document.addEventListener("DOMContentLoaded", function () {
       filteredCards = filteredCards.filter((card) =>
         card.Name.toLowerCase().includes(searchTerm)
       );
+    }
+
+    const searchTermAtt = searchInputAtt.value.toLowerCase();
+    if (searchTermAtt) {
+      filteredCards = filteredCards.filter((card) => {
+        if (card.Abilities && card.Body_Text && card.Classifications) {
+          return (
+            card.Abilities.toLowerCase().includes(searchTermAtt) ||
+            card.Body_Text.toLowerCase().includes(searchTermAtt) ||
+            card.Classifications.toLowerCase().includes(searchTermAtt)
+          );
+        } else {
+          return false;
+        }
+      });
     }
 
     const inkableValue = inkableSelect.value;
