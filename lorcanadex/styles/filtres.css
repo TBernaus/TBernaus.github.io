@@ -1,75 +1,89 @@
-#filtres-global{
+#filtres-global {
     padding: 10px;
     /* display: inline-block; */
 }
-.showing-general{
+
+.showing-general {
     background-color: #e4ebe4;
     padding: 10px;
     border-radius: 15px;
 }
+
 #filtres {
     display: block;
-  }
-  
-  #filtres.active {
-    display: block; 
-  }
-  
+}
+
+#filtres.active {
+    display: block;
+}
+
 
 @keyframes showAnimation {
     from {
-      opacity: 0;
-      transform: translateY(-20px);
+        opacity: 0;
+        transform: translateY(-20px);
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes hideAnimation {
-    from {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    to {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-  }
-  
-  #filtres.showing {
-    animation: showAnimation 0.5s ease forwards;
-  }
-  
-  #filtres.hiding {
-    animation: hideAnimation 0.5s ease forwards;
-  }
-  
 
-  .show-filters{
-    float: right;
-  }
-
-  .color-filter,
-.clear-filters-button {
-  width: 80px;
-  background-color: #000;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  margin: 5px;
-  cursor: pointer;
-  border: solid 1px black;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-#color-filters{
+
+@keyframes hideAnimation {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+#filtres.showing {
+    animation: showAnimation 0.5s ease forwards;
+}
+
+#filtres.hiding {
+    animation: hideAnimation 0.5s ease forwards;
+}
+
+
+.show-filters {
+    float: right;
+}
+
+.color-filter,
+.clear-filters-button {
+    width: 80px;
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+    border: solid 1px black;
+}
+
+#color-filters {
     /* background-color: #d3d8d3; */
     border-radius: 15px;
 }
 
 .clear-filters-button {
-  width: auto;
+    width: auto;
 }
+
+.rang {
+    float: left;
+}
+
 #color-filters {
-  display: inline-block;
+    display: inline-block;
+}
+
+#inkable{
+    display: inline;
 }

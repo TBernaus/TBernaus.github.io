@@ -27,9 +27,9 @@
             <option value="name">Nom</option>
             <!-- <option value="card-number">Número de carta</option> -->
         </select>
-
-
-
+        
+        
+        
         <div id="filtres">
             <button id="invert-order-button">Invertir ordre</button>
             <br>
@@ -44,10 +44,9 @@
                 <button class="clear-filters-button">Esborra els filtres</button>
             </div>
 
-            <br>
 
             <!-- Filtres per cost -->
-            <div class="card">
+            <div class="rang">
 
                 <div class="ink-content">
                     <div class="cost-left">
@@ -70,12 +69,14 @@
             </div>
             <br>
             <!-- Dropdown per a filtres inkable -->
-            <label for="inkable-select">Tintejable?</label>
-            <select id="inkable-select">
-                <option value="any">-</option>
-                <option value="true">Sí</option>
-                <option value="false">No</option>
-            </select>
+            <div id="inkable">
+                <label for="inkable-select">Tintejable?</label>
+                <select id="inkable-select">
+                    <option value="any">-</option>
+                    <option value="true">Sí</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
             <br>
             <!-- Camp de búsqueda per Name-->
             <input type="text" id="search-input" placeholder="Buscar per nom...">
