@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const inkableSelect = document.getElementById("inkable-select");
   const searchInput = document.getElementById("search-input");
   const searchInputAtt = document.getElementById("search-input-att");
+  const searchInputGlobal = document.getElementById("search-input-global");
   let cardsDisplayed = 30;
   const fileListElement = document.getElementById("file-list"); 
   let cardsData = [];
@@ -114,6 +115,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     }
+
+    const searchTermGlobal = searchInputGlobal.value.toLowerCase();
+if (searchTermGlobal) {
+  filteredCards = filteredCards.filter((card) => {
+    const cardValues = Object.values(card).join(' ').toLowerCase();
+    return cardValues.includes(searchTermGlobal);
+  });
+}
 
     const inkableValue = inkableSelect.value;
     if (inkableValue !== "any") {
