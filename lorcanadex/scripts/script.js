@@ -6,10 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchInput = document.getElementById("search-input");
   const searchInputAtt = document.getElementById("search-input-att");
   const searchInputGlobal = document.getElementById("search-input-global");
+  const clearSearchButton = document.querySelector(".clear-search");
   let cardsDisplayed = 30;
-  const fileListElement = document.getElementById("file-list"); 
+  const fileListElement = document.getElementById("file-list");
   let cardsData = [];
-  const placeholderElement = document.getElementById("placeholder"); 
+  const placeholderElement = document.getElementById("placeholder");
 
 
   /*
@@ -17,53 +18,49 @@ document.addEventListener("DOMContentLoaded", function () {
         ############### OBTENIR CARTES ###############
         ##############################################
     */
-  function displayCards(cards) 
-  {
-      placeholderElement.style.display = "none";
-      fileListElement.innerHTML = "";
-      const filteredCards = cards.slice(0, cardsDisplayed);
-      
-      filteredCards.forEach((cardData) => {
-        console.log(cardData)
-          const listItem = document.createElement("li");
-          const imageElement = document.createElement("img");
-          imageElement.setAttribute('data-src', cardData.Image);
-          imageElement.alt = cardData.Name;
-          listItem.textContent = `${cardData.Name}`;
-          listItem.appendChild(imageElement);
-          fileListElement.appendChild(listItem);
-      });
-  
-      function lazyLoadImages() 
-      {
-          const lazyImages = document.querySelectorAll('img[data-src]');
-          if ("IntersectionObserver" in window) 
-          {
-              const observer = new IntersectionObserver((entries, observer) => {
-                  entries.forEach(entry => {
-                      if (entry.isIntersecting) {
-                          const img = entry.target;
-                          img.src = img.getAttribute('data-src');
-                          img.removeAttribute('data-src');
-                          observer.unobserve(img);
-                      }
-                  });
-              });
-  
-              lazyImages.forEach(img => {
-                  observer.observe(img);
-              });
+  function displayCards(cards) {
+    placeholderElement.style.display = "none";
+    fileListElement.innerHTML = "";
+    const filteredCards = cards.slice(0, cardsDisplayed);
 
-          } 
-          else 
-          {
-              lazyImages.forEach(img => {
-                  img.src = img.getAttribute('data-src');
-                  img.removeAttribute('data-src');
-              });
-          }
+    filteredCards.forEach((cardData) => {
+      console.log(cardData)
+      const listItem = document.createElement("li");
+      const imageElement = document.createElement("img");
+      imageElement.setAttribute('data-src', cardData.Image);
+      imageElement.alt = cardData.Name;
+      listItem.textContent = `${cardData.Name}`;
+      listItem.appendChild(imageElement);
+      fileListElement.appendChild(listItem);
+    });
+
+    function lazyLoadImages() {
+      const lazyImages = document.querySelectorAll('img[data-src]');
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.getAttribute('data-src');
+              img.removeAttribute('data-src');
+              observer.unobserve(img);
+            }
+          });
+        });
+
+        lazyImages.forEach(img => {
+          observer.observe(img);
+        });
+
       }
-      lazyLoadImages();
+      else {
+        lazyImages.forEach(img => {
+          img.src = img.getAttribute('data-src');
+          img.removeAttribute('data-src');
+        });
+      }
+    }
+    lazyLoadImages();
   }
   placeholderElement.style.display = "block";
   fetch(apiUrl)
@@ -74,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.error("Error obtenint dades de l'API:", error));
 
-    
+
   /*
         ##############################################
         ############### FILTRAR CARTES ###############
@@ -93,37 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
         activeColors.includes(card.Color)
       );
     }
-
-    const searchTerm = searchInput.value.toLowerCase();
-    if (searchTerm) {
-      filteredCards = filteredCards.filter((card) =>
-        card.Name.toLowerCase().includes(searchTerm)
-      );
-    }
-
-    const searchTermAtt = searchInputAtt.value.toLowerCase();
-    if (searchTermAtt) {
-      filteredCards = filteredCards.filter((card) => {
-        if (card.Abilities && card.Body_Text && card.Classifications) {
-          return (
-            card.Abilities.toLowerCase().includes(searchTermAtt) ||
-            card.Body_Text.toLowerCase().includes(searchTermAtt) ||
-            card.Classifications.toLowerCase().includes(searchTermAtt)
-          );
-        } else {
-          return false;
-        }
-      });
-    }
-
-    const searchTermGlobal = searchInputGlobal.value.toLowerCase();
-if (searchTermGlobal) {
-  filteredCards = filteredCards.filter((card) => {
-    const cardValues = Object.values(card).join(' ').toLowerCase();
-    return cardValues.includes(searchTermGlobal);
-  });
-}
-
+    
     const inkableValue = inkableSelect.value;
     if (inkableValue !== "any") {
       const inkableBoolean = inkableValue === "true";
@@ -135,31 +102,85 @@ if (searchTermGlobal) {
     const maxInk = parseInt(document.getElementById("max-value").innerHTML);
     filteredCards = filteredCards.filter(
       (card) => card.Cost >= minInk && card.Cost <= maxInk
-    );
-
-    filteredCards = filteredCards.filter(
-      (card) =>
+      );
+      
+      filteredCards = filteredCards.filter(
+        (card) =>
         card.Name !== "TEST" &&
-        !card.Name.includes("s Gull") 
-    );
-    const sortBy = sortSelect.value;
-    sortAndDisplayCards(filteredCards, sortBy);
+        !card.Name.includes("s Gull")
+        );
+        const sortBy = sortSelect.value;
+        sortAndDisplayCards(filteredCards, sortBy);
+        
+        /*
+              ###################################
+              ########## BUSCAR CARTES ##########
+              
+              dins de la funció de filtrar cartes
+              ###################################
+          */
 
+        // nom
+        const searchTerm = searchInput.value.toLowerCase();
+        if (searchTerm) {
+          filteredCards = filteredCards.filter((card) =>
+            card.Name.toLowerCase().includes(searchTerm)
+          );
+        }
+
+        // habilitats, text o classe
+        const searchTermAtt = searchInputAtt.value.toLowerCase();
+        if (searchTermAtt) {
+          filteredCards = filteredCards.filter((card) => {
+            if (card.Abilities && card.Body_Text && card.Classifications) {
+              return (
+                card.Abilities.toLowerCase().includes(searchTermAtt) ||
+                card.Body_Text.toLowerCase().includes(searchTermAtt) ||
+                card.Classifications.toLowerCase().includes(searchTermAtt)
+              );
+            } else {
+              return false;
+            }
+          });
+        }
+    
+        // global
+        const searchTermGlobal = searchInputGlobal.value.toLowerCase();
+        if (searchTermGlobal) {
+          filteredCards = filteredCards.filter((card) => {
+            const cardValues = Object.values(card).join(' ').toLowerCase();
+            return cardValues.includes(searchTermGlobal);
+          });
+        }
+
+        // cancelar búsqueda
+        clearSearchButton.addEventListener("click", function () {
+          searchInput.value = "";
+          searchInputAtt.value = "";
+          searchInputGlobal.value = "";
+          filterAndDisplayCards();
+        });
+
+        /*
+        ###################################
+        ############FI BÚSQUEDA############
+        ###################################
+        */
 
     const totalFilteredCards = filteredCards.length;
     const filteredAndDisplayedCards = filteredCards.slice(0, cardsDisplayed);
     displayCards(filteredAndDisplayedCards);
     if (cardsDisplayed >= totalFilteredCards) {
-        loadMoreButton.style.display = "none";
+      loadMoreButton.style.display = "none";
     } else {
-        loadMoreButton.style.display = "block";
+      loadMoreButton.style.display = "block";
     }
 
     // Chernabog's Followers de lila a groc per error de la API
-const chernabogsFollowersCard = cardsData.find(card => card.Name === "Chernabog's Followers");
-if (chernabogsFollowersCard) {
-    chernabogsFollowersCard.Color = "Amethyst";
-} 
+    const chernabogsFollowersCard = cardsData.find(card => card.Name === "Chernabog's Followers");
+    if (chernabogsFollowersCard) {
+      chernabogsFollowersCard.Color = "Amethyst";
+    }
 
   }
 
@@ -229,14 +250,14 @@ if (chernabogsFollowersCard) {
   colorButtonsInv.forEach((button) => {
     button.addEventListener("click", function () {
 
-        const computedStyle = window.getComputedStyle(this);
-        const backgroundColor = computedStyle.backgroundColor;
-        if (backgroundColor === "rgb(0, 0, 0)") {
+      const computedStyle = window.getComputedStyle(this);
+      const backgroundColor = computedStyle.backgroundColor;
+      if (backgroundColor === "rgb(0, 0, 0)") {
         this.style.backgroundColor = "#fff";
         this.style.color = "#000";
       } else {
         this.style.backgroundColor = "#000";
-        this.style.color = "#fff"; 
+        this.style.color = "#fff";
       }
     });
   });
