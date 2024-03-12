@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const placeholderElement = document.getElementById("placeholder");
 
 
+
   /*
         ##############################################
         ############### OBTENIR CARTES ###############
@@ -90,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
         activeColors.includes(card.Color)
       );
     }
-    
+
     const inkableValue = inkableSelect.value;
     if (inkableValue !== "any") {
       const inkableBoolean = inkableValue === "true";
@@ -102,70 +103,70 @@ document.addEventListener("DOMContentLoaded", function () {
     const maxInk = parseInt(document.getElementById("max-value").innerHTML);
     filteredCards = filteredCards.filter(
       (card) => card.Cost >= minInk && card.Cost <= maxInk
-      );
-      
-      filteredCards = filteredCards.filter(
-        (card) =>
+    );
+
+    filteredCards = filteredCards.filter(
+      (card) =>
         card.Name !== "TEST" &&
         !card.Name.includes("s Gull")
-        );
-        const sortBy = sortSelect.value;
-        sortAndDisplayCards(filteredCards, sortBy);
-        
-        /*
-              ###################################
-              ########## BUSCAR CARTES ##########
-              
-              dins de la funció de filtrar cartes
-              ###################################
-          */
+    );
+    const sortBy = sortSelect.value;
+    sortAndDisplayCards(filteredCards, sortBy);
 
-        // nom
-        const searchTerm = searchInput.value.toLowerCase();
-        if (searchTerm) {
-          filteredCards = filteredCards.filter((card) =>
-            card.Name.toLowerCase().includes(searchTerm)
+    /*
+          ###################################
+          ########## BUSCAR CARTES ##########
+          
+          dins de la funció de filtrar cartes
+          ###################################
+      */
+
+    // nom
+    const searchTerm = searchInput.value.toLowerCase();
+    if (searchTerm) {
+      filteredCards = filteredCards.filter((card) =>
+        card.Name.toLowerCase().includes(searchTerm)
+      );
+    }
+
+    // habilitats, text o classe
+    const searchTermAtt = searchInputAtt.value.toLowerCase();
+    if (searchTermAtt) {
+      filteredCards = filteredCards.filter((card) => {
+        if (card.Abilities && card.Body_Text && card.Classifications) {
+          return (
+            card.Abilities.toLowerCase().includes(searchTermAtt) ||
+            card.Body_Text.toLowerCase().includes(searchTermAtt) ||
+            card.Classifications.toLowerCase().includes(searchTermAtt)
           );
+        } else {
+          return false;
         }
+      });
+    }
 
-        // habilitats, text o classe
-        const searchTermAtt = searchInputAtt.value.toLowerCase();
-        if (searchTermAtt) {
-          filteredCards = filteredCards.filter((card) => {
-            if (card.Abilities && card.Body_Text && card.Classifications) {
-              return (
-                card.Abilities.toLowerCase().includes(searchTermAtt) ||
-                card.Body_Text.toLowerCase().includes(searchTermAtt) ||
-                card.Classifications.toLowerCase().includes(searchTermAtt)
-              );
-            } else {
-              return false;
-            }
-          });
-        }
-    
-        // global
-        const searchTermGlobal = searchInputGlobal.value.toLowerCase();
-        if (searchTermGlobal) {
-          filteredCards = filteredCards.filter((card) => {
-            const cardValues = Object.values(card).join(' ').toLowerCase();
-            return cardValues.includes(searchTermGlobal);
-          });
-        }
+    // global
+    const searchTermGlobal = searchInputGlobal.value.toLowerCase();
+    if (searchTermGlobal) {
+      filteredCards = filteredCards.filter((card) => {
+        const cardValues = Object.values(card).join(' ').toLowerCase();
+        return cardValues.includes(searchTermGlobal);
+      });
+    }
 
-        // cancelar búsqueda
-        clearSearchButton.addEventListener("click", function () {
-          searchInput.value = "";
-          searchInputAtt.value = "";
-          searchInputGlobal.value = "";
-          filterAndDisplayCards();
-        });
+    // cancelar búsqueda
+    clearSearchButton.addEventListener("click", function () {
+      searchInput.value = "";
+      searchInputAtt.value = "";
+      searchInputGlobal.value = "";
+      filterAndDisplayCards();
+    });
 
-        /*
-        ###################################
-        ############FI BÚSQUEDA############
-        ###################################
-        */
+    /*
+    ###################################
+    ############FI BÚSQUEDA############
+    ###################################
+    */
 
     const totalFilteredCards = filteredCards.length;
     const filteredAndDisplayedCards = filteredCards.slice(0, cardsDisplayed);
@@ -213,9 +214,9 @@ document.addEventListener("DOMContentLoaded", function () {
       let comparison = 0;
 
       switch (sortBy) {
-        case "card-number":
-          comparison = a.Card_Num - b.Card_Num;
-          break;
+        // case "card-number":
+        //   comparison = a.Card_Num - b.Card_Num;
+        //   break;
         case "ink-cost":
           comparison = a.Cost - b.Cost;
           break;

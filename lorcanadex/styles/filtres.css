@@ -1,0 +1,51 @@
+#filtres-global{
+    padding: 10px;
+}
+.showing-general{
+    background-color: #e3e6e3;
+    padding: 10px;
+    border-radius: 15px;
+}
+#filtres {
+    display: block;
+  }
+  
+  #filtres.active {
+    display: block; 
+  }
+  
+
+@keyframes showAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes hideAnimation {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+  
+  #filtres.showing {
+    animation: showAnimation 0.5s ease forwards;
+  }
+  
+  #filtres.hiding {
+    animation: hideAnimation 0.5s ease forwards;
+  }
+  
+
+  .show-filters{
+    float: right;
+  }

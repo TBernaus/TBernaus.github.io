@@ -8,77 +8,88 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/rang.css">
     <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/filtres.css">
     <link rel="icon" type="image/png" href="resources/favicon.png">
 </head>
 
 <body>
+    <div class="show-filters">
+        <button class="filtresBtn">
+            Amaga els filtres
+        </button>
+    </div>
     <h1>LorcanaDex</h1>
+    <div id="filtres-global">
+        <!-- Filtre per endreçar -->
+        <label for="sort-select">Endreça per:</label>
+        <select id="sort-select">
+            <option value="ink-cost">Cost de tinta</option>
+            <option value="name">Nom</option>
+            <!-- <option value="card-number">Número de carta</option> -->
+        </select>
 
-    <!-- Filtre per endreçar -->
-    <label for="sort-select">Endreça per:</label>
-    <select id="sort-select">
-        <option value="ink-cost">Cost de tinta</option>
-        <option value="name">Nom</option>
-        <option value="card-number">Número de carta</option>
-    </select>
-    <button id="invert-order-button">Invertir ordre</button>
-    <br>
-    <!-- Filtres per colors -->
-    <div id="color-filters">
-        <button class="color-filter" btn-color="purple" data-color="Amethyst">Lila</button>
-        <button class="color-filter" btn-color="green" data-color="Emerald">Verd</button>
-        <button class="color-filter" btn-color="red" data-color="Ruby">Vermell</button>
-        <button class="color-filter" btn-color="grey" data-color="Steel">Gris</button>
-        <button class="color-filter" btn-color="orange" data-color="Amber">Taronja</button>
-        <button class="color-filter" btn-color="blue" data-color="Sapphire">Blau</button>
-        <button class="clear-filters-button">Esborra els filtres</button>
-    </div>
 
-    <br>
 
-    <!-- Filtres per cost -->
-    <div class="card">
-
-        <div class="ink-content">
-            <div class="cost-left">
-                <label>Min</label>
-                <p id="min-value">1</p>
+        <div id="filtres">
+            <button id="invert-order-button">Invertir ordre</button>
+            <br>
+            <!-- Filtres per colors -->
+            <div id="color-filters">
+                <button class="color-filter" btn-color="purple" data-color="Amethyst">Lila</button>
+                <button class="color-filter" btn-color="green" data-color="Emerald">Verd</button>
+                <button class="color-filter" btn-color="red" data-color="Ruby">Vermell</button>
+                <button class="color-filter" btn-color="grey" data-color="Steel">Gris</button>
+                <button class="color-filter" btn-color="orange" data-color="Amber">Taronja</button>
+                <button class="color-filter" btn-color="blue" data-color="Sapphire">Blau</button>
+                <button class="clear-filters-button">Esborra els filtres</button>
             </div>
 
-            <div>
-                <label>Max</label>
-                <p id="max-value">10</p>
+            <br>
+
+            <!-- Filtres per cost -->
+            <div class="card">
+
+                <div class="ink-content">
+                    <div class="cost-left">
+                        <label>Min</label>
+                        <p id="min-value">1</p>
+                    </div>
+
+                    <div>
+                        <label>Max</label>
+                        <p id="max-value">10</p>
+                    </div>
+                </div>
+
+                <div class="range-slider">
+                    <div class="range-fill"></div>
+
+                    <input type="range" class="min-ink" value="1" min="1" max="10" step="1" />
+                    <input type="range" class="max-ink" value="10" min="1" max="10" step="1" />
+                </div>
             </div>
-        </div>
+            <br>
+            <!-- Dropdown per a filtres inkable -->
+            <label for="inkable-select">Tintejable?</label>
+            <select id="inkable-select">
+                <option value="any">-</option>
+                <option value="true">Sí</option>
+                <option value="false">No</option>
+            </select>
+            <br>
+            <!-- Camp de búsqueda per Name-->
+            <input type="text" id="search-input" placeholder="Buscar per nom...">
 
-        <div class="range-slider">
-            <div class="range-fill"></div>
+            <!-- Camp de búsqueda per Boyd_Text, Abilities i Classifications-->
+            <input type="text" id="search-input-att" placeholder="Buscar per atributs...">
 
-            <input type="range" class="min-ink" value="1" min="1" max="10" step="1" />
-            <input type="range" class="max-ink" value="10" min="1" max="10" step="1" />
+            <!-- Camp de búsqueda per Boyd_Text, Abilities i Classifications-->
+            <input type="text" id="search-input-global" placeholder="Buscar per qualsevol cosa">
+
+            <!-- esborrar búsquedas -->
+            <button class="clear-search">Esborra búsquedes</button>
         </div>
     </div>
-    <br>
-    <!-- Dropdown per a filtres inkable -->
-    <label for="inkable-select">Tintejable?</label>
-    <select id="inkable-select">
-        <option value="any">-</option>
-        <option value="true">Sí</option>
-        <option value="false">No</option>
-    </select>
-
-    <!-- Camp de búsqueda per Name-->
-    <input type="text" id="search-input" placeholder="Buscar per nom...">
-
-    <!-- Camp de búsqueda per Boyd_Text, Abilities i Classifications-->
-    <input type="text" id="search-input-att" placeholder="Buscar per atributs...">
-
-    <!-- Camp de búsqueda per Boyd_Text, Abilities i Classifications-->
-    <input type="text" id="search-input-global" placeholder="Buscar per qualsevol cosa">
-
-    <!-- esborrar búsquedas -->
-    <button class="clear-search">Esborra búsquedes</button>
-
     <!-- placeholder -->
     <div id="placeholder">
         <br>
@@ -101,6 +112,7 @@
     <script src="scripts/script.js"></script>
     <script src="scripts/modal.js"></script>
     <script src="scripts/filtre-colors.js"></script>
+    <script src="scripts/mostrar-filtres.js"></script>
 </body>
 
 </html>
