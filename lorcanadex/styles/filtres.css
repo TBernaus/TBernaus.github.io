@@ -111,3 +111,20 @@ input{
 #searchers {
     display: inline-block;
 }
+
+#searchers {
+    display: block; /* Cambiado a bloque para forzar un salto de línea */
+    margin-top: 10px; /* Añadido margen superior para separación */
+}
+
+/* Reducir tamaño de botones en pantallas pequeñas */
+@media screen and (max-width: 800px) {
+  button, select {
+    width: auto; /* Ancho automático para que se ajusten al contenido */
+    padding: 3px 8px; /* Ajustar el relleno para que los botones sean más pequeños */
+    margin: 3px; /* Reducir el margen */
+  }
+  .clear-search{
+    width: 360px;
+}
+}
