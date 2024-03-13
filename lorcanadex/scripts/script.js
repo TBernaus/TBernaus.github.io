@@ -1,15 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
   const apiUrl = "https://api.lorcana-api.com/cards/all";
+
   const sortSelect = document.getElementById("sort-select");
+
   const colorFilters = document.querySelectorAll(".color-filter");
   const typeFilters = document.querySelectorAll(".type-filter");
+
   const inkableSelect = document.getElementById("inkable-select");
+
   const searchInput = document.getElementById("search-input");
   const searchInputAtt = document.getElementById("search-input-att");
   const searchInputGlobal = document.getElementById("search-input-global");
+
   const clearSearchButton = document.querySelector(".clear-search");
+  const clearFiltersButton = document.querySelector(".clear-filters-button");
+  const clearTypeFiltersButton = document.querySelector(".clear-types-button");
+  const clearAllButton = document.getElementById("clear-all");
+
   const fileListElement = document.getElementById("file-list");
   const placeholderElement = document.getElementById("placeholder");
+
   let cardsDisplayed = 30;
   let cardsData = [];
 
@@ -25,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const filteredCards = cards.slice(0, cardsDisplayed);
 
     filteredCards.forEach((cardData) => {
-      console.log(cardData)
+      // console.log(cardData)
       const listItem = document.createElement("li");
       const imageElement = document.createElement("img");
       imageElement.setAttribute('data-src', cardData.Image);
@@ -69,8 +79,9 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       cardsData = data;
       filterAndDisplayCards();
-      const distincClassifications = [...new Set(cardsData.map(card => card.Classifications))];
-      console.log("Tipos distintos de cartas:", distincClassifications);
+      placeholderElement.style.display = "none";
+      // const distincClassifications = [...new Set(cardsData.map(card => card.Classifications))];
+      // console.log("Tipos distintos de cartas:", distincClassifications);
     })
     .catch((error) => console.error("Error obtenint dades de l'API:", error));
 
@@ -94,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     }
 
-
     const inkableValue = inkableSelect.value;
     if (inkableValue !== "any") {
       const inkableBoolean = inkableValue === "true";
@@ -102,6 +112,11 @@ document.addEventListener("DOMContentLoaded", function () {
         (card) => card.Inkable === inkableBoolean
       );
     }
+    function setInkableToDefault() {
+      const inkableSelect = document.getElementById("inkable-select");
+      inkableSelect.value = "any";
+  }
+
     const minInk = parseInt(document.getElementById("min-value").innerHTML);
     const maxInk = parseInt(document.getElementById("max-value").innerHTML);
     filteredCards = filteredCards.filter(
@@ -139,7 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
       filteredCards = filteredCards.filter((card) =>
         card.Name.toLowerCase().includes(searchTerm)
       );
-      console.log(filteredCards)
     }
 
     // habilitats, text o classe
@@ -149,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const abilities = card.Abilities ? card.Abilities.toLowerCase() : '';
         const bodyText = card.Body_Text ? card.Body_Text.toLowerCase() : '';
         const classifications = card.Classifications ? card.Classifications.toLowerCase() : '';
-    
+
         return (
           abilities.includes(searchTermAtt) ||
           bodyText.includes(searchTermAtt) ||
@@ -157,14 +171,14 @@ document.addEventListener("DOMContentLoaded", function () {
         );
       });
     }
-    
+
 
     // global (menys flavor_text, card_num i set_num)
     const searchTermGlobal = searchInputGlobal.value.toLowerCase();
     if (searchTermGlobal) {
       filteredCards = filteredCards.filter((card) => {
         const cardValues = Object.keys(card)
-          .filter(key => key !== 'Flavor_Text' && key !=='Set_Num' && key !=='Card_Num')
+          .filter(key => key !== 'Flavor_Text' && key !== 'Set_Num' && key !== 'Card_Num')
           .map(key => card[key])
           .join(' ')
           .toLowerCase();
@@ -172,10 +186,13 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
     // cancelar búsqueda
-    clearSearchButton.addEventListener("click", function () {
+    function clearSearchInputs() {
       searchInput.value = "";
       searchInputAtt.value = "";
       searchInputGlobal.value = "";
+    }
+    clearSearchButton.addEventListener("click", function () {
+      clearSearchInputs();
       filterAndDisplayCards();
     });
 
@@ -205,6 +222,20 @@ document.addEventListener("DOMContentLoaded", function () {
     if (controlYourTemper) {
       controlYourTemper.Type = "Action";
     }
+    /*
+          ##############################################
+          ############## ELIMINAR FILTRES ##############
+          ##############################################
+      */
+
+    clearAllButton.addEventListener("click", function () {
+      clearSearchInputs();
+      resetFilters();
+      resetTypeFilters();
+      setDefaultRangeValues();
+      setInkableToDefault()
+      filterAndDisplayCards();
+    })
   }
 
   sortSelect.addEventListener("change", function () {
@@ -302,8 +333,6 @@ document.addEventListener("DOMContentLoaded", function () {
         dins de filter, aquí només canviar els colors dels botons i reset
     */
 
-  const clearFiltersButton = document.querySelector(".clear-filters-button");
-
   function resetFilters() {
     colorFilters.forEach((button) => {
       button.style.backgroundColor = "#000";
@@ -335,7 +364,6 @@ document.addEventListener("DOMContentLoaded", function () {
   
   dins de filter, aquí només canviar els colors dels botons i reset
   */
-  const clearTypeFiltersButton = document.querySelector(".clear-types-button");
 
   function resetTypeFilters() {
     typeFilters.forEach((button) => {
@@ -354,7 +382,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   typeFilters.forEach((button) => {
     button.addEventListener("click", function () {
-      const color = "#000";
       if (this.style.backgroundColor === "rgb(255, 255, 255)") {
         this.style.backgroundColor = "#000";
         this.style.color = "#fff"
@@ -371,6 +398,8 @@ document.addEventListener("DOMContentLoaded", function () {
         ###################### RANG ######################
         ##################################################
     */
+
+
   let minValue = document.getElementById("min-value");
   let maxValue = document.getElementById("max-value");
 
@@ -388,6 +417,19 @@ document.addEventListener("DOMContentLoaded", function () {
     maxValue.innerHTML = maxInk;
 
     filterAndDisplayCards();
+  }
+  function setDefaultRangeValues() {
+    const minValue = document.getElementById("min-value");
+    const maxValue = document.getElementById("max-value");
+    const minRangeInput = document.querySelector(".min-ink");
+    const maxRangeInput = document.querySelector(".max-ink");
+    minValue.innerHTML = 1;
+    maxValue.innerHTML = 10;
+    minRangeInput.value = 1;
+    maxRangeInput.value = 10;
+
+    const rangeFill = document.querySelector('.range-fill');
+    rangeFill.style.width = '0%';
   }
 
   const inputElements = document.querySelectorAll("input");
@@ -408,3 +450,4 @@ document.addEventListener("DOMContentLoaded", function () {
     filterAndDisplayCards();
   }
 });
+
