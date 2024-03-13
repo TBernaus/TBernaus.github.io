@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       cardsData = data;
       filterAndDisplayCards();
-      // const distincClassifications = [...new Set(cardsData.map(card => card.Classifications))];
-      // console.log("Tipos distintos de cartas:", distincClassifications);
+      const distincClassifications = [...new Set(cardsData.map(card => card.Classifications))];
+      console.log("Tipos distintos de cartas:", distincClassifications);
     })
     .catch((error) => console.error("Error obtenint dades de l'API:", error));
 
@@ -146,17 +146,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchTermAtt = searchInputAtt.value.toLowerCase();
     if (searchTermAtt) {
       filteredCards = filteredCards.filter((card) => {
-        if (card.Abilities && card.Body_Text && card.Classifications) {
-          return (
-            card.Abilities.toLowerCase().includes(searchTermAtt) ||
-            card.Body_Text.toLowerCase().includes(searchTermAtt) ||
-            card.Classifications.toLowerCase().includes(searchTermAtt)
-          );
-        } else {
-          return false;
-        }
+        const abilities = card.Abilities ? card.Abilities.toLowerCase() : '';
+        const bodyText = card.Body_Text ? card.Body_Text.toLowerCase() : '';
+        const classifications = card.Classifications ? card.Classifications.toLowerCase() : '';
+    
+        return (
+          abilities.includes(searchTermAtt) ||
+          bodyText.includes(searchTermAtt) ||
+          classifications.includes(searchTermAtt)
+        );
       });
     }
+    
 
     // global (menys flavor_text, card_num i set_num)
     const searchTermGlobal = searchInputGlobal.value.toLowerCase();

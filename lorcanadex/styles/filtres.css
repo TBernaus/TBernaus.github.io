@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Estils generals */
 #filtres-global {
     display: inline-block;
     padding: 10px;
@@ -10,7 +10,7 @@
     padding: 10px;
 }
 
-/* Filtros */
+/* Filtres */
 #filtres {
     display: inline-block;
     opacity: 0;
@@ -28,7 +28,7 @@
     animation: hideAnimation 0.5s ease forwards;
 }
 
-/* Animaciones */
+/* Animacions */
 @keyframes showAnimation {
     from {
         opacity: 0;
@@ -53,7 +53,7 @@
     }
 }
 
-/* Botones de filtros */
+/* Botons de filtres */
 .show-filters {
     float: right;
 }
@@ -70,7 +70,7 @@
     cursor: pointer;
 }
 
-/* Contenedor de filtros por color */
+/* Contenidor de filtres per color */
 #color-filters {
     display: none;
     justify-content: center;
@@ -79,7 +79,7 @@
     margin: 0;
 }
 
-/* Contenedor de filtros por tipo */
+/* Contenidor de filtres per tipus */
 #card-type {
     display: none;
     justify-content: center;
@@ -88,26 +88,26 @@
     margin: 0;
 }
 
-/* Botón de limpiar filtros */
+/* Botó de netejar filtres */
 .clear-filters-button,
-.clear-types-button,
-.clear-search {
+.clear-types-button {
     width: 360px;
 }
 
-/* Otras clases */
+.clear-search{
+    width: 555px;
+}
+/* Altres classes */
+
+input{
+    width: 175px;
+}
 .ink-content {
     display: inline-flex;
 }
 
-.rang {
-    display: inline-block;
-}
-
-#inkable {
-    display: inline-block;
-}
-
+.rang,
+#inkable,
 #searchers {
     display: inline-block;
 }
