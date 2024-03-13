@@ -103,8 +103,11 @@
 .clear-types-button{
     width: 150px;
 }
+.ink-content{
+    display: inline-flex;
+}
 .rang {
-    display: block;
+    display: inline-block;
     margin: 0;
 }
 
@@ -118,5 +121,5 @@
 
 #searchers {
     /* float: right; */
-    display: block;
+    display: inline-block;
 }
