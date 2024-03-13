@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       cardsData = data;
       filterAndDisplayCards();
-      // const uniqueTypes = [...new Set(cardsData.map(card => card.Rarity))];
-      // console.log("Tipos distintos de cartas:", uniqueTypes);
+      // const distincClassifications = [...new Set(cardsData.map(card => card.Classifications))];
+      // console.log("Tipos distintos de cartas:", distincClassifications);
     })
     .catch((error) => console.error("Error obtenint dades de l'API:", error));
 

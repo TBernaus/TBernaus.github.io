@@ -18,24 +18,30 @@
             Amaga els filtres
         </button>
     </div>
-    <h1>LorcanaDex</h1>
+    <!-- <h1>LorcanaDex</h1> -->
     <div id="filtres-global">
         <!-- Filtre per endreçar -->
-        <label for="sort-select">Endreça per:</label>
-        <select id="sort-select">
-            <option value="ink-cost">Cost de tinta</option>
-            <option value="name">Nom</option>
-            <!-- <option value="card-number">Número de carta</option> -->
-        </select>
-        <div id="filtres">
+        <div id="sort-per">
 
+            <label for="sort-select">Endreça per:</label>
+            <select id="sort-select">
+                <option value="ink-cost">Cost de tinta</option>
+                <option value="name">Nom</option>
+                <!-- <option value="card-number">Número de carta</option> -->
+            </select>
             <!-- Invertir ordre -->
             <button id="invert-order-button">Invertir ordre</button>
-            <br>
+            <!-- <br> -->
+        </div>
+        <div id="filtres">
+<br>
 
-            <!-- Filtres per colors -->
+            <!-- Filtres per colors --> 
+        <button class="filtres-colors-Btn mostrar-opcions">
+            Mostra els filtres per colors
+        </button><br>
             <div id="color-filters">
-                <label for="color-filter-label">Filtra per color</label><br>
+                <!-- <label for="color-filter-label">Filtra per color</label><br> -->
                 <button class="color-filter" btn-color="purple" data-color="Amethyst">Lila</button>
                 <button class="color-filter" btn-color="green" data-color="Emerald">Verd</button>
                 <button class="color-filter" btn-color="red" data-color="Ruby">Vermell</button> <br>
@@ -45,12 +51,16 @@
                 <button class="clear-filters-button">Esborra els filtres</button>
             </div>
 
-       
+            <br>
+            <br>
 
             <!-- filtres per tipus de carta -->
 
+            <button class="filtres-tipus-Btn mostrar-opcions">
+                Mostra els filtres per tipus
+            </button><br>
             <div id="card-type">
-                <label for="type-filter-label">Filtra per tipus</label><br>
+                <!-- <label for="type-filter-label">Filtra per tipus</label><br> -->
                 <button class="type-filter" type="Item">Item</button>
                 <button class="type-filter" type="Action">Acció</button>
                 <button class="type-filter" type="Action - Song">Cançó</button><br>
@@ -93,6 +103,7 @@
                     <option value="false">No</option>
                 </select>
             </div>
+            <br>
             <!-- Camp de búsqueda per Name-->
             <div id="searchers">
 
@@ -105,6 +116,7 @@
                 <input type="text" id="search-input-global" placeholder="Buscar per qualsevol cosa">
 
                 <!-- esborrar búsquedas -->
+                <br>
                 <button class="clear-search">Esborra búsquedes</button>
             </div>
         </div>
