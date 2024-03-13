@@ -27,27 +27,14 @@
             <option value="name">Nom</option>
             <!-- <option value="card-number">Número de carta</option> -->
         </select>
-        
-        
-        
         <div id="filtres">
+
+            <!-- Invertir ordre -->
             <button id="invert-order-button">Invertir ordre</button>
             <br>
-            <!-- Filtres per colors -->
-            <div id="color-filters">
-                <button class="color-filter" btn-color="purple" data-color="Amethyst">Lila</button>
-                <button class="color-filter" btn-color="green" data-color="Emerald">Verd</button>
-                <button class="color-filter" btn-color="red" data-color="Ruby">Vermell</button> <br>
-                <button class="color-filter" btn-color="grey" data-color="Steel">Gris</button>
-                <button class="color-filter" btn-color="orange" data-color="Amber">Taronja</button>
-                <button class="color-filter" btn-color="blue" data-color="Sapphire">Blau</button><br>
-                <button class="clear-filters-button">Esborra els filtres</button>
-            </div>
 
-
-            <!-- Filtres per cost -->
+            <!-- Rang per cost -->
             <div class="rang">
-
                 <div class="ink-content">
                     <div class="cost-left">
                         <label>Min</label>
@@ -67,6 +54,34 @@
                     <input type="range" class="max-ink" value="10" min="1" max="10" step="1" />
                 </div>
             </div>
+
+            <br>
+
+            <!-- Filtres per colors -->
+            <div id="color-filters">
+                <label for="color-filter-label">Filtra per color</label><br>
+                <button class="color-filter" btn-color="purple" data-color="Amethyst">Lila</button>
+                <button class="color-filter" btn-color="green" data-color="Emerald">Verd</button>
+                <button class="color-filter" btn-color="red" data-color="Ruby">Vermell</button> <br>
+                <button class="color-filter" btn-color="grey" data-color="Steel">Gris</button>
+                <button class="color-filter" btn-color="orange" data-color="Amber">Taronja</button>
+                <button class="color-filter" btn-color="blue" data-color="Sapphire">Blau</button><br>
+                <button class="clear-filters-button">Esborra els filtres</button>
+            </div>
+
+       
+
+            <!-- filtres per tipus de carta -->
+
+            <div id="card-type">
+                <label for="type-filter-label">Filtra per tipus</label><br>
+                <button class="type-filter" type="Item">Item</button>
+                <button class="type-filter" type="Action">Acció</button><br>
+                <button class="type-filter" type="Location">Localitat</button>
+                <button class="type-filter" type="Character">Personatge</button><br>
+                <button class="clear-types-button">Esborra els filtres</button>
+            </div>
+
             <br>
             <!-- Dropdown per a filtres inkable -->
             <div id="inkable">
@@ -77,18 +92,20 @@
                     <option value="false">No</option>
                 </select>
             </div>
-            <br>
             <!-- Camp de búsqueda per Name-->
-            <input type="text" id="search-input" placeholder="Buscar per nom...">
+            <div id="searchers">
 
-            <!-- Camp de búsqueda per Boyd_Text, Abilities i Classifications-->
-            <input type="text" id="search-input-att" placeholder="Buscar per atributs...">
+                <input type="text" id="search-input" placeholder="Buscar per nom...">
 
-            <!-- Camp de búsqueda per Boyd_Text, Abilities i Classifications-->
-            <input type="text" id="search-input-global" placeholder="Buscar per qualsevol cosa">
+                <!-- Camp de búsqueda per Boyd_Text, Abilities i Classifications-->
+                <input type="text" id="search-input-att" placeholder="Buscar per atributs...">
 
-            <!-- esborrar búsquedas -->
-            <button class="clear-search">Esborra búsquedes</button>
+                <!-- Camp de búsqueda per Boyd_Text, Abilities i Classifications-->
+                <input type="text" id="search-input-global" placeholder="Buscar per qualsevol cosa">
+
+                <!-- esborrar búsquedas -->
+                <button class="clear-search">Esborra búsquedes</button>
+            </div>
         </div>
     </div>
     <!-- placeholder -->
@@ -112,7 +129,6 @@
     </div>
     <script src="scripts/script.js"></script>
     <script src="scripts/modal.js"></script>
-    <script src="scripts/filtre-colors.js"></script>
     <script src="scripts/mostrar-filtres.js"></script>
 </body>
 

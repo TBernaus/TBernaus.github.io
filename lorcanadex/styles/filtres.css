@@ -55,6 +55,19 @@
     float: right;
 }
 
+
+.type-filter {
+
+    width: 110px;
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+    border: solid 1px black;
+}
+
 .color-filter,
 .clear-filters-button {
     width: 80px;
@@ -69,21 +82,41 @@
 
 #color-filters {
     /* background-color: #d3d8d3; */
+    display: inline-block;
     border-radius: 15px;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+}
+
+#card-type {
+    /* float: right; */
+    display: inline-block;
+    justify-content: right;
+    text-align: center;
+    margin-left: 10em;
 }
 
 .clear-filters-button {
-    width: auto;
+    width: 150px;
 }
-
+.clear-types-button{
+    width: 150px;
+}
 .rang {
-    float: left;
+    display: block;
+    margin: 0;
 }
 
 #color-filters {
     display: inline-block;
 }
 
-#inkable{
+#inkable {
     display: inline;
+}
+
+#searchers {
+    /* float: right; */
+    display: block;
 }
