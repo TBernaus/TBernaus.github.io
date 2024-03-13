@@ -69,6 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       cardsData = data;
       filterAndDisplayCards();
+      // const uniqueTypes = [...new Set(cardsData.map(card => card.Rarity))];
+      // console.log("Tipos distintos de cartas:", uniqueTypes);
     })
     .catch((error) => console.error("Error obtenint dades de l'API:", error));
 
@@ -156,12 +158,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    // global (menys flavor text)
+    // global (menys flavor_text, card_num i set_num)
     const searchTermGlobal = searchInputGlobal.value.toLowerCase();
     if (searchTermGlobal) {
       filteredCards = filteredCards.filter((card) => {
         const cardValues = Object.keys(card)
-          .filter(key => key !== 'Flavor_Text')
+          .filter(key => key !== 'Flavor_Text' && key !=='Set_Num' && key !=='Card_Num')
           .map(key => card[key])
           .join(' ')
           .toLowerCase();
