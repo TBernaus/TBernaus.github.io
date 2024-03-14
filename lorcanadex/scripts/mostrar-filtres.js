@@ -59,10 +59,10 @@ document.addEventListener("DOMContentLoaded", function () {
   showSetFiltersButton.addEventListener("click", function () {
     if (setFiltersContainer.style.display === "none" || setFiltersContainer.style.display === "") {
       setFiltersContainer.style.display = "inline-block";
-      showSetFiltersButton.innerHTML = "Amaga els filtres per tipus";
+      showSetFiltersButton.innerHTML = "Amaga els filtres per set";
     } else {
       setFiltersContainer.style.display = "none";
-      showSetFiltersButton.innerHTML = "Mostra els filtres per tipus";
+      showSetFiltersButton.innerHTML = "Mostra els filtres per set";
     }
   });
 });

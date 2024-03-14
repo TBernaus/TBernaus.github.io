@@ -60,7 +60,7 @@
 
 .type-filter,
 .color-filter,
-.clear-filters-button {
+.set-name {
     width: 110px;
     background-color: #000;
     color: white;
@@ -97,8 +97,7 @@
 }
 
 /* Botó de netejar filtres */
-.clear-filters-button,
-.clear-types-button {
+.clearBtn {
     width: 360px;
 }
 

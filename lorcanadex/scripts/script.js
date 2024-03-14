@@ -5,8 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const colorFilters = document.querySelectorAll(".color-filter");
     const typeFilters = document.querySelectorAll(".type-filter");
-    // const setNameFilter = document.getElementById("set-name");
-
+    const setNameFilters = document.querySelectorAll(".set-name");
 
     const inkableSelect = document.getElementById("inkable-select");
 
@@ -17,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const clearSearchButton = document.querySelector(".clear-search");
     const clearFiltersButton = document.querySelector(".clear-filters-button");
     const clearTypeFiltersButton = document.querySelector(".clear-types-button");
+    const clearSetFiltersButton = document.querySelector(".clear-set-button");
     const clearAllButton = document.getElementById("clear-all");
 
     const fileListElement = document.getElementById("file-list");
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const filteredCards = cards.slice(0, cardsDisplayed);
 
         filteredCards.forEach((cardData) => {
-            // console.log(cardData)
+            console.log(cardData)
             const listItem = document.createElement("li");
             const imageElement = document.createElement("img");
             imageElement.setAttribute('data-src', cardData.Image);
@@ -130,6 +130,16 @@ document.addEventListener("DOMContentLoaded", function () {
         if (activeTypes.length > 0) {
             filteredCards = filteredCards.filter((card) =>
                 activeTypes.includes(card.Type)
+            );
+        }
+        
+        const activeSet = Array.from(setNameFilters)
+            .filter((filter) => filter.classList.contains("active"))
+            .map((filter) => filter.getAttribute("set_name"));
+
+        if (activeSet.length > 0) {
+            filteredCards = filteredCards.filter((card) =>
+                activeSet.includes(card.Set_Name)
             );
         }
         filteredCards = filteredCards.filter(
@@ -233,7 +243,8 @@ document.addEventListener("DOMContentLoaded", function () {
             resetFilters();
             resetTypeFilters();
             setDefaultRangeValues();
-            setInkableToDefault()
+            setInkableToDefault();
+            resetSetFilters();
             filterAndDisplayCards();
         })
     }
@@ -250,6 +261,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     typeFilters.forEach((filter) => {
+        filter.addEventListener("click", function () {
+            this.classList.toggle("active");
+            filterAndDisplayCards();
+        });
+    });
+    setNameFilters.forEach((filter) => {
         filter.addEventListener("click", function () {
             this.classList.toggle("active");
             filterAndDisplayCards();
@@ -390,6 +407,42 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+        /*
+    #############################################
+    ############## FILTRAR PER SET ##############
+    #############################################
+ 
+    dins de filter, aquí només canviar els colors dels botons i reset
+    */
+
+    function resetSetFilters() {
+        setNameFilters.forEach((button) => {
+            button.style.backgroundColor = "#000";
+            button.style.color = "#fff";
+        });
+        setNameFilters.forEach((filter) => {
+            filter.classList.remove("active");
+        });
+    }
+    
+    clearSetFiltersButton.addEventListener("click", function () {
+        resetSetFilters();
+        filterAndDisplayCards();
+    });
+    
+    setNameFilters.forEach((button) => {
+        button.addEventListener("click", function () {
+            if (this.style.backgroundColor === "rgb(255, 255, 255)") {
+                this.style.backgroundColor = "#000";
+                this.style.color = "#fff"
+            } else {
+                this.style.backgroundColor = "#fff";
+                this.style.color = "#000"
+            }
+        });
+    });
+    
 
 
     /*
