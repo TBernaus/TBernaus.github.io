@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const filteredCards = cards.slice(0, cardsDisplayed);
 
         filteredCards.forEach((cardData) => {
-            console.log(cardData)
+            // console.log(cardData)
             const listItem = document.createElement("li");
             const imageElement = document.createElement("img");
             imageElement.setAttribute('data-src', cardData.Image);
@@ -82,8 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
             cardsData = data;
             filterAndDisplayCards();
             placeholderElement.style.display = "none";
-            const distinctSetName = [...new Set(cardsData.map(card => card.Set_Name))];
-            console.log("Tipos distintos de cartas:", distinctSetName);
+            // const distinctSetName = [...new Set(cardsData.map(card => card.Set_Name))];
+            // console.log("Tipos distintos de cartas:", distinctSetName);
         })
         .catch((error) => console.error("Error obtenint dades de l'API:", error));
 
