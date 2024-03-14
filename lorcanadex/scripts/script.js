@@ -286,31 +286,36 @@ document.addEventListener("DOMContentLoaded", function () {
           ############### ENDREÇAR CARTES ###############
           ###############################################
       */
-    function sortAndDisplayCards(cards, sortBy) {
-        cards.sort((a, b) => {
-            let comparison = 0;
-
-            switch (sortBy) {
-                // case "card-number":
-                //   comparison = a.Card_Num - b.Card_Num;
-                //   break;
-                case "ink-cost":
-                    comparison = a.Cost - b.Cost;
-                    break;
-                default:
-                    comparison = a.Name.localeCompare(b.Name);
-                    break;
-            }
-
+          function sortAndDisplayCards(cards, sortBy) {
+            cards.sort((a, b) => {
+                let comparison = 0;
+        
+                if (sortBy === "color") {
+                    // Ordenar por color primero
+                    comparison = a.Color.localeCompare(b.Color);
+                    if (comparison !== 0) {
+                        return comparison;
+                    }
+                }
+        
+                // Si se ordena por color o no, siempre ordenar por costo de tinta
+                comparison = a.Cost - b.Cost;
+                if (comparison !== 0) {
+                    return comparison;
+                }
+        
+                // Si se ordena por color o por costo de tinta, ordenar por nombre
+                comparison = a.Name.localeCompare(b.Name);
+                return comparison;
+            });
+        
             if (isOrderReversed) {
-                comparison *= -1;
+                cards.reverse();
             }
-
-            return comparison;
-        });
-
-        displayCards(cards);
-    }
+        
+            displayCards(cards);
+        }
+        
 
     /*
           ###############################################
