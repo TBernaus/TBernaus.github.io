@@ -7,8 +7,14 @@
     box-sizing: border-box;
 }
 
+.actiu{
+    background-color:#fff;
+    color:#000;
+}
+
 .showing-general {
-    background-color: #e4ebe4;
+    /* background-color: #e4ebe4; */
+    background-color: #f1f6f1;
     border-radius: 15px;
     padding: 10px;
 }
@@ -34,7 +40,7 @@
 
 #sort-select {
     width: 40%;
-    margin-right: 2%;
+    margin-left: 2%;
 }
 
 #invert-order-button,
@@ -42,11 +48,10 @@
     width: 20%;
 }
 
-/* Asegúrate de que los elementos dentro del div sort-per se ajusten correctamente */
 #sort-per {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     /* Para separar los botones */
 }
 
@@ -121,7 +126,8 @@
 
 /* Botó de netejar filtres */
 .clearBtn {
-    width: 360px;
+    width: 96%;
+    margin-bottom: 7%;
 }
 
 .clear-search {
@@ -135,12 +141,16 @@
     display: inline-flex;
 }
 
-.rang,
+.rang{
+    display: none;
+}
+
 #inkable {
     display: inline-block;
 }
 
 #searchers {
+    display: none;
     width: 100%;
     padding: 2%;
     box-sizing: border-box;

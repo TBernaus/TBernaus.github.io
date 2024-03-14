@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="cat">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,19 +35,19 @@
             <!-- Invertir ordre -->
             <button id="invert-order-button">Invertir ordre</button>
 
-            
+
             <!-- Eliminar filtres -->
             <button id="clear-all">Eliminar filtres</button>
 
-            
+
         </div>
         <div id="filtres">
-<br>
+            <br>
 
-            <!-- Filtres per colors --> 
-        <button class="filtres-colors-Btn mostrar-opcions">
-            Mostra els filtres per colors
-        </button><br>
+            <!-- Filtres per colors -->
+            <button class="filtres-colors-Btn mostrar-opcions">
+                Mostra els filtres per colors
+            </button><br>
             <div id="color-filters">
                 <!-- <label for="color-filter-label">Filtra per color</label><br> -->
                 <button class="color-filter" btn-color="purple" data-color="Amethyst">Lila</button>
@@ -57,10 +57,10 @@
                 <button class="color-filter" btn-color="orange" data-color="Amber">Taronja</button>
                 <button class="color-filter" btn-color="blue" data-color="Sapphire">Blau</button><br>
                 <button class="clear-filters-button clearBtn">Esborra els filtres</button>
+                <br>
             </div>
+            <br>
 
-            <br>
-            <br>
 
             <!-- filtres per tipus de carta -->
 
@@ -68,6 +68,7 @@
                 Mostra els filtres per tipus
             </button><br>
             <div id="card-type">
+                <br>
                 <!-- <label for="type-filter-label">Filtra per tipus</label><br> -->
                 <button class="type-filter" type="Item">Item</button>
                 <button class="type-filter" type="Action">Acció</button>
@@ -76,9 +77,10 @@
                 <button class="type-filter" type="Character">Personatge</button><br>
                 <button class="clear-types-button clearBtn">Esborra els filtres</button>
                 <br>
+                <br>
             </div>
 
-            <br><br>
+            <br>
 
             <!-- filtres per nom de colecció -->
 
@@ -91,12 +93,20 @@
                 <button class="set-name" set_name="The First Chapter">The First Charapter</button>
                 <button class="set-name" set_name="Rise of the Floodborn">Rise of the Floodborn</button> <br>
                 <button class="clear-set-button clearBtn">Esborra els filtres</button>
+                <br>
+                <br>
             </div>
 
             <br>
 
             <!-- Rang per cost -->
+            <button class="show-range-Btn mostrar-opcions">
+                Mostra el rang de costos
+            </button> <br>
+
             <div class="rang">
+                <br>
+
                 <div class="ink-content">
                     <div class="cost-left">
                         <label for="range">Min</label>
@@ -118,17 +128,10 @@
             </div>
 
             <br>
-            <!-- Dropdown per a filtres inkable -->
-            <div id="inkable">
-                <label for="inkable-select">Tintejable?</label>
-                <select id="inkable-select">
-                    <option value="any">-</option>
-                    <option value="true">Sí</option>
-                    <option value="false">No</option>
-                </select>
-            </div>
-            <br>
             <!-- Camp de búsqueda per Name-->
+            <button class="show-search-btn">
+                Mostra els cercadors
+            </button>
             <div id="searchers">
 
                 <input type="text" id="search-input" placeholder="Buscar per nom...">
@@ -143,6 +146,19 @@
                 <br>
                 <button class="clear-search">Esborra búsquedes</button>
             </div>
+
+            <br>
+            <br>
+            <!-- Dropdown per a filtres inkable -->
+            <div id="inkable">
+                <label for="inkable-select">Tintejable?</label>
+                <select id="inkable-select">
+                    <option value="any">-</option>
+                    <option value="true">Sí</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <br>
         </div>
     </div>
     <!-- placeholder -->

@@ -3,7 +3,9 @@
 
 body {
   font-family: 'Waltograph', 'Anta', 'Lato', 'arial', cursive;
-  background-color: #f1f6f1;
+  /* background-color: #f1f6f1; */
+  background-color: #e4ebe4;
+  color: #333;
 }
 
 @media screen and (min-width: 1200px) {
@@ -18,7 +20,8 @@ body {
 
 /* Estils per a botons i selects */
 button, select {
-  background-color: #000;
+  background-color: #000; 
+  /* background-color: #FF9800; */
   color: white;
   padding: 5px 10px;
   margin: 5px;
