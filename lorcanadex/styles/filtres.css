@@ -35,11 +35,17 @@
     margin-right: 2%;
 }
 
-.invert-order-button,
-.clear-all {
-    width: 100%;
+#invert-order-button,
+#clear-all {
+    width: 20%;
 }
 
+/* Asegúrate de que los elementos dentro del div sort-per se ajusten correctamente */
+#sort-per {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Para separar los botones */
+}
 /* Animacions */
 @keyframes showAnimation {
     from {
