@@ -157,13 +157,14 @@ input {
     }
 
     .clearBtn{
-        width: 96%; /* Ocupa el 100% del ancho disponible */
+        width: 96%;
     }
 
     #search-input,
     #search-input-att,
     #search-input-global {
-        width: 96%; /* Ocupa el 100% del ancho disponible */
-        margin-bottom: 5px; /* Espacio entre los inputs */
+        width: 96%; 
+        margin-bottom: 5px; 
+        background-color: pink;
     }
 }
