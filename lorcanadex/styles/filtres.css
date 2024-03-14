@@ -1,8 +1,10 @@
 /* Estils generals */
 #filtres-global {
     width: 96%;
+    max-width: 500px; /* Limita el ancho máximo del contenedor */
     display: inline-block;
     padding: 2%;
+    margin: 0 auto; /* Centra el contenedor en la pantalla */
 }
 
 .showing-general {
@@ -176,4 +178,3 @@
         margin-bottom: 5px;
     }
 }
-
