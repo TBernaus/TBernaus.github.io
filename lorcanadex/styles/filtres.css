@@ -23,19 +23,21 @@
     animation: showAnimation 0.5s ease forwards;
     opacity: 1;
     pointer-events: auto;
+    width: 100%;
 }
 
 #filtres.hiding {
     animation: hideAnimation 0.5s ease forwards;
 }
 
-#sort-select{
-    width: 20%;
+#sort-select {
+    width: 40%;
     margin-right: 2%;
 }
+
 .invert-order-button,
-.clear-all{
-width: 100%;
+.clear-all {
+    width: 100%;
 }
 
 /* Animacions */
@@ -113,7 +115,8 @@ width: 100%;
 }
 
 .clear-search {
-    width: 555px;
+    width: 98%;
+    margin-left: 1%;
 }
 
 /* Altres classes */
@@ -122,48 +125,49 @@ width: 100%;
     display: inline-flex;
 }
 
-input {
-    width: 175px;
-}
-
 .rang,
-#inkable,
-#searchers {
+#inkable {
     display: inline-block;
 }
 
 #searchers {
-    display: block;
-    margin-top: 10px;
+    width: 100%; 
+    padding: 2%; 
+    box-sizing: border-box; 
+}
+
+#searchers input {
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* Pantalla mitjana */
+@media screen and (max-width: 1200px) {
+    #searchers input {
+        width: calc(100% - 20px);
+    }
 }
 
 /* Pantalla petita */
 @media screen and (max-width: 800px) {
-    #sort-select{
-        width: 40%;
-        margin-right: 2%;
-    }
-
-    button,
-    select {
-        width: auto;
-        padding: 3px 8px;
-        margin: 3px;
-    }
 
     .clear-search {
-        width: 94%;
+        width: 98%;
         margin-left: 1%;
     }
 
-    .clearBtn{
-        width: 96%;
+    .clearBtn {
+        width: 100%;
     }
 
     #search-input,
     #search-input-att,
     #search-input-global {
-        width: 96%; 
-        margin-bottom: 5px; 
+        width: 100%;
+        margin-left: 2%;
+        margin-bottom: 5px;
     }
 }
+
