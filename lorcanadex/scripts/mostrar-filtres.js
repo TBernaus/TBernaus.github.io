@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const filtersGlobal = document.getElementById("filtres-global");
   const colorFiltersContainer = document.getElementById("color-filters");
   const typeFiltersContainer = document.getElementById("card-type");
-  const setFiltersContainer = document.getElementById("set-name");
+  const setFiltersContainer = document.getElementById("set-name-filter");
 
   // Afegir classes inicials per a mostrar els filtres
   filtersContainer.classList.add("showing");

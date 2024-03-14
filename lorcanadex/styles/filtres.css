@@ -88,7 +88,7 @@
     margin: 0;
 }
 /* Contenidor de filtres per set */
-#set-name {
+#set-name-filter {
     display: none;
     justify-content: center;
     /* text-align: center; */
@@ -120,16 +120,16 @@ input{
 }
 
 #searchers {
-    display: block; /* Cambiado a bloque para forzar un salto de línea */
-    margin-top: 10px; /* Añadido margen superior para separación */
+    display: block; 
+    margin-top: 10px; 
 }
 
-/* Reducir tamaño de botones en pantallas pequeñas */
+/* Pantalla petita */
 @media screen and (max-width: 800px) {
   button, select {
-    width: auto; /* Ancho automático para que se ajusten al contenido */
-    padding: 3px 8px; /* Ajustar el relleno para que los botones sean más pequeños */
-    margin: 3px; /* Reducir el margen */
+    width: auto; 
+    padding: 3px 8px; 
+    margin: 3px; 
   }
   .clear-search{
     width: 360px;
