@@ -1,7 +1,8 @@
 /* Estils generals */
 #filtres-global {
+    width: 96%;
     display: inline-block;
-    padding: 10px;
+    padding: 2%;
 }
 
 .showing-general {
@@ -26,6 +27,15 @@
 
 #filtres.hiding {
     animation: hideAnimation 0.5s ease forwards;
+}
+
+#sort-select{
+    width: 20%;
+    margin-right: 2%;
+}
+.invert-order-button,
+.clear-all{
+width: 100%;
 }
 
 /* Animacions */
@@ -92,7 +102,7 @@
 #set-name-filter {
     display: none;
     justify-content: center;
-    /* text-align: center; */
+    text-align: center;
     border-radius: 15px;
     margin: 0;
 }
@@ -129,6 +139,10 @@ input {
 
 /* Pantalla petita */
 @media screen and (max-width: 800px) {
+    #sort-select{
+        width: 40%;
+        margin-right: 2%;
+    }
 
     button,
     select {
@@ -138,18 +152,18 @@ input {
     }
 
     .clear-search {
-        width: 360px;
+        width: 94%;
+        margin-left: 1%;
     }
 
-    #searchers {
-        max-width: 200px;
-        /* Ancho máximo del contenedor de búsqueda */
+    .clearBtn{
+        width: 96%; /* Ocupa el 100% del ancho disponible */
     }
 
-    #searchers input {
-        width: 100%;
-        /* Anchura total para los campos de entrada */
-        margin-bottom: 5px;
-        /* Margen inferior para separar los campos */
+    #search-input,
+    #search-input-att,
+    #search-input-global {
+        width: 96%; /* Ocupa el 100% del ancho disponible */
+        margin-bottom: 5px; /* Espacio entre los inputs */
     }
 }
