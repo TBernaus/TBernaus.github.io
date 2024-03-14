@@ -1,11 +1,10 @@
-/* estils per al selector de rang (cost de cartes) */
+/* Estils per al selector de rang (cost de cartes) */
 
+/* Estils generals */
 .card {
     display: inline-block;
-    /* background-color: #fff; */
     border-radius: 5px;
     padding: 20px;
-    /* box-shadow: 0px 9px 20px 0px rgba(14, 88, 48, 0.1); */
 }
 
 .ink-content {
@@ -25,6 +24,7 @@ p {
     font-weight: 600;
 }
 
+/* Estils per al control deslizant de rang */
 .range-slider {
     width: 400px;
     position: relative;
@@ -33,19 +33,17 @@ p {
 
 .range-fill {
     height: 6px;
-    /* background-color: #36b37e; */
     position: absolute;
     z-index: 1;
 }
 
 input[type="range"] {
-    /* -webkit-appearance: none; */
-    /* width: 100%; */
     background: transparent;
     position: absolute;
     left: 0;
 }
 
+/* Estils per als punts del control deslizant */
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 15px;
@@ -58,6 +56,7 @@ input[type="range"]::-webkit-slider-thumb {
     z-index: 1;
 }
 
+/* Estils per a la pista del control deslizant */
 input[type="range"]::-webkit-slider-runnable-track {
     width: 100%;
     height: 5px;
@@ -65,11 +64,13 @@ input[type="range"]::-webkit-slider-runnable-track {
     border-radius: 3px;
     border: none;
 }
+
 .cost-left{
     padding-right: 80px;
 }
 
-/* estils especifics per a firefox */
+
+/* Estils específics per a Firefox */
 @-moz-document url-prefix() {
     .range-slider {
         width: 400px;
@@ -84,6 +85,8 @@ input[type="range"]::-webkit-slider-runnable-track {
     input[type="range"]::-moz-range-thumb {
         position: relative; 
     }
+
+    /* Ajust específic per a l'estil en Firefox */
     .cost-left{
         padding-right: 280px;
     }

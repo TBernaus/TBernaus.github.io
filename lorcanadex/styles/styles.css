@@ -1,25 +1,21 @@
+/* Estils generals */
 body {
   font-family: 'Waltograph', 'Anta', 'Lato', 'arial', cursive;
-  background-color: #f1f6f1
+  background-color: #f1f6f1;
 }
 
-#loading-placeholder{
-  width: auto;
-  height: 30px;
-}
-.display-cards{
- padding: 2px;
- padding-left: 5px;
- padding-right: 5px;
- border-radius: 15px;
-}
 @media screen and (min-width: 1200px) {
   body {
     font-size: 18px;
   }
 }
+#loading-placeholder{
+  width: auto;
+  height: 30px;
+}
 
-button, select{
+/* Estils per a botons i selects */
+button, select {
   background-color: #000;
   color: white;
   padding: 5px 10px;
@@ -29,21 +25,22 @@ button, select{
   border: 1px black solid;
 }
 
+button.actiu, select.actiu {
+  color: #000; 
+}
+
+/* Estils per a la llista de fitxers */
 #file-list {
   list-style-type: none;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
 }
 
 #file-list li {
-  /* 6 cartes er fila */
-  width: calc(16.666% - 20px);
+  width: calc(16.666% - 20px); /* 6 cartes per fila */
   text-align: center;
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-bottom: 20px;
+  margin: 0 10px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,26 +61,24 @@ button, select{
   border-radius: 15px;
 }
 
-/* pantalles mitjanes i petites */
-/*5 cartes en pantalles mitjanes */
+/* Estils per a pantalles mitjanes */
 @media screen and (max-width: 1200px) {
   #file-list li {
-    width: calc(20% - 20px);
+    width: calc(20% - 20px); /* 5 cartes per fila */
   }
 }
 
-/*3 cartes en pantalles mitjanes */
+/* Estils per a pantalles petites */
 @media screen and (max-width: 800px) {
   #file-list li {
-    width: calc(33.333% - 20px);
+    width: calc(33.333% - 20px); /* 3 cartes per fila */
   }
 }
 
-/* tamany del nom de les cartes*/
+/* Estils per a la mida del nom de les cartes */
 #file-list li {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
 }
-
