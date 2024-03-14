@@ -1,10 +1,10 @@
 /* Estils generals */
 #filtres-global {
     width: 96%;
-    max-width: 500px; /* Limita el ancho máximo del contenedor */
     display: inline-block;
     padding: 2%;
-    margin: 0 auto; /* Centra el contenedor en la pantalla */
+    margin: 0 auto;
+    /* Centra el contenedor en la pantalla */
 }
 
 .showing-general {
@@ -46,8 +46,10 @@
 #sort-per {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Para separar los botones */
+    justify-content: space-between;
+    /* Para separar los botones */
 }
+
 /* Animacions */
 @keyframes showAnimation {
     from {
@@ -139,9 +141,9 @@
 }
 
 #searchers {
-    width: 100%; 
-    padding: 2%; 
-    box-sizing: border-box; 
+    width: 100%;
+    padding: 2%;
+    box-sizing: border-box;
 }
 
 #searchers input {
@@ -176,5 +178,9 @@
         width: 100%;
         margin-left: 2%;
         margin-bottom: 5px;
+    }
+
+    #filtres-global {
+        max-width: 500px;
     }
 }
