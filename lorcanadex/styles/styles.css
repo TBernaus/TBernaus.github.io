@@ -73,6 +73,10 @@ button.actiu, select.actiu {
   #file-list li {
     width: calc(33.333% - 20px); /* 3 cartes per fila */
   }
+  input{
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
 }
 
 /* Estils per a la mida del nom de les cartes */
