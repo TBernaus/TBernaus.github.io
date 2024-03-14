@@ -221,6 +221,12 @@ document.addEventListener("DOMContentLoaded", function () {
             loadMoreButton.style.display = "block";
         }
 
+        if (cardsDisplayed >= cardsData.length) {
+            loadAllButton.style.display = "none";
+        } else {
+            loadAllButton.style.display = "block";
+        }
+
         // Chernabog's Followers de lila a groc per error de la API
         const chernabogsFollowersCard = cardsData.find(card => card.Name === "Chernabog's Followers");
         if (chernabogsFollowersCard) {
@@ -506,4 +512,18 @@ document.addEventListener("DOMContentLoaded", function () {
         cardsDisplayed += 10;
         filterAndDisplayCards();
     }
+    
+        /*
+          ###################################################
+          ############ CARREGAR TOTES LES CARTES ############
+          ###################################################
+      */
+    const loadAllButton = document.getElementById("load-all-button");
+    loadAllButton.addEventListener("click", loadAllCards);
+    
+    function loadAllCards() {
+        cardsDisplayed = cardsData.length;
+        filterAndDisplayCards();
+    }
+    
 });
