@@ -1,4 +1,10 @@
 /* Estils generals */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Waltograph', 'Anta', 'Lato', 'arial', cursive;
   background-color: #f1f6f1;
