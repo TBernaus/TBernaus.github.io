@@ -19,8 +19,10 @@
             Amaga els filtres
         </button>
     </div>
+
     <!-- <h1>LorcanaDex</h1> -->
     <div id="filtres-global">
+        
         <!-- Filtre per endreçar -->
         <div id="sort-per">
 
@@ -32,13 +34,12 @@
                 <option value="color">Color</option>
                 <option value="card-number">Número de carta</option>
             </select>
+
             <!-- Invertir ordre -->
             <button id="invert-order-button">Invertir ordre</button>
 
-
             <!-- Eliminar filtres -->
             <button id="clear-all">Eliminar filtres</button>
-
 
         </div>
         <div id="filtres">
@@ -61,7 +62,6 @@
             </div>
             <br>
 
-
             <!-- filtres per tipus de carta -->
 
             <button class="filtres-tipus-Btn mostrar-opcions">
@@ -78,9 +78,7 @@
                 <button class="clear-types-button clearBtn">Esborra els filtres</button>
                 <br>
                 <br>
-            </div>
-
-            <br>
+            </div><br>
 
             <!-- filtres per nom de colecció -->
 
@@ -95,9 +93,7 @@
                 <button class="clear-set-button clearBtn">Esborra els filtres</button>
                 <br>
                 <br>
-            </div>
-
-            <br>
+            </div><br>
 
             <!-- Rang per cost -->
             <button class="show-range-Btn mostrar-opcions">
@@ -106,7 +102,6 @@
 
             <div class="rang">
                 <br>
-
                 <div class="ink-content">
                     <div class="cost-left">
                         <label for="range">Min</label>
@@ -121,13 +116,11 @@
 
                 <div class="range-slider">
                     <div class="range-fill"></div>
-
                     <input type="range" class="min-ink" value="1" min="1" max="10" step="1" />
                     <input type="range" class="max-ink" value="10" min="1" max="10" step="1" />
                 </div>
-            </div>
+            </div><br>
 
-            <br>
             <!-- Camp de búsqueda per Name-->
             <button class="show-search-btn">
                 Mostra els cercadors
@@ -146,9 +139,8 @@
                 <br>
                 <button class="clear-search">Esborra búsquedes</button>
             </div>
+            <br><br>      
 
-            <br>
-            <br>
             <!-- Dropdown per a filtres inkable -->
             <div id="inkable">
                 <label for="inkable-select">Tintejable?</label>
@@ -161,6 +153,7 @@
             <br>
         </div>
     </div>
+
     <!-- placeholder -->
     <div id="placeholder">
         <br>
@@ -176,11 +169,14 @@
     <!-- carrga més -->
     <button id="load-more-button">Carrega més cartes</button>
     <button id="load-all-button">Carrega totes les cartes</button>
+
     <!-- Modal -->
     <div id="modal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="modal-img">
     </div>
+
+    <!-- scripts -->
     <script src="scripts/script.js"></script>
     <script src="scripts/modal.js"></script>
     <script src="scripts/mostrar-filtres.js"></script>
