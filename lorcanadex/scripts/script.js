@@ -25,11 +25,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let cardsDisplayed = 30;
   let cardsData = [];
 
-  /*
-          ##############################################
-          ############### OBTENIR CARTES ###############
-          ##############################################
-      */
+/*
+        ##############################################
+        ############### OBTENIR CARTES ###############
+        ##############################################
+*/
   function displayCards(cards) {
     placeholderElement.style.display = "none";
     fileListElement.innerHTML = "";
@@ -84,11 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.error("Error obtenint dades de l'API:", error));
 
-  /*
-          ##############################################
-          ############### FILTRAR CARTES ###############
-          ##############################################
-      */
+/*
+        ##############################################
+        ############### FILTRAR CARTES ###############
+        ##############################################
+*/
 
   function filterAndDisplayCards() {
     const activeColors = Array.from(colorFilters)
@@ -146,12 +146,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     sortAndDisplayCards(filteredCards, sortBy);
 
-    /*
-             ###################################
-             ########## BUSCAR CARTES ##########
-             dins de la funció de filtrar cartes
-             ###################################
-         */
+/*
+        ###################################
+        ########## BUSCAR CARTES ##########
+        dins de la funció de filtrar cartes
+        ###################################
+*/
 
     // nom
     const searchTerm = searchInput.value.toLowerCase();
@@ -205,11 +205,11 @@ document.addEventListener("DOMContentLoaded", function () {
       filterAndDisplayCards();
     });
 
-    /*
+/*
         ###################################
         ############FI BÚSQUEDA############
         ###################################
-        */
+*/
 
     const totalFilteredCards = filteredCards.length;
     const filteredAndDisplayedCards = filteredCards.slice(0, cardsDisplayed);
@@ -241,11 +241,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (controlYourTemper) {
       controlYourTemper.Type = "Action";
     }
-    /*
-              ##############################################
-              ############## ELIMINAR FILTRES ##############
-              ##############################################
-          */
+/*
+        ##############################################
+        ############## ELIMINAR FILTRES ##############
+        ##############################################
+*/
 
     clearAllButton.addEventListener("click", function () {
       clearSearchInputs();
@@ -290,11 +290,11 @@ document.addEventListener("DOMContentLoaded", function () {
     filterAndDisplayCards();
   });
 
-  /*
-          ###############################################
-          ############### ENDREÇAR CARTES ###############
-          ###############################################
-      */
+/*
+        ###############################################
+        ############### ENDREÇAR CARTES ###############
+        ###############################################
+*/
   function sortAndDisplayCards(cards, sortBy) {
     cards.sort((a, b) => {
       let comparison = 0;
@@ -336,11 +336,11 @@ document.addEventListener("DOMContentLoaded", function () {
     displayCards(cards);
   }
 
-  /*
-          ###############################################
-          ################ INVERTIR COST ################
-          ###############################################
-      */
+/*
+        ###############################################
+        ################ INVERTIR COST ################
+        ###############################################
+*/
   const invertOrderButton = document.getElementById("invert-order-button");
   let isOrderReversed = false;
 
@@ -363,13 +363,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /*
-          ##############################################
-          ############# FILTRAR PER COLORS #############
-          ##############################################
- 
-          dins de filter, aquí només canviar els colors dels botons i reset
-      */
+/*
+        ##############################################
+        ############# FILTRAR PER COLORS #############
+        ##############################################
+
+        dins de filter, aquí només canviar els colors dels botons i reset
+*/
 
   function resetFilters() {
     colorFilters.forEach((button) => {
@@ -395,13 +395,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-  /*
+
+/*
     #############################################
     ############# FILTRAR PER TIPUS #############
     #############################################
  
     dins de filter, aquí només canviar els colors dels botons i reset
-    */
+*/
 
   function resetTypeFilters() {
     typeFilters.forEach((button) => {
@@ -430,13 +431,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /*
+/*
     #############################################
     ############## FILTRAR PER SET ##############
     #############################################
  
     dins de filter, aquí només canviar els colors dels botons i reset
-    */
+*/
 
   function resetSetFilters() {
     setNameFilters.forEach((button) => {
@@ -465,11 +466,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /*
-          ##################################################
-          ###################### RANG ######################
-          ##################################################
-      */
+/*
+        ##################################################
+        ###################### RANG ######################
+        ##################################################
+*/
 
   let minValue = document.getElementById("min-value");
   let maxValue = document.getElementById("max-value");
@@ -507,11 +508,11 @@ document.addEventListener("DOMContentLoaded", function () {
   inputElements.forEach((element) => {
     element.addEventListener("input", validateRange);
   });
-  /*
-          ###################################################
-          ############### CARREGAR MÉS CARTES ###############
-          ###################################################
-      */
+/*
+        ###################################################
+        ############### CARREGAR MÉS CARTES ###############
+        ###################################################
+*/
 
   const loadMoreButton = document.getElementById("load-more-button");
   loadMoreButton.addEventListener("click", loadMoreCards);
@@ -521,11 +522,11 @@ document.addEventListener("DOMContentLoaded", function () {
     filterAndDisplayCards();
   }
 
-  /*
-          ###################################################
-          ############ CARREGAR TOTES LES CARTES ############
-          ###################################################
-      */
+/*
+        ###################################################
+        ############ CARREGAR TOTES LES CARTES ############
+        ###################################################
+*/
   const loadAllButton = document.getElementById("load-all-button");
   loadAllButton.addEventListener("click", loadAllCards);
 
