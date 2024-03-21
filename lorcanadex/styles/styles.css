@@ -18,6 +18,10 @@ body {
   height: 30px;
 }
 
+#placeholder{
+  display: "block";
+
+}
 /* Estils per a botons i selects */
 button, select {
   background-color: #000; 

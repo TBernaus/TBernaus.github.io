@@ -2,8 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const apiUrl = "https://api.lorcana-api.com/cards/all";
 
   const sortSelect = document.getElementById("sort-select");
-  
-  const inputElements = document.querySelectorAll("input");
+
   const colorFilters = document.querySelectorAll(".color-filter");
   const typeFilters = document.querySelectorAll(".type-filter");
   const setNameFilters = document.querySelectorAll(".set-name");
@@ -22,16 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const fileListElement = document.getElementById("file-list");
   const placeholderElement = document.getElementById("placeholder");
-
-  const loadMoreButton = document.getElementById("load-more-button");
-  const loadAllButton = document.getElementById("load-all-button");
-
-  const invertOrderButton = document.getElementById("invert-order-button");
-  const colorButtonsInv = document.querySelectorAll("#invert-order-button");
-  let isOrderReversed = false;
-
-  let minValue = document.getElementById("min-value");
-  let maxValue = document.getElementById("max-value");
 
   let cardsDisplayed = 30;
   let cardsData = [];
@@ -57,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
       fileListElement.appendChild(listItem);
     });
 
-    // Funció per a la càrrega diferida d'imatges
     function lazyLoadImages() {
       const lazyImages = document.querySelectorAll("img[data-src]");
       if ("IntersectionObserver" in window) {
@@ -84,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     lazyLoadImages();
   }
-
+  placeholderElement.style.display = "block";
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
@@ -287,7 +275,6 @@ document.addEventListener("DOMContentLoaded", function () {
       filterAndDisplayCards();
     });
   });
-
   setNameFilters.forEach((filter) => {
     filter.addEventListener("click", function () {
       this.classList.toggle("active");
@@ -304,9 +291,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 /*
-    ###############################################
-    ############### ENDREÇAR CARTES ###############
-    ###############################################
+        ###############################################
+        ############### ENDREÇAR CARTES ###############
+        ###############################################
 */
   function sortAndDisplayCards(cards, sortBy) {
     cards.sort((a, b) => {
@@ -350,16 +337,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 /*
-    ###############################################
-    ################ INVERTIR COST ################
-    ###############################################
+        ###############################################
+        ################ INVERTIR COST ################
+        ###############################################
 */
+  const invertOrderButton = document.getElementById("invert-order-button");
+  let isOrderReversed = false;
 
   invertOrderButton.addEventListener("click", function () {
     isOrderReversed = !isOrderReversed;
     filterAndDisplayCards();
   });
-
+  const colorButtonsInv = document.querySelectorAll("#invert-order-button");
   colorButtonsInv.forEach((button) => {
     button.addEventListener("click", function () {
       const computedStyle = window.getComputedStyle(this);
@@ -375,11 +364,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 /*
-    ##############################################
-    ############# FILTRAR PER COLORS #############
-    ##############################################
+        ##############################################
+        ############# FILTRAR PER COLORS #############
+        ##############################################
 
-    dins de filter, aquí només canviar els colors dels botons i reset
+        dins de filter, aquí només canviar els colors dels botons i reset
 */
 
   function resetFilters() {
@@ -478,10 +467,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 /*
-    ##################################################
-    ###################### RANG ######################
-    ##################################################
+        ##################################################
+        ###################### RANG ######################
+        ##################################################
 */
+
+  let minValue = document.getElementById("min-value");
+  let maxValue = document.getElementById("max-value");
 
   function validateRange() {
     let minInk = parseInt(inputElements[0].value);
@@ -498,8 +490,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     filterAndDisplayCards();
   }
-
   function setDefaultRangeValues() {
+    const minValue = document.getElementById("min-value");
+    const maxValue = document.getElementById("max-value");
     const minRangeInput = document.querySelector(".min-ink");
     const maxRangeInput = document.querySelector(".max-ink");
     minValue.innerHTML = 1;
@@ -511,32 +504,34 @@ document.addEventListener("DOMContentLoaded", function () {
     rangeFill.style.width = "0%";
   }
 
+  const inputElements = document.querySelectorAll("input");
   inputElements.forEach((element) => {
     element.addEventListener("input", validateRange);
   });
 /*
-    ###################################################
-    ############### CARREGAR MÉS CARTES ###############
-    ###################################################
+        ###################################################
+        ############### CARREGAR MÉS CARTES ###############
+        ###################################################
 */
+
+  const loadMoreButton = document.getElementById("load-more-button");
+  loadMoreButton.addEventListener("click", loadMoreCards);
 
   function loadMoreCards() {
     cardsDisplayed += 10;
     filterAndDisplayCards();
   }
 
-  loadMoreButton.addEventListener("click", loadMoreCards);
-
 /*
-    ###################################################
-    ############ CARREGAR TOTES LES CARTES ############
-    ###################################################
+        ###################################################
+        ############ CARREGAR TOTES LES CARTES ############
+        ###################################################
 */
+  const loadAllButton = document.getElementById("load-all-button");
+  loadAllButton.addEventListener("click", loadAllCards);
 
-function loadAllCards() {
-  cardsDisplayed = cardsData.length;
-  filterAndDisplayCards();
-}
-
-loadAllButton.addEventListener("click", loadAllCards);
+  function loadAllCards() {
+    cardsDisplayed = cardsData.length;
+    filterAndDisplayCards();
+  }
 });
