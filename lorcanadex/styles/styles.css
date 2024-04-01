@@ -91,3 +91,14 @@ button.actiu, select.actiu {
   text-overflow: ellipsis;
   max-width: 100%;
 }
+
+/* footer */
+#footer {
+  position: float; 
+  bottom: 0; 
+  width: 100%;
+  text-align: center; 
+  padding: 10px 0; 
+  margin-top: 20px;
+  font-size: smaller;
+}
