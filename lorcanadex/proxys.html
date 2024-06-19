@@ -5,26 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Descobreix el món de Lorcana en català a lorcanadex">
-    <title>LorcanaDex</title>
+    <title>ProxyDex</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/rang.css">
-    <link rel="stylesheet" href="styles/modal.css">
     <link rel="stylesheet" href="styles/filtres.css">
     <link rel="icon" type="image/png" href="resources/favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 
 <body>
     <div class="show-filters">
-        <a href="proxys.html">proxys</a>
-        <!-- <button id="deck-creator-button">
-            Crea el teu deck
-        </button> -->
+        <a href="index.html">torna</a>
         <button class="filtresBtn">
             Amaga els filtres
         </button>
     </div>
 
-    <!-- <h1>LorcanaDex</h1> -->
     <div id="filtres-global">
 
         <!-- Filtre per endreçar -->
@@ -169,21 +165,21 @@
         <ul id="file-list"></ul>
     </div>
 
-    <!-- carrga més -->
+    <!-- carrega més -->
     <button id="load-more-button">Carrega més cartes</button>
     <button id="load-all-button">Carrega totes les cartes</button>
 
-    <!-- Modal -->
-    <div id="modal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modal-img">
-    </div>
+    <!-- Botón para generar el PDF -->
+    <button id="generate-pdf-button">Generar PDF</button>
+
+    <!-- Contenedor de cartas seleccionadas -->
+    <div id="selected-cards-container"></div>
 
     <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
     <script src="scripts/script.js"></script>
-    <script src="scripts/modal.js"></script>
     <script src="scripts/mostrar-filtres.js"></script>
-
+    <script src="scripts/proxys.js"></script>
 
     <!-- footer -->
     <div id="footer">

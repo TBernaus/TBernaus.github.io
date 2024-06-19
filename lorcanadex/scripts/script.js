@@ -540,23 +540,6 @@ function loadAllCards() {
 
 loadAllButton.addEventListener("click", loadAllCards);
 
-/*
-    ###################################################
-    ################ DECK CREATOR LINK ################
-    ###################################################
-*/
-
-const deckButton = document.getElementById("deck-creator-button");
-deckButton.addEventListener("click", function() {
-    window.location.href = "deck-creator.html";
-});
-
-const returnToCardSearchbtn = document.getElementById("card-search-button");
-returnToCardSearchbtn.addEventListener("click", function() {
-    window.location.href = "index.html";
-});
-
-
 // final
 }
 );
