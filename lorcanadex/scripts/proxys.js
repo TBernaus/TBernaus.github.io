@@ -71,15 +71,38 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    async function convertImageToBase64(url) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.crossOrigin = 'Anonymous';
+            img.onload = function () {
+                const canvas = document.createElement('canvas');
+                canvas.width = this.width;
+                canvas.height = this.height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(this, 0, 0);
+                const dataURL = canvas.toDataURL('image/jpeg');
+                resolve(dataURL);
+            };
+            img.onerror = reject;
+            img.src = 'https://cors-anywhere.herokuapp.com/' + url;
+        });
+    }
+
     generatePdfButton.addEventListener("click", async function () {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF('portrait', 'mm', 'a4');
-        const cardWidth = 86;
-        const cardHeight = 122;
-        const margin = 10;
+        const cardWidth = 63;
+        const cardHeight = 87;
+        const pageWidth = 210;
+        const pageHeight = 297;
         const imagesPerRow = 3;
         const imagesPerColumn = 3;
         const imagesPerPage = imagesPerRow * imagesPerColumn;
+        const totalWidth = imagesPerRow * cardWidth;
+        const totalHeight = imagesPerColumn * cardHeight;
+        const marginX = (pageWidth - totalWidth) / 2;
+        const marginY = (pageHeight - totalHeight) / 2;
         let imageCount = 0;
 
         for (let card of selectedCards) {
@@ -91,22 +114,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const rowIndex = Math.floor(imageCount / imagesPerRow);
                 const columnIndex = imageCount % imagesPerRow;
-                const x = margin + columnIndex * (cardWidth + margin);
-                const y = margin + rowIndex * (cardHeight + margin);
+                const x = marginX + columnIndex * cardWidth;
+                const y = marginY + rowIndex * cardHeight;
 
-                const imgContainer = document.createElement("div");
-                imgContainer.style.width = `${cardWidth}px`;
-                imgContainer.style.height = `${cardHeight}px`;
-                const img = new Image();
-                img.src = card.Image;
-                imgContainer.appendChild(img);
-                document.body.appendChild(imgContainer);
+                try {
+                    const imgData = await convertImageToBase64(card.Image);
+                    doc.addImage(imgData, 'JPEG', x, y, cardWidth, cardHeight);
+                } catch (error) {
+                    console.error('Error loading image', card.Image, error);
+                }
 
-                const canvas = await html2canvas(imgContainer);
-                const imgData = canvas.toDataURL("image/jpeg");
-                doc.addImage(imgData, 'JPEG', x, y, cardWidth, cardHeight);
-
-                document.body.removeChild(imgContainer);
                 imageCount++;
             }
         }
