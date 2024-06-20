@@ -126,10 +126,16 @@
         <button id="clear-deck-button">Esborra Deck</button>
         <br />
         <button id="export-deck-button">Exportar el Deck</button>
+        <button id="generate-deck-pdf-button">Generar PDF del Deck</button>
         <br><br>
         <textarea id="import-deck-input" placeholder="Enganxa el text del deck aquí..."></textarea>
         <button id="import-deck-button">Importa el Deck</button>
     </div>
+        
+    <!-- permis -->
+        <a href="https://cors-anywhere.herokuapp.com/corsdemo">solicita permís per a crear les proxys</a>
+        <br />
+
     <div id="placeholder">
         <br>
         S'estan carregant les cartes, un moment siusplau...
@@ -145,6 +151,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script type="module" src="scripts/proxys.js"></script>
     <script type="module" src="scripts/mostrar-filtres.js"></script>
     <script type="module" src="scripts/api.js"></script>
     <script type="module" src="scripts/filters.js"></script>
