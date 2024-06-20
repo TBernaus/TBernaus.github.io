@@ -17,7 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchersContainer = document.getElementById("searchers");
 
   // Afegir classes inicials per a mostrar els filtres
+  if (document.title !== "DeckDex") {
   filtersContainer.classList.add("showing");
+  }
   filtersGlobal.classList.add("showing-general");
 
   // Funció per gestionar la visibilitat dels filtres generals
