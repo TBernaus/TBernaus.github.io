@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const saveDeckButton = document.getElementById("save-deck-button");
     const clearDeckButton = document.getElementById("clear-deck-button");
+    const exportDeckButton = document.getElementById("export-deck-button");
     const deckListElement = document.getElementById("deck-list");
     const deckTitle = document.getElementById("deck-title");
     let deck = [];
@@ -85,7 +86,16 @@ document.addEventListener("DOMContentLoaded", function () {
     function clearDeck() {
         deck = [];
         renderDeck();
-        localStorage.removeItem("lorcanaDeckTBernaus");
+        localStorage.removeItem("lorcanaDeck");
+    }
+
+    function exportDeck() {
+        let deckList = deck.map(card => `${card.copies} ${card.Name}`).join('\n');
+        navigator.clipboard.writeText(deckList).then(() => {
+            console.log("Deck copiat al portapapeles");
+        }).catch(err => {
+            console.error("Error al copiar el deck al portapapeles: ", err);
+        });
     }
 
     document.getElementById("file-list").addEventListener("click", function (e) {
@@ -104,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (existingCard.copies < 4) {
                     existingCard.copies++;
                 } else {
-                    console.log("No pots tenir més de 4 còpies de la mateixa carta.");
+                    console.log("No pots tenir més de 4 còpies de la carta.");
                 }
             } else {
                 deck.push({
@@ -120,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     saveDeckButton.addEventListener("click", saveDeck);
     clearDeckButton.addEventListener("click", clearDeck);
+    exportDeckButton.addEventListener("click", exportDeck);
 
     loadDeck();
 });
