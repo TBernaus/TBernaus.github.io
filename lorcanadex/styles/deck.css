@@ -76,3 +76,36 @@
     cursor: pointer;
     border-radius: 20px;
 }
+
+#clear-deck-button{
+    background-color: red;
+    border: none;
+    position: absolute;
+    right: 0;
+}
+
+.notification-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    max-width: 300px;
+    z-index: 1000;
+}
+
+.notification {
+    background-color: #000;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.notification.show {
+    display: block;
+}

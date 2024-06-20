@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const deckListElement = document.getElementById("deck-list");
     const deckTitle = document.getElementById("deck-title");
     const importDeckInput = document.getElementById("import-deck-input");
+    const notificationContainer = document.getElementById('notification-container');
     let deck = [];
 
     function loadDeck() {
@@ -102,6 +103,33 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.textContent = message;
+
+        const closeButton = document.createElement('span');
+        closeButton.textContent = ' ×';
+        closeButton.style.cursor = 'pointer';
+        closeButton.addEventListener('click', () => {
+            notification.remove();
+        });
+
+        notification.appendChild(closeButton);
+        notificationContainer.appendChild(notification);
+
+        setTimeout(() => {
+            notification.classList.add('show');
+        }, 100);
+
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => {
+                notification.remove();
+            }, 300);
+        }, 8000);
+    }
+
     function importDeck() {
         const deckText = importDeckInput.value.trim();
         if (deckText) {
@@ -118,10 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         existingCard.copies = 4;
                     }
                 } else {
-                    // Aquí deberías agregar la lógica para obtener la URL de la imagen de la carta
-                    // Por ejemplo, podrías tener un objeto cardsData que contenga todas las cartas
-                    // y sus URLs de imágenes, algo como:
-                    const cardData = cardsData.find(card => card.Name === name);
+                    const cardData = cardsData.find(card => card.Name == name);
                     if (cardData) {
                         deck.push({
                             Name: name,
@@ -130,6 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         });
                     } else {
                         console.error("No s'ha trobat la carta: ", name);
+                        showNotification(`No s'ha trobat la carta: ${name}`);
                     }
                 }
             });
@@ -172,5 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
     exportDeckButton.addEventListener("click", exportDeck);
     importDeckButton.addEventListener("click", importDeck);
 
-    loadDeck();
+    fetchCardsData().then(() => {
+        loadDeck();
+    });
 });
