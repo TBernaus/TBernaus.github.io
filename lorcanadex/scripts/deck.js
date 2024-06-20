@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const deckTitle = document.getElementById("deck-title");
     let deck = [];
 
-    // Cargar deck guardado desde localStorage
     function loadDeck() {
         const savedDeck = localStorage.getItem("lorcanaDeck");
         if (savedDeck) {
@@ -50,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     card.copies++;
                     renderDeck();
                 } else {
-                    console.log("No puedes tener más de 4 copias de la misma carta.");
+                    console.log("No pots tenir més de 4 còpies per carta.");
                 }
             });
 
@@ -66,10 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 renderDeck();
             });
 
-            // Asegúrate de que los botones se vean como en proxys.js
-            addButton.style.cssText = "padding: 5px 10px; margin-left: 5px;";
-            removeButton.style.cssText = "padding: 5px 10px; margin-left: 5px;";
-
             cardControls.appendChild(addButton);
             cardControls.appendChild(removeButton);
 
@@ -84,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function saveDeck() {
         localStorage.setItem("lorcanaDeck", JSON.stringify(deck));
-        console.log("Deck guardado exitosamente!");
+        console.log("Deck guardat correctament");
     }
 
     function clearDeck() {
@@ -100,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const cardImage = cardElement.querySelector("img").src;
 
             if (!cardImage) {
-                console.error("No se encontró la URL de la imagen para la carta:", cardName);
+                console.error("No s'ha trobat la URL de l'imatge per a la carta: ", cardName);
                 return;
             }
 
@@ -109,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (existingCard.copies < 4) {
                     existingCard.copies++;
                 } else {
-                    console.log("No puedes tener más de 4 copias de la misma carta.");
+                    console.log("No pots tenir més de 4 còpies de la mateixa carta.");
                 }
             } else {
                 deck.push({
