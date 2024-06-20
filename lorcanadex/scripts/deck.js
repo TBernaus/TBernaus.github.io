@@ -131,6 +131,23 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 300);
         }, 20000);
     }
+
+    function showLoadingMessage() {
+        const loadingMessage = document.createElement('div');
+        loadingMessage.className = 'loading-message';
+        loadingMessage.innerHTML = 'Generant PDF, si us plau espera...<br><span id="loading-percentage">0%</span>';
+        notificationContainer.appendChild(loadingMessage);
+        return loadingMessage;
+    }
+
+    function updateLoadingMessage(loadingMessage, percentage) {
+        const loadingPercentage = loadingMessage.querySelector('#loading-percentage');
+        loadingPercentage.textContent = `${percentage}%`;
+    }
+
+    function hideLoadingMessage(loadingMessage) {
+        loadingMessage.remove();
+    }
     
     function importDeck() {
         const deckText = importDeckInput.value.trim();
@@ -199,6 +216,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const marginY = (pageHeight - totalHeight) / 2;
         let imageCount = 0;
 
+        const totalImages = deck.reduce((acc, card) => acc + card.copies, 0);
+        let processedImages = 0;
+
+        // Mostrar mensaje de carga
+        const loadingMessage = showLoadingMessage();
+
         for (let card of deck) {
             for (let i = 0; i < card.copies; i++) {
                 if (imageCount === imagesPerPage) {
@@ -219,8 +242,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 imageCount++;
+                processedImages++;
+                const percentage = Math.floor((processedImages / totalImages) * 100);
+                updateLoadingMessage(loadingMessage, percentage);
             }
         }
+
+        // Ocultar mensaje de carga
+        hideLoadingMessage(loadingMessage);
 
         doc.save("deck-list.pdf");
     });
