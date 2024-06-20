@@ -1,9 +1,13 @@
+import { cardsData, fetchCardsData } from './api.js';
+
 document.addEventListener("DOMContentLoaded", function () {
     const saveDeckButton = document.getElementById("save-deck-button");
     const clearDeckButton = document.getElementById("clear-deck-button");
     const exportDeckButton = document.getElementById("export-deck-button");
+    const importDeckButton = document.getElementById("import-deck-button");
     const deckListElement = document.getElementById("deck-list");
     const deckTitle = document.getElementById("deck-title");
+    const importDeckInput = document.getElementById("import-deck-input");
     let deck = [];
 
     function loadDeck() {
@@ -98,6 +102,41 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    function importDeck() {
+        const deckText = importDeckInput.value.trim();
+        if (deckText) {
+            const lines = deckText.split('\n');
+            deck = [];
+            lines.forEach(line => {
+                const parts = line.split(' ');
+                const copies = parseInt(parts.shift(), 10);
+                const name = parts.join(' ');
+                const existingCard = deck.find(card => card.Name === name);
+                if (existingCard) {
+                    existingCard.copies += copies;
+                    if (existingCard.copies > 4) {
+                        existingCard.copies = 4;
+                    }
+                } else {
+                    // Aquí deberías agregar la lógica para obtener la URL de la imagen de la carta
+                    // Por ejemplo, podrías tener un objeto cardsData que contenga todas las cartas
+                    // y sus URLs de imágenes, algo como:
+                    const cardData = cardsData.find(card => card.Name === name);
+                    if (cardData) {
+                        deck.push({
+                            Name: name,
+                            Image: cardData.Image,
+                            copies: Math.min(copies, 4)
+                        });
+                    } else {
+                        console.error("No s'ha trobat la carta: ", name);
+                    }
+                }
+            });
+            renderDeck();
+        }
+    }
+
     document.getElementById("file-list").addEventListener("click", function (e) {
         if (e.target.tagName === "LI" || e.target.tagName === "IMG") {
             const cardElement = e.target.tagName === "LI" ? e.target : e.target.parentElement;
@@ -131,6 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
     saveDeckButton.addEventListener("click", saveDeck);
     clearDeckButton.addEventListener("click", clearDeck);
     exportDeckButton.addEventListener("click", exportDeck);
+    importDeckButton.addEventListener("click", importDeck);
 
     loadDeck();
 });
