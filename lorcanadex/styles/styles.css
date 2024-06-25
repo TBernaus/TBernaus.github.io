@@ -32,6 +32,10 @@ button, select {
   cursor: pointer;
   border-radius: 15px;
   border: 1px black solid;
+  min-width: 150px; 
+  text-align: center;
+  display: inline-block; 
+  white-space: nowrap; 
 }
 
 button.actiu, select.actiu {
