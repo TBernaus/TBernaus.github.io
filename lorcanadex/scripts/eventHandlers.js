@@ -112,10 +112,10 @@ export function setupEventHandlers() {
     filterAndDisplayCards();
   });
 
-  clearSearchButton.addEventListener("click", function () {
-    clearSearchFields();
-    filterAndDisplayCards();
-  });
+  // clearSearchButton.addEventListener("click", function () {
+  //   clearSearchFields();
+  //   filterAndDisplayCards();
+  // });
 
   inputElements.forEach((element) => {
     element.addEventListener("input", validateRange);
