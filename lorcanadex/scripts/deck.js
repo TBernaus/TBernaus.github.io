@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const deckTitle = document.getElementById("deck-title");
     const importDeckInput = document.getElementById("import-deck-input");
     const notificationContainer = document.getElementById('notification-container');
+    const includeGuidesCheckbox = document.getElementById("include-guides-checkbox");
     let deck = [];
 
     function loadDeck() {
@@ -219,11 +220,34 @@ document.addEventListener("DOMContentLoaded", function () {
         const totalImages = deck.reduce((acc, card) => acc + card.copies, 0);
         let processedImages = 0;
 
+        const includeGuides = includeGuidesCheckbox.checked;
+        console.log("includeGuides:", includeGuides);
+
+        // Mostrar mensaje de carga
         const loadingMessage = showLoadingMessage();
+
+        function drawCutLines(doc) {
+            doc.setDrawColor(128, 128, 128); // Gris neutro
+            // Líneas verticales
+            for (let i = 0; i <= imagesPerRow; i++) {
+                const x = marginX + i * cardWidth;
+                doc.line(x, 0, x, pageHeight);
+                console.log(`Drew vertical line at x: ${x}`);
+            }
+            // Líneas horizontales
+            for (let j = 0; j <= imagesPerColumn; j++) {
+                const y = marginY + j * cardHeight;
+                doc.line(0, y, pageWidth, y);
+                console.log(`Drew horizontal line at y: ${y}`);
+            }
+        }
 
         for (let card of deck) {
             for (let i = 0; i < card.copies; i++) {
                 if (imageCount === imagesPerPage) {
+                    if (includeGuides) {
+                        drawCutLines(doc);
+                    }
                     doc.addPage();
                     imageCount = 0;
                 }
@@ -247,6 +271,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
+        if (includeGuides) {
+            drawCutLines(doc);
+        }
+
+        // Ocultar mensaje de carga
         hideLoadingMessage(loadingMessage);
 
         doc.save("deck-list.pdf");
