@@ -7,7 +7,6 @@ const colorFilters = document.querySelectorAll(".color-filter");
 const typeFilters = document.querySelectorAll(".type-filter");
 const setNameFilters = document.querySelectorAll(".set-name");
 const inkableSelect = document.getElementById("inkable-select");
-let isOrderReversed = false;
 
 export function filterAndDisplayCards() {
   let filteredCards = cardsData;

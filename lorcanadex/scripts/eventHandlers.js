@@ -1,6 +1,8 @@
 import { filterAndDisplayCards, resetFilters, validateRange } from "./filters.js";
-import { cardsData } from "./api.js";
 import { getCardsDisplayed, setCardsDisplayed } from "./display.js";
+import { cardsData } from "./api.js";
+
+let isOrderReversed = false;
 
 export function setupEventHandlers() {
   const sortSelect = document.getElementById("sort-select");
