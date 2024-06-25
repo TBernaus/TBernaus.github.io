@@ -82,18 +82,18 @@
                 <br>
                 <div class="ink-content">
                     <div class="cost-left">
-                        <label for="range">Min</label>
+                        <label for="range-min">Min</label>
                         <p id="min-value">1</p>
                     </div>
                     <div>
-                        <label for="range">Max</label>
+                        <label for="range-max">Max</label>
                         <p id="max-value">10</p>
                     </div>
                 </div>
                 <div class="range-slider">
                     <div class="range-fill"></div>
-                    <input type="range" class="min-ink" value="1" min="1" max="10" step="1" />
-                    <input type="range" class="max-ink" value="10" min="1" max="10" step="1" />
+                    <input type="range" id="range-min" class="min-ink" value="1" min="1" max="10" step="1" />
+                    <input type="range" id="range-max" class="max-ink" value="10" min="1" max="10" step="1" />
                 </div>
             </div><br>
             <button class="show-search-btn">
@@ -102,11 +102,13 @@
             <div id="searchers">
                 <input type="text" id="search-input" placeholder="Buscar per nom...">
                 <input type="text" id="search-input-att" placeholder="Buscar per atributs...">
+                <input type="text" id="search-input-eff" placeholder="Buscar per efectes...">
                 <input type="text" id="search-input-global" placeholder="Buscar per qualsevol cosa">
-                <br>
-                <button class="clear-search">Esborra búsquedes</button>
+                <!-- <br>
+                <button class="clear-search">Esborra búsquedes</button> -->
             </div>
-            <br><br>
+            <!-- <br> -->
+            <br />
             <div id="inkable">
                 <label for="inkable-select">Tintejable?</label>
                 <select id="inkable-select">
@@ -147,7 +149,6 @@
 
     <button id="load-more-button">Carrega més cartes</button>
     <button id="load-all-button">Carrega totes les cartes</button>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
     <!-- <script type="module" src="scripts/proxys.js"></script> -->

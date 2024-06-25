@@ -17,15 +17,11 @@
     <div class="show-filters">
         <!-- <a href="proxys.html">proxys</a> -->
         <a href="deck.html">decks</a>
-        <!-- <button id="deck-creator-button">
-            Crea el teu deck
-        </button> -->
         <button class="filtresBtn">
             Amaga els filtres
         </button>
     </div>
 
-    <!-- <h1>LorcanaDex</h1> -->
     <div id="filtres-global">
 
         <!-- Filtre per endreçar -->
@@ -89,7 +85,6 @@
                 Mostra els filtres per set
             </button><br>
             <div id="set-name-filter">
-                <!-- <label for="type-filter-label">Filtra per tipus</label><br> -->
                 <button class="set-name" set_name="The First Chapter">The First Charapter</button>
                 <button class="set-name" set_name="Rise of the Floodborn">Rise of the Floodborn</button><br>
                 <button class="set-name" set_name="Into the Inklands">Into the Inklands</button>
@@ -108,20 +103,20 @@
                 <br>
                 <div class="ink-content">
                     <div class="cost-left">
-                        <label for="range">Min</label>
+                        <label for="range-min">Min</label>
                         <p id="min-value">1</p>
                     </div>
 
                     <div>
-                        <label for="range">Max</label>
+                        <label for="range-max">Max</label>
                         <p id="max-value">10</p>
                     </div>
                 </div>
 
                 <div class="range-slider">
                     <div class="range-fill"></div>
-                    <input type="range" class="min-ink" value="1" min="1" max="10" step="1" />
-                    <input type="range" class="max-ink" value="10" min="1" max="10" step="1" />
+                    <input type="range" id="range-min" class="min-ink" value="1" min="1" max="10" step="1" />
+                    <input type="range" id="range-max" class="max-ink" value="10" min="1" max="10" step="1" />
                 </div>
             </div><br>
 
@@ -132,19 +127,16 @@
             <div id="searchers">
 
                 <input type="text" id="search-input" placeholder="Buscar per nom...">
-
-                <!-- Camp de búsqueda per Boyd_Text, Abilities i Classifications-->
                 <input type="text" id="search-input-att" placeholder="Buscar per atributs...">
-
-                <!-- Camp de búsqueda per Boyd_Text, Abilities i Classifications-->
+                <input type="text" id="search-input-eff" placeholder="Buscar per efectes...">
                 <input type="text" id="search-input-global" placeholder="Buscar per qualsevol cosa">
 
                 <!-- esborrar búsquedas -->
-                <br>
-                <button class="clear-search">Esborra búsquedes</button>
+                <!-- <br> -->
+                <!-- <button class="clear-search">Esborra búsquedes</button> -->
             </div>
-            <br><br>
-
+            <!-- <br> -->
+            <br />
             <!-- Dropdown per a filtres inkable -->
             <div id="inkable">
                 <label for="inkable-select">Tintejable?</label>

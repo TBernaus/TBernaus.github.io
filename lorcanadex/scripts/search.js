@@ -1,10 +1,13 @@
 const searchInput = document.getElementById("search-input");
 const searchInputAtt = document.getElementById("search-input-att");
+const searchInputEff = document.getElementById("search-input-eff");
 const searchInputGlobal = document.getElementById("search-input-global");
+
 
 export function applySearchFilters(cards) {
   cards = searchByName(cards);
   cards = searchByAttributes(cards);
+  cards = searchByEffect(cards);
   cards = searchByGlobal(cards);
   return cards;
 }
@@ -25,6 +28,17 @@ function searchByAttributes(cards) {
       const bodyText = card.Body_Text ? card.Body_Text.toLowerCase() : "";
       const classifications = card.Classifications ? card.Classifications.toLowerCase() : "";
       return abilities.includes(searchTermAtt) || bodyText.includes(searchTermAtt) || classifications.includes(searchTermAtt);
+    });
+  }
+  return cards;
+}
+
+function searchByEffect(cards) {
+  const searchTermEff = searchInputEff.value.toLowerCase();
+  if (searchTermEff) {
+    return cards.filter((card) => {
+      const bodyText = card.Body_Text ? card.Body_Text.toLowerCase() : "";
+      return  bodyText.includes(searchTermEff);
     });
   }
   return cards;

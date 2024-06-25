@@ -11,6 +11,7 @@ export function setupEventHandlers() {
   const setNameFilters = document.querySelectorAll(".set-name");
   const searchInput = document.getElementById("search-input");
   const searchInputAtt = document.getElementById("search-input-att");
+  const searchInputEff = document.getElementById("search-input-eff");
   const searchInputGlobal = document.getElementById("search-input-global");
   const inkableSelect = document.getElementById("inkable-select");
   const invertOrderButton = document.getElementById("invert-order-button");
@@ -69,6 +70,7 @@ export function setupEventHandlers() {
 
   searchInput.addEventListener("input", filterAndDisplayCards);
   searchInputAtt.addEventListener("input", filterAndDisplayCards);
+  searchInputEff.addEventListener("input", filterAndDisplayCards);
   searchInputGlobal.addEventListener("input", filterAndDisplayCards);
 
   inkableSelect.addEventListener("change", filterAndDisplayCards);
@@ -148,6 +150,7 @@ export function setupEventHandlers() {
   function clearSearchFields() {
     searchInput.value = "";
     searchInputAtt.value = "";
+    searchInputEff.value = "";
     searchInputGlobal.value = "";
   }
 }
