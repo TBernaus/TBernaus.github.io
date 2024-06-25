@@ -107,4 +107,5 @@ export async function generateDeckPdf(deck, notificationContainer) {
     hideLoadingMessage(loadingMessage);
 
     doc.save("deck-list.pdf");
+    
 }
