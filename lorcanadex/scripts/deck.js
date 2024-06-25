@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 resolve(dataURL);
             };
             img.onerror = reject;
-            img.src = 'https://cors-anywhere.herokuapp.com/' + url;
+            img.src = url;
         });
     }
 
@@ -219,7 +219,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const totalImages = deck.reduce((acc, card) => acc + card.copies, 0);
         let processedImages = 0;
 
-        // Mostrar mensaje de carga
         const loadingMessage = showLoadingMessage();
 
         for (let card of deck) {
@@ -248,7 +247,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        // Ocultar mensaje de carga
         hideLoadingMessage(loadingMessage);
 
         doc.save("deck-list.pdf");

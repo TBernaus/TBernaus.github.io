@@ -71,10 +71,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    async function convertImageToBase64(url) {
+    async function convertImageToBase64(imagePath) {
         return new Promise((resolve, reject) => {
             const img = new Image();
-            img.crossOrigin = 'Anonymous';
             img.onload = function () {
                 const canvas = document.createElement('canvas');
                 canvas.width = this.width;
@@ -85,9 +84,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 resolve(dataURL);
             };
             img.onerror = reject;
-            img.src = 'https://cors-anywhere.herokuapp.com/' + url;
+            img.src = imagePath;
         });
     }
+    
 
     generatePdfButton.addEventListener("click", async function () {
         const { jsPDF } = window.jspdf;
