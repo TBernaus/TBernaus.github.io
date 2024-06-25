@@ -109,7 +109,7 @@ export async function generateDeckPdf(deck, notificationContainer) {
     // doc.save("deck-list.pdf");
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
         {
-             var blob = pdf.output();
+             let blob = doc.output();
              window.open(URL.createObjectURL(blob));
         }
         else
