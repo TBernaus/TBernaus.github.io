@@ -136,7 +136,7 @@
         <textarea id="import-deck-input" placeholder="Enganxa el text del deck aquí..."></textarea>
         <button id="import-deck-button">Importa el Deck</button>
     </div>
-        
+
     <div id="placeholder">
         <br>
         S'estan carregant les cartes, un moment siusplau...
@@ -164,7 +164,7 @@
 
 
     <div id="footer">
-        © created by Tomàs Bernaus Solé and David López Casafont - 2024 -
+        © created by Tomàs Bernaus Solé and David López Casafont - 2024
     </div>
     <div id="notification-container" class="notification-container"></div>
     <script>
@@ -174,7 +174,18 @@
             meta.content = 'interest-cohort=(), attribution-reporting=(), run-ad-auction=(), private-state-token-redemption=(), private-state-token-issuance=(), join-ad-interest-group=(), compute-pressure=(), browsing-topics=()';
             document.getElementsByTagName('head')[0].appendChild(meta);
         });
-        </script>
-        
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch(function (error) {
+                console.log('Service Worker registration failed:', error);
+            });
+        }
+    </script>
+
+
 </body>
+
 </html>
