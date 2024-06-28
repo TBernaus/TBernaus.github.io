@@ -1,17 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Calendario</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://apis.google.com/js/api.js"></script>
-    </head>
 
-    <body>
-        <div class="container">
-            <iframe src="https://calendar.google.com/calendar/embed?src=tomasviatges%40gmail.com&ctz=Europe%2FMadrid"
-                frameborder="0" scrolling="no"></iframe>
-        </div>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendari</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const iframe = document.querySelector('iframe');
+            let currentMonth = new Date().getMonth();
+            let currentYear = new Date().getFullYear();
+
+            function updateCalendar() {
+                iframe.src = `https://calendar.google.com/calendar/embed?src=tomasviatges%40gmail.com&ctz=Europe%2FMadrid&wkst=2&showTitle=0&showPrint=0&showTabs=1&showCalendars=0&showTz=0&dates=${currentYear}${(currentMonth + 1).toString().padStart(2, '0')}01/${currentYear}${(currentMonth + 1).toString().padStart(2, '0')}28`;
+            }
+
+            document.addEventListener('wheel', function (event) {
+                if (event.deltaY < 0) {
+                    // Scroll up
+                    console.log('enrere');
+                    currentMonth--;
+                    if (currentMonth < 0) {
+                        currentMonth = 11;
+                        currentYear--;
+                    }
+                } else {
+                    // Scroll down
+                    console.log('endavant');
+                    currentMonth++;
+                    if (currentMonth > 11) {
+                        currentMonth = 0;
+                        currentYear++;
+                    }
+                }
+                updateCalendar();
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'ArrowLeft') {
+                    console.log('enrere');
+                    currentMonth--;
+                    if (currentMonth < 0) {
+                        currentMonth = 11;
+                        currentYear--;
+                    }
+                } else if (event.key === 'ArrowRight') {
+                    console.log('endavant');
+                    currentMonth++;
+                    if (currentMonth > 11) {
+                        currentMonth = 0;
+                        currentYear++;
+                    }
+                }
+                updateCalendar();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <iframe src="https://calendar.google.com/calendar/embed?src=tomasviatges%40gmail.com&ctz=Europe%2FMadrid&wkst=2&showTitle=0&showPrint=0&showTabs=1&showCalendars=0&showTz=0"
+            frameborder="0" scrolling="no"></iframe>
+    </div>
+</body>
+
 </html>
