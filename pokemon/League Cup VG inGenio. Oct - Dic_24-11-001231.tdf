@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tournament type="3" stage="4" version="1.74" gametype="VIDEO_GAME" mode="VGCPREMIER">
+	<data>
+		<name>League Cup VG inGenio. Oct - Dic</name>
+		<id>24-11-001231</id>
+		<city>Barcelona</city>
+		<state></state>
+		<country>Spain</country>
+		<roundtime>50</roundtime>
+		<finalsroundtime>50</finalsroundtime>
+		<organizer popid="1087837" name="Cristopher Delgado"/>
+		<startdate>11/23/2024</startdate>
+		<lessswiss>false</lessswiss>
+		<autotablenumber>true</autotablenumber>
+		<overflowtablestart>40</overflowtablestart>
+	</data>
+	<timeelapsed>114</timeelapsed>
+	<players>
+		<player userid="4585854">
+			<firstname>Adrián</firstname>
+			<lastname>Albero Tomás</lastname>
+			<birthdate>02/27/2003</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:55:05</creationdate>
+			<lastmodifieddate>11/21/2024 20:55:05</lastmodifieddate>
+		</player>
+		<player userid="4258109">
+			<firstname>Carlos</firstname>
+			<lastname>de Miranda</lastname>
+			<birthdate>02/27/2004</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:14:25</creationdate>
+			<lastmodifieddate>11/21/2024 21:14:25</lastmodifieddate>
+		</player>
+		<player userid="4429748">
+			<firstname>Joan</firstname>
+			<lastname>Pons Manchado</lastname>
+			<birthdate>02/27/1997</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:58:49</creationdate>
+			<lastmodifieddate>11/21/2024 20:58:49</lastmodifieddate>
+		</player>
+		<player userid="5029454">
+			<firstname>Adrià</firstname>
+			<lastname>Lozano Navarro</lastname>
+			<birthdate>02/27/1998</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:17:03</creationdate>
+			<lastmodifieddate>11/21/2024 21:17:03</lastmodifieddate>
+		</player>
+		<player userid="4232325">
+			<firstname>Víctor</firstname>
+			<lastname>Jiménez Coll</lastname>
+			<birthdate>02/27/1995</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:01:22</creationdate>
+			<lastmodifieddate>11/21/2024 21:01:22</lastmodifieddate>
+		</player>
+		<player userid="4232108">
+			<firstname>Alejandro</firstname>
+			<lastname>Trastoy</lastname>
+			<birthdate>02/27/1995</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:04:50</creationdate>
+			<lastmodifieddate>11/21/2024 21:04:50</lastmodifieddate>
+		</player>
+		<player userid="1411862">
+			<firstname>Lluis</firstname>
+			<lastname>Orellana</lastname>
+			<birthdate>02/27/1997</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:07:28</creationdate>
+			<lastmodifieddate>11/21/2024 21:07:28</lastmodifieddate>
+		</player>
+		<player userid="3205870">
+			<firstname>Joan</firstname>
+			<lastname>García</lastname>
+			<birthdate>02/27/2004</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:06:24</creationdate>
+			<lastmodifieddate>11/21/2024 21:06:24</lastmodifieddate>
+		</player>
+		<player userid="5068013">
+			<firstname>Sergi</firstname>
+			<lastname>Parés Flor</lastname>
+			<birthdate>02/27/1997</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:18:38</creationdate>
+			<lastmodifieddate>11/21/2024 21:18:38</lastmodifieddate>
+		</player>
+		<player userid="4316283">
+			<firstname>Khaled</firstname>
+			<lastname>Abusaada</lastname>
+			<birthdate>02/27/1999</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:49:59</creationdate>
+			<lastmodifieddate>11/21/2024 20:49:59</lastmodifieddate>
+		</player>
+		<player userid="1275002">
+			<firstname>Luis Miguel</firstname>
+			<lastname>Sotelo Gamboa</lastname>
+			<birthdate>02/27/1990</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:14:59</creationdate>
+			<lastmodifieddate>11/21/2024 21:14:59</lastmodifieddate>
+		</player>
+		<player userid="4779580">
+			<firstname>Juan</firstname>
+			<lastname>López Morgado</lastname>
+			<birthdate>02/27/2002</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:54:11</creationdate>
+			<lastmodifieddate>11/21/2024 20:54:11</lastmodifieddate>
+		</player>
+		<player userid="2582994">
+			<firstname>Álex</firstname>
+			<lastname>Moreno Robles</lastname>
+			<birthdate>02/27/1997</birthdate>
+			<starter>true</starter>
+			<creationdate>07/13/2024 02:35:27</creationdate>
+			<lastmodifieddate>07/13/2024 12:21:19</lastmodifieddate>
+		</player>
+		<player userid="4455988">
+			<firstname>Eric</firstname>
+			<lastname>Alegre</lastname>
+			<birthdate>02/27/2016</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:09:01</creationdate>
+			<lastmodifieddate>11/21/2024 21:09:01</lastmodifieddate>
+		</player>
+		<player userid="2280533">
+			<firstname>Héctor</firstname>
+			<lastname>Menéndez Marcos</lastname>
+			<birthdate>02/27/1995</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:13:45</creationdate>
+			<lastmodifieddate>11/21/2024 21:13:45</lastmodifieddate>
+		</player>
+		<player userid="4325833">
+			<firstname>Sergio</firstname>
+			<lastname>Pérez Widera</lastname>
+			<birthdate>02/27/1998</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:05:09</creationdate>
+			<lastmodifieddate>11/21/2024 21:05:09</lastmodifieddate>
+		</player>
+		<player userid="1422635">
+			<firstname>Álex</firstname>
+			<lastname>Soto</lastname>
+			<birthdate>02/27/1997</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:17:33</creationdate>
+			<lastmodifieddate>11/21/2024 21:17:33</lastmodifieddate>
+		</player>
+		<player userid="3662242">
+			<firstname>Jan</firstname>
+			<lastname>Altisent Brescó</lastname>
+			<birthdate>02/27/2005</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:54:36</creationdate>
+			<lastmodifieddate>11/21/2024 20:54:36</lastmodifieddate>
+		</player>
+		<player userid="1365029">
+			<firstname>Arturo</firstname>
+			<lastname>Jiménez</lastname>
+			<birthdate>02/27/1994</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:49:22</creationdate>
+			<lastmodifieddate>11/21/2024 20:49:22</lastmodifieddate>
+		</player>
+		<player userid="2491127">
+			<firstname>Sigfrido</firstname>
+			<lastname>Nuez</lastname>
+			<birthdate>02/27/1986</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:15:14</creationdate>
+			<lastmodifieddate>11/21/2024 21:15:14</lastmodifieddate>
+		</player>
+		<player userid="3834076">
+			<firstname>Francesc Xavier</firstname>
+			<lastname>Majós Palau</lastname>
+			<birthdate>02/27/1995</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:04:22</creationdate>
+			<lastmodifieddate>11/21/2024 21:04:22</lastmodifieddate>
+		</player>
+		<player userid="1420100">
+			<firstname>Xavier</firstname>
+			<lastname>Romo Puig</lastname>
+			<birthdate>02/27/1985</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:12:22</creationdate>
+			<lastmodifieddate>11/21/2024 21:12:22</lastmodifieddate>
+		</player>
+		<player userid="4676252">
+			<firstname>Lidia</firstname>
+			<lastname>Gómez</lastname>
+			<birthdate>02/27/2000</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:16:02</creationdate>
+			<lastmodifieddate>11/21/2024 21:16:02</lastmodifieddate>
+		</player>
+		<player userid="3880074">
+			<firstname>Miquel</firstname>
+			<lastname>Nicolau Gómez</lastname>
+			<birthdate>02/27/1997</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:16:24</creationdate>
+			<lastmodifieddate>11/21/2024 21:16:24</lastmodifieddate>
+		</player>
+		<player userid="1480154">
+			<firstname>Iván</firstname>
+			<lastname>Aguilar Vázquez</lastname>
+			<birthdate>02/27/2003</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:50:53</creationdate>
+			<lastmodifieddate>11/21/2024 20:50:53</lastmodifieddate>
+		</player>
+		<player userid="1395356">
+			<firstname>Julian</firstname>
+			<lastname>Piñeiro Fernández</lastname>
+			<birthdate>02/27/1995</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:48:50</creationdate>
+			<lastmodifieddate>11/21/2024 20:48:50</lastmodifieddate>
+		</player>
+		<player userid="3700793">
+			<firstname>Íker</firstname>
+			<lastname>De Dios Soto</lastname>
+			<birthdate>02/27/2002</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:05:36</creationdate>
+			<lastmodifieddate>11/21/2024 21:05:36</lastmodifieddate>
+		</player>
+		<player userid="5039545">
+			<firstname>Víctor Hugo</firstname>
+			<lastname>Gómez Tejada</lastname>
+			<birthdate>02/27/1992</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:06:00</creationdate>
+			<lastmodifieddate>11/21/2024 21:06:00</lastmodifieddate>
+		</player>
+		<player userid="1102605">
+			<firstname>Adrià</firstname>
+			<lastname>Ortiz Martínez</lastname>
+			<birthdate>02/27/1998</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:06:42</creationdate>
+			<lastmodifieddate>11/21/2024 21:06:42</lastmodifieddate>
+		</player>
+		<player userid="4324236">
+			<firstname>Marc</firstname>
+			<lastname>Morales Romero</lastname>
+			<birthdate>02/27/1995</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:09:52</creationdate>
+			<lastmodifieddate>11/21/2024 21:09:52</lastmodifieddate>
+		</player>
+		<player userid="3323338">
+			<firstname>Víctor</firstname>
+			<lastname>Boza Martín</lastname>
+			<birthdate>02/27/1992</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:12:06</creationdate>
+			<lastmodifieddate>11/21/2024 21:12:06</lastmodifieddate>
+		</player>
+		<player userid="1109136">
+			<firstname>Eric</firstname>
+			<lastname>Rios</lastname>
+			<birthdate>02/27/1999</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:18:14</creationdate>
+			<lastmodifieddate>11/21/2024 21:18:14</lastmodifieddate>
+		</player>
+		<player userid="4584083">
+			<firstname>David</firstname>
+			<lastname>Pérez</lastname>
+			<birthdate>02/27/1991</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:14:42</creationdate>
+			<lastmodifieddate>11/21/2024 21:14:42</lastmodifieddate>
+		</player>
+		<player userid="4252065">
+			<firstname>Alejandro</firstname>
+			<lastname>Sánchez Miñarro</lastname>
+			<birthdate>02/27/1997</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:56:08</creationdate>
+			<lastmodifieddate>11/21/2024 20:56:08</lastmodifieddate>
+		</player>
+		<player userid="3949959">
+			<firstname>Kai</firstname>
+			<lastname>Sánchez i Pastor</lastname>
+			<birthdate>02/27/2008</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:56:35</creationdate>
+			<lastmodifieddate>11/21/2024 20:56:35</lastmodifieddate>
+		</player>
+		<player userid="4425899">
+			<firstname>Daniel</firstname>
+			<lastname>Torres Rosado</lastname>
+			<birthdate>02/27/2009</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:14:05</creationdate>
+			<lastmodifieddate>11/21/2024 21:14:05</lastmodifieddate>
+		</player>
+		<player userid="5037537">
+			<firstname>Álex</firstname>
+			<lastname>Peralta Navarro</lastname>
+			<birthdate>02/27/1993</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:15:37</creationdate>
+			<lastmodifieddate>11/21/2024 21:15:37</lastmodifieddate>
+		</player>
+		<player userid="2743200">
+			<firstname>Forhad</firstname>
+			<lastname>Chodhoury</lastname>
+			<birthdate>02/27/1997</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:50:27</creationdate>
+			<lastmodifieddate>11/21/2024 20:50:27</lastmodifieddate>
+		</player>
+		<player userid="3336460">
+			<firstname>Pedro</firstname>
+			<lastname>Velázquez Godoy</lastname>
+			<birthdate>02/27/1993</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:10:13</creationdate>
+			<lastmodifieddate>11/21/2024 21:10:13</lastmodifieddate>
+		</player>
+		<player userid="4713372">
+			<firstname>Luis</firstname>
+			<lastname>Becerril Lajourdie</lastname>
+			<birthdate>02/27/2002</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:00:31</creationdate>
+			<lastmodifieddate>11/21/2024 21:00:31</lastmodifieddate>
+		</player>
+		<player userid="3357147">
+			<firstname>Leo</firstname>
+			<lastname>Fontville</lastname>
+			<birthdate>02/27/2011</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:10:31</creationdate>
+			<lastmodifieddate>11/21/2024 21:10:31</lastmodifieddate>
+		</player>
+		<player userid="3942195">
+			<firstname>Emilio</firstname>
+			<lastname>Domínguez de la Haba</lastname>
+			<birthdate>02/27/1998</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:57:18</creationdate>
+			<lastmodifieddate>11/21/2024 20:57:18</lastmodifieddate>
+		</player>
+		<player userid="4363309">
+			<firstname>David</firstname>
+			<lastname>Nicodemus</lastname>
+			<birthdate>02/27/1999</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:02:10</creationdate>
+			<lastmodifieddate>11/21/2024 21:02:10</lastmodifieddate>
+		</player>
+		<player userid="4189477">
+			<firstname>Juan Carlos</firstname>
+			<lastname>Heras Posadas</lastname>
+			<birthdate>02/27/2000</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:55:40</creationdate>
+			<lastmodifieddate>11/21/2024 20:55:40</lastmodifieddate>
+		</player>
+		<player userid="3342814">
+			<firstname>Iago</firstname>
+			<lastname>Pardo</lastname>
+			<birthdate>02/27/1997</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:55:21</creationdate>
+			<lastmodifieddate>11/21/2024 20:55:21</lastmodifieddate>
+		</player>
+		<player userid="4827537">
+			<firstname>Pol</firstname>
+			<lastname>Domínguez González</lastname>
+			<birthdate>02/27/2004</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:01:54</creationdate>
+			<lastmodifieddate>11/21/2024 21:01:54</lastmodifieddate>
+		</player>
+		<player userid="5052834">
+			<firstname>Pau</firstname>
+			<lastname>Nuet Valiente</lastname>
+			<birthdate>02/27/1994</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:17:57</creationdate>
+			<lastmodifieddate>11/21/2024 21:17:57</lastmodifieddate>
+		</player>
+		<player userid="4783276">
+			<firstname>Gabriel</firstname>
+			<lastname>Llansó Florentí</lastname>
+			<birthdate>02/27/1997</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:59:13</creationdate>
+			<lastmodifieddate>11/21/2024 20:59:13</lastmodifieddate>
+		</player>
+		<player userid="3190833">
+			<firstname>Marc</firstname>
+			<lastname>Balboa Corominas</lastname>
+			<birthdate>02/27/1998</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:27:37</creationdate>
+			<lastmodifieddate>11/21/2024 21:27:37</lastmodifieddate>
+		</player>
+		<player userid="4779601">
+			<firstname>Marc</firstname>
+			<lastname>Torralba Brosa</lastname>
+			<birthdate>02/27/1996</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:17:20</creationdate>
+			<lastmodifieddate>11/21/2024 21:17:20</lastmodifieddate>
+		</player>
+		<player userid="2160933">
+			<firstname>Jordi</firstname>
+			<lastname>Crego</lastname>
+			<birthdate>02/27/1995</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:56:54</creationdate>
+			<lastmodifieddate>11/21/2024 20:56:54</lastmodifieddate>
+		</player>
+		<player userid="3321990">
+			<firstname>Adrián</firstname>
+			<lastname>Suñé</lastname>
+			<birthdate>02/27/1994</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:09:34</creationdate>
+			<lastmodifieddate>11/21/2024 21:09:34</lastmodifieddate>
+		</player>
+		<player userid="3357153">
+			<firstname>Louis</firstname>
+			<lastname>Fontville</lastname>
+			<birthdate>02/27/2009</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:11:30</creationdate>
+			<lastmodifieddate>11/21/2024 21:11:30</lastmodifieddate>
+		</player>
+		<player userid="4429896">
+			<firstname>Roman</firstname>
+			<lastname>Antanasiu Alonso</lastname>
+			<birthdate>02/27/2003</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:16:44</creationdate>
+			<lastmodifieddate>11/21/2024 21:16:44</lastmodifieddate>
+		</player>
+		<player userid="4702481">
+			<firstname>David</firstname>
+			<lastname>Amigo Lardies</lastname>
+			<birthdate>02/27/1996</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:59:32</creationdate>
+			<lastmodifieddate>11/21/2024 20:59:32</lastmodifieddate>
+		</player>
+		<player userid="4416807">
+			<firstname>Iván</firstname>
+			<lastname>Pérez Blanco</lastname>
+			<birthdate>02/27/1996</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:59:54</creationdate>
+			<lastmodifieddate>11/21/2024 20:59:54</lastmodifieddate>
+		</player>
+		<player userid="3948199">
+			<firstname>Lluc</firstname>
+			<lastname>Sánchez i Pastor</lastname>
+			<birthdate>02/27/2009</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 20:51:14</creationdate>
+			<lastmodifieddate>11/21/2024 20:51:14</lastmodifieddate>
+		</player>
+		<player userid="4620699">
+			<firstname>Pau</firstname>
+			<lastname>Bragulat Fábregas</lastname>
+			<birthdate>02/27/2005</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:07:09</creationdate>
+			<lastmodifieddate>11/21/2024 21:07:09</lastmodifieddate>
+		</player>
+		<player userid="3683148">
+			<firstname>Sergio</firstname>
+			<lastname>Ramírez García</lastname>
+			<birthdate>02/27/1993</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:00:54</creationdate>
+			<lastmodifieddate>11/21/2024 21:00:54</lastmodifieddate>
+		</player>
+		<player userid="1425254">
+			<firstname>Nil</firstname>
+			<lastname>Caballero Milà</lastname>
+			<birthdate>02/27/2001</birthdate>
+			<starter>true</starter>
+			<creationdate>11/21/2024 21:09:19</creationdate>
+			<lastmodifieddate>11/21/2024 21:09:19</lastmodifieddate>
+		</player>
+	</players>
+	<pods>
+		<pod category="10" stage="0">
+			<poddata>
+				<startingtable>1</startingtable>
+				<playoff3rd4th>false</playoff3rd4th>
+				<subgroupcount>1</subgroupcount>
+			</poddata>
+			<subgroups>
+				<subgroup number="1">
+					<players>
+						<player userid="3321990" />
+						<player userid="3323338" />
+						<player userid="4585854" />
+						<player userid="4455988" />
+						<player userid="2491127" />
+						<player userid="1422635" />
+						<player userid="5052834" />
+						<player userid="4232325" />
+						<player userid="1102605" />
+						<player userid="4325833" />
+						<player userid="3205870" />
+						<player userid="1411862" />
+						<player userid="4827537" />
+						<player userid="4620699" />
+						<player userid="1425254" />
+						<player userid="3662242" />
+						<player userid="4416807" />
+						<player userid="3342814" />
+						<player userid="5068013" />
+						<player userid="2743200" />
+						<player userid="3336460" />
+						<player userid="4425899" />
+						<player userid="3834076" />
+						<player userid="4324236" />
+						<player userid="4363309" />
+						<player userid="3357153" />
+						<player userid="3357147" />
+						<player userid="2160933" />
+						<player userid="3190833" />
+						<player userid="3700793" />
+						<player userid="4252065" />
+						<player userid="3949959" />
+						<player userid="1365029" />
+						<player userid="4232108" />
+						<player userid="4316283" />
+						<player userid="1480154" />
+						<player userid="1109136" />
+						<player userid="4779601" />
+						<player userid="3880074" />
+						<player userid="4702481" />
+						<player userid="4429896" />
+						<player userid="2582994" />
+						<player userid="3948199" />
+						<player userid="4676252" />
+						<player userid="4584083" />
+						<player userid="2280533" />
+						<player userid="4713372" />
+						<player userid="4779580" />
+						<player userid="1275002" />
+						<player userid="5039545" />
+						<player userid="4429748" />
+						<player userid="4783276" />
+						<player userid="1395356" />
+						<player userid="4189477" />
+						<player userid="4258109" />
+						<player userid="3942195" />
+						<player userid="5037537" />
+						<player userid="1420100" />
+						<player userid="5029454" />
+						<player userid="3683148" />
+					</players>
+				</subgroup>
+			</subgroups>
+			<rounds>
+				<round number="1" type="3" stage="2" >
+					<timeleft>3000</timeleft>
+					<matches>
+						<match outcome="0">
+							<player1 userid="4416807"/>
+							<player2 userid="3321990"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>1</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="2160933"/>
+							<player2 userid="4324236"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>2</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="1422635"/>
+							<player2 userid="4676252"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>3</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="2743200"/>
+							<player2 userid="5037537"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>4</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="4363309"/>
+							<player2 userid="3683148"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>5</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="2491127"/>
+							<player2 userid="5052834"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>6</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="4620699"/>
+							<player2 userid="1365029"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>7</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="3880074"/>
+							<player2 userid="1395356"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>8</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="1102605"/>
+							<player2 userid="4429896"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>9</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="4585854"/>
+							<player2 userid="4713372"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>10</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="4584083"/>
+							<player2 userid="4827537"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>11</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="4325833"/>
+							<player2 userid="5029454"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>12</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="3342814"/>
+							<player2 userid="3336460"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>13</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="5068013"/>
+							<player2 userid="2582994"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>14</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="1275002"/>
+							<player2 userid="1420100"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>15</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="3834076"/>
+							<player2 userid="4779580"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>16</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="4189477"/>
+							<player2 userid="4232325"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>17</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="3942195"/>
+							<player2 userid="3662242"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>18</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="4232108"/>
+							<player2 userid="4316283"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>19</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="3205870"/>
+							<player2 userid="3700793"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>20</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="4702481"/>
+							<player2 userid="1480154"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>21</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="4779601"/>
+							<player2 userid="2280533"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>22</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="4258109"/>
+							<player2 userid="3190833"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>23</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="5039545"/>
+							<player2 userid="1411862"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>24</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="3323338"/>
+							<player2 userid="3949959"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>25</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="1109136"/>
+							<player2 userid="4429748"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>26</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="1425254"/>
+							<player2 userid="4783276"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>27</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="4252065"/>
+							<player2 userid="4425899"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>28</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="3948199"/>
+							<player2 userid="3357153"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>29</tablenumber>
+						</match>
+						<match outcome="0">
+							<player1 userid="3357147"/>
+							<player2 userid="4455988"/>
+							<timestamp>11/23/2024 10:17:39</timestamp>
+							<tablenumber>30</tablenumber>
+						</match>
+					</matches>
+				</round>
+			</rounds>
+		</pod>
+	</pods>
+	<finalsoptions>
+		<categorycut key="2">
+			<options>
+				<value>0</value>
+				<value>2</value>
+				<value>4</value>
+				<value>8</value>
+			</options>
+			<cut>8</cut>
+			<playercount>55</playercount>
+			<paired3rd4th>false</paired3rd4th>
+		</categorycut>
+		<categorycut key="1">
+			<options>
+				<value>0</value>
+			</options>
+			<cut>0</cut>
+			<playercount>4</playercount>
+			<paired3rd4th>false</paired3rd4th>
+		</categorycut>
+		<categorycut key="0">
+			<options>
+				<value>0</value>
+			</options>
+			<cut>0</cut>
+			<playercount>1</playercount>
+			<paired3rd4th>false</paired3rd4th>
+		</categorycut>
+	</finalsoptions>
+</tournament>
