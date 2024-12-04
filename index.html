@@ -1,59 +1,537 @@
 <!DOCTYPE html>
-<html lang="cat">
+<html lang="ca">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>TBernaus</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+    <title>Portafolio Personal</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <header>
+        <h1>Tomàs Bernaus Solé</h1>
+        <nav class="language-switcher">
+            <button class="lang-btn" data-lang="ca">CA</button>
+            <button class="lang-btn" data-lang="es">ES</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </nav>
+    </header>
 
-    <script>
-        fetch('./pokemon/index.html')
-            .then(response => {
-                if (!response.ok) {
-                    document.getElementById('pokemonLink').href = './pokemon/backup.html';
-                }
-            });
-    </script>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <!-- <a class="navbar-brand" href="#">Logo</a> -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="./RatTCG/">Rat TCG</a>
-                </li> -->
-                <li class="nav-item">
-                    <a class="nav-link" href="./RFS/">RFS</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="./lorcadex/">LorcaDex</a>
-                </li> -->
-                <li class="nav-item">
-                    <a class="nav-link" href="./lorcanadex/">LorcanaDex</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pokemon/" id="pokemonLink">Pokemon</a>
-                </li>
-                <li class="nav-item dropdown">
-            </ul>
+    <aside>
+        <ul>
+            <li><a href="#personal-info" class="menu-link" data-lang="ca">Informació Personal</a></li>
+            <li><a href="#personal-info" class="menu-link" data-lang="es" style="display:none;">Información Personal</a>
+            </li>
+            <li><a href="#personal-info" class="menu-link" data-lang="en" style="display:none;">Personal Information</a>
+            </li>
+
+            <li><a href="#experience" class="menu-link" data-lang="ca">Experiència Laboral</a></li>
+            <li><a href="#experience" class="menu-link" data-lang="es" style="display:none;">Experiencia Laboral</a>
+            </li>
+            <li><a href="#experience" class="menu-link" data-lang="en" style="display:none;">Work Experience</a></li>
+
+            <li><a href="#education" class="menu-link" data-lang="ca">Estudis</a></li>
+            <li><a href="#education" class="menu-link" data-lang="es" style="display:none;">Estudios</a></li>
+            <li><a href="#education" class="menu-link" data-lang="en" style="display:none;">Education</a></li>
+
+            <li><a href="#projects" class="menu-link" data-lang="ca">Projectes</a></li>
+            <li><a href="#projects" class="menu-link" data-lang="es" style="display:none;">Proyectos</a></li>
+            <li><a href="#projects" class="menu-link" data-lang="en" style="display:none;">Projects</a></li>
+
+            <li><a href="#volunteering" class="menu-link" data-lang="ca">Voluntariats</a></li>
+            <li><a href="#volunteering" class="menu-link" data-lang="es" style="display:none;">Voluntariados</a></li>
+            <li><a href="#volunteering" class="menu-link" data-lang="en" style="display:none;">Volunteering</a></li>
+
+            <li><a href="#extracurricular" class="menu-link" data-lang="ca">Activitats Extracurriculars</a></li>
+            <li><a href="#extracurricular" class="menu-link" data-lang="es" style="display:none;">Actividades
+                    Extracurriculares</a></li>
+            <li><a href="#extracurricular" class="menu-link" data-lang="en" style="display:none;">Extracurricular
+                    Activities</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <div class="content-wrapper">
+            <section class="card" id="personal-info">
+                <img src="https://ik.imagekit.io/tbernaus/pfptbernausgithub.jpg" alt="Foto de perfil" id="pfp">
+                <h2 data-lang="ca">Informació Personal</h2>
+                <h2 data-lang="es" style="display:none;">Información Personal</h2>
+                <h2 data-lang="en" style="display:none;">Personal Information</h2>
+
+                <p data-lang="ca">
+                    <strong data-lang="ca">
+                        Nom:
+                    </strong>
+                    Tomàs Bernaus Solé
+                </p>
+                <p data-lang="es" style="display:none;">
+                    <strong data-lang="es" style="display:none;">
+                        Nombre:
+                    </strong>
+                    Tomàs Bernaus Solé
+                </p>
+                <p data-lang="en" style="display:none;">
+                    <strong data-lang="en" style="display:none;">
+                        Name:
+                    </strong>
+                    TomàsBernaus Solé
+                </p>
+
+                <p> <strong>Email:</strong> TomasBernausSole@gmail.com</p>
+
+                <p data-lang="ca"><strong data-lang="ca">Sobre mi: </strong> <br>
+                    Sóc un professional apassionat per la informàtica i el sector social.
+                    Amb experiència en programació i en la gestió de projectes, he tingut l'oportunitat de treballar
+                    en ambdós camps. Actualment, lidero i col·laboro amb diversos projectes socials que utilitzen els
+                    jocs de taula i els videojocs com a eines per fomentar la connexió entre les persones i el
+                    desenvolupament de competències socials. Crec fermament en el poder de la tecnologia i
+                    l'entreteniment per generar un impacte positiu en la societat.
+                </p>
+                <p data-lang="es" style="display:none;"><strong data-lang="es" style="display:none;">Sobre mí:
+                    </strong><br>
+                    Soy un profesional apasionado por la informática y el sector social. Con experiencia
+                    en programación y en la gestión de proyectos, he tenido la oportunidad de trabajar en
+                    ambos campos. Actualmente, lidero y colaboro con varios proyectos sociales que utilizan los juegos
+                    de mesa y los videojuegos como herramientas para fomentar la conexión entre las personas y
+                    el desarrollo de competencias sociales. Creo firmemente en el poder de la tecnología y el
+                    entretenimiento para generar un impacto positivo en la sociedad.
+                </p>
+                <p data-lang="en" style="display:none;"><strong data-lang="en" style="display:none;">About me: </strong>
+                    <br>
+                    I am a professional passionate about both IT and the social sector. With experience in programming
+                    and project management, I have had the opportunity to work in both fields. Currently, I lead and
+                    collaborate and several social projects that use board games and video games as tools to foster
+                    connection among people and to develop social skills. I strongly believe in the power of technology
+                    and entertainment to create a positive impact on society.
+                </p>
+
+                <p data-lang="ca"><strong data-lang="ca">Altres dades d'interés:</strong> Carnet de conduir B</p>
+                <p data-lang="es" style="display:none;"><strong data-lang="es" style="display:none;">Otros datos de
+                        interés:</strong>Carnet de conducir B</p>
+                <p data-lang="en" style="display:none;"><strong data-lang="en" style="display:none;">Other Relevant
+                        Information:</strong>Driver's License B</p>
+            </section>
+
+
+            <section class="card" id="experience">
+                <h2 data-lang="ca">Experiència Laboral</h2>
+                <h2 data-lang="es" style="display:none;">Experiencia Laboral</h2>
+                <h2 data-lang="en" style="display:none;">Work Experience</h2>
+
+                <ul data-lang="ca">
+                    <h3>Programador Web</h3>
+                    <strong>2023 - Actualitat | ITDO</strong>
+                    <li>
+                        Creació i optimització de pàgines web. Contacte amb clients finals i dissenyadors.
+                    </li>
+                    <li>
+                        Participació en projectes d'equip i desenvolupament individual.
+                    </li>
+                    <li>
+                        Millora contínua d'interfícies d'usuari i experiències digitals.
+                    </li>
+                    <li>
+                        Drupal, Gatsby, React, Wordpress, Javascript, SQL, PHP.
+                    </li>
+                </ul>
+                <ul data-lang="es" style="display:none;">
+                    <h3>Programador Web</h3>
+                    <strong>2023 - Actualitadad | ITDO</strong>
+                    <li>
+                        Creación y optimización de páginas web. Contacto con clientes finales y diseñadores.
+                    </li>
+                    <li>
+                        Participación en proyectos de equipo y desarrollo individual.
+                    </li>
+                    <li>
+                        Mejora continua de interfaces de usuario y experiencias digitales.
+                    </li>
+                    <li>
+                        Drupal, Gatsby, React, Wordpress, Javascript, SQL, PHP.
+                    </li>
+                </ul>
+                <ul data-lang="en" style="display:none;">
+                    <h3>Web Developer</h3>
+                    <strong>2023 - Present | ITDO</strong>
+                    <li>
+                        Creation and optimization of websites. Communication with end clients and designers.
+                    </li>
+                    <li>
+                        Continuous improvement of user interfaces and digital experiences.
+                    </li>
+                    <li>
+                        Millora contínua d'interfícies d'usuari i experiències digitals.
+                    </li>
+                    <li>
+                        Drupal, Gatsby, React, Wordpress, Javascript, SQL, PHP.
+                    </li>
+                </ul>
+
+                <br>
+
+                <ul data-lang="ca">
+                    <h3>Jutge oficial d'esdeveniments competitius</h3>
+                    <strong>2022 - Actualitat | TPCi, Fanfinity, 2022Tournaments, PECO, VictoryRoad</strong>
+                    <li>
+                        Supervisió i gestió d'esdeveniments de jocs de cartes competitius a nivell global, assegurant el
+                        compliment de les normes oficials.
+                    </li>
+                    <li>
+                        Col·laboració amb equips internacionals en la planificació i execució de tornejos.
+                    </li>
+                    <li>
+                        Desenvolupament d'habilitats interculturals i adaptació a diferents entorns en viatges globals.
+                    </li>
+                </ul>
+                <ul data-lang="es" style="display:none;">
+                    <h3>Juez oficial de eventos competitivos</h3>
+                    <strong>2022 - Actualidad | TPCi, Fanfinity, 2022Tournaments, PECO, VictoryRoad</strong>
+                    <li>
+                        Supervisión y gestión de eventos de juegos de cartas competitivos a nivel global, asegurando el
+                        cumplimiento de las normas oficiales.
+                    </li>
+                    <li>
+                        Colaboración con equipos internacionales en la planificación y ejecución de torneos.
+                    </li>
+                    <li>
+                        Desarrollo de habilidades interculturales y adaptación a diferentes entornos en viajes globales.
+                    </li>
+                </ul>
+                <ul data-lang="en" style="display:none;">
+                    <h3>Official Judge for Competitive Events</h3>
+                    <strong>2022 - Present | TPCi, Fanfinity, 2022Tournaments, PECO, VictoryRoad</strong>
+                    <li>
+                        Supervision and management of competitive trading card game events globally, ensuring compliance
+                        with official rules.
+                    </li>
+                    <li>
+                        Collaboration with international teams in the planning and execution of tournaments.
+                    </li>
+                    <li>
+                        Development of intercultural skills and adaptation to diverse environments during global travel.
+                    </li>
+                </ul>
+
+                <br>
+
+                <ul data-lang="ca">
+                    <h3>Educador infantil i juvenil</h3>
+                    <strong>2014 - 2017 / 2021- 2023 | CEIP Joan Miró / CEIP El carmel</strong>
+                    <li>
+                        Atenció i cura de nens i nenes d'entre 3 i 12 anys en un centre d'alta complexitat.
+                    </li>
+                    <li>
+                        Resolució de conflictes dels infants cap a altres infants i cap a adults, promoció de la
+                        comunicació i la cooperació social.
+                    </li>
+                    <li>
+                        Dinamització de dinàmiques per als infants i les families.
+                    </li>
+                </ul>
+                <ul data-lang="es" style="display:none;">
+                    <h3>Educador infantil y juvenil</h3>
+                    <strong>2014 - 2017 / 2021- 2023 | CEIP Joan Miró / CEIP El carmel</strong>
+                    <li>
+                        Atención y cuidado de niños y niñas de entre 3 y 12 años en un centro de alta complejidad.
+                    </li>
+                    <li>
+                        Resolución de conflictos entre niños y hacia adultos, fomentando la comunicación y la
+                        cooperación social.
+                    </li>
+                    <li>
+                        Dinamización de actividades para niños y familias.
+                    </li>
+                </ul>
+                <ul data-lang="en" style="display:none;">
+                    <h3>Child and Youth Educator</h3>
+                    <strong>2014 - 2017 / 2021- 2023 | CEIP Joan Miró / CEIP El carmel</strong>
+                    <li>
+                        Care and supervision of children aged 3 to 12 in a high-complexity school environment.
+                    </li>
+                    <li>
+                        Conflict resolution among children and with adults, fostering communication and social
+                        cooperation.
+                    </li>
+                    <li>
+                        Organization of activities for children and families.
+                    </li>
+                </ul>
+
+                <br>
+
+                <ul data-lang="ca">
+                    <h3>Tècnic informàtic</h3>
+                    <strong>2017 - 2018 | Fox Live </strong>
+                    <li>
+                        Responsable d'un equip de fins a 8 persones.
+                    </li>
+                    <li>
+                        Gestió de vendes i atenció al públic.
+                    </li>
+                    <li>
+                        Reparació de sistemes i equips informàtics.
+                    </li>
+                    <li>
+                        Coordinació amb proveïdors per garantir el subministrament de productes i serveis.
+                    </li>
+                </ul>
+                <ul data-lang="es" style="display:none;">
+                    <h3>Técnico informático</h3>
+                    <strong>2017 - 2018 | Fox Live</strong>
+                    <li>
+                        Responsable de un equipo de hasta 8 personas.
+                    </li>
+                    <li>
+                        Gestión de ventas y atención al público.
+                    </li>
+                    <li>
+                        Reparación de sistemas y equipos informáticos.
+                    </li>
+                    <li>
+                        Coordinación con proveedores para garantizar el suministro de productos y servicios.
+                    </li>
+                </ul>
+                <ul data-lang="en" style="display:none;">
+                    <h3>IT Technician</h3>
+                    <strong>2017 - 2018 | Fox Live</strong>
+                    <li>
+                        Leader of a team of up to 8 people.
+                    </li>
+                    <li>
+                        Sales management and customer service.
+                    </li>
+                    <li>
+                        Repair of systems and IT equipment.
+                    </li>
+                    <li>
+                        Coordination with suppliers to ensure the provision of products and services.
+                    </li>
+                </ul>
+
+                <br>
+
+                <ul data-lang="ca">
+                    <h3>Atenció al públic</h3>
+                    <strong>2017 | Adecco, Nespreso </strong>
+                    <li>
+                        Atenció i resolució de problemes dels clients.
+                    </li>
+                    <li>
+                        Gestió de vendes i servei postventa.
+                    </li>
+                    <li>
+                        Comunicació clara i eficient amb diferents perfils de clients. Gestió de conflictes.
+                    </li>
+                </ul>
+                <ul data-lang="es" style="display:none;">
+                    <h3>Atención al público</h3>
+                    <strong>2017 | Adecco, Nespresso</strong>
+                    <li>
+                        Atención y resolución de problemas de los clientes.
+                    </li>
+                    <li>
+                        Gestión de ventas y servicio postventa.
+                    </li>
+                    <li>
+                        Comunicación clara y eficiente con diferentes perfiles de clientes. Gestión de conflictos.
+                    </li>
+                </ul>
+                <ul data-lang="en" style="display:none;">
+                    <h3>Customer Service</h3>
+                    <strong>2017 | Adecco, Nespresso</strong>
+                    <li>
+                        Customer support and problem resolution.
+                    </li>
+                    <li>
+                        Sales management and after-sales service.
+                    </li>
+                    <li>
+                        Clear and efficient communication with diverse customer profiles. Conflict management.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="card" id="education">
+                <h2 data-lang="ca">Estudis</h2>
+                <h2 data-lang="es" style="display:none;">Estudios</h2>
+                <h2 data-lang="en" style="display:none;">Education</h2>
+                <ul data-lang="ca">
+                    <h3>Tècnic superior en aplicacions web</h3>
+                    <strong>2024 | Escola del treball </strong>
+                    <li>
+                        Titulació oficial de cicle formatiu grau superior
+                    </li>
+                    <li>
+                        Coneixements en PHP, Node.js, Javascript, Python i Wordpress
+                    </li>
+                </ul>
+                <ul data-lang="es" style="display:none;">
+                    <h3>Tècnic superior en aplicacions web</h3>
+                    <strong>2024 | Escola del treball </strong>
+                    <li>
+                        Titulació oficial de cicle formatiu grau superior
+                    </li>
+                    <li>
+                        Coneixements en PHP, Node.js, Javascript, Python i Wordpress
+                    </li>
+                </ul>
+                <ul data-lang="en" style="display:none;">
+                    <h3>Tècnic superior en aplicacions web</h3>
+                    <strong>2024 | Escola del treball </strong>
+                    <li>
+                        Titulació oficial de cicle formatiu grau superior
+                    </li>
+                    <li>
+                        Coneixements en PHP, Node.js, Javascript, Python i Wordpress
+                    </li>
+                </ul>
+
+                <br>
+
+                <ul data-lang="ca">
+                    <h3>tècnic en sistemes microinformàtics i xarxes</h3>
+                    <strong>2016 | IES Provençana</strong>
+                    <li>
+                        Titulació oficial de cicle formatiu grau mig
+                    </li>
+                    <li>
+                        Coneixements en hardware, sistemes, xarxes i ofimàtica
+                    </li>
+                </ul>
+                <ul data-lang="es" style="display:none;">
+                    <h3>tècnic en sistemes microinformàtics i xarxes</h3>
+                    <strong>2016 | IES Provençana</strong>
+                    <li>
+                        Titulació oficial de cicle formatiu grau mig
+                    </li>
+                    <li>
+                        Coneixements en hardware, sistemes, xarxes i ofimàtica
+                    </li>
+                </ul>
+                <ul data-lang="en" style="display:none;">
+                    <h3>tècnic en sistemes microinformàtics i xarxes</h3>
+                    <strong>2016 | IES Provençana</strong>
+                    <li>
+                        Titulació oficial de cicle formatiu grau mig
+                    </li>
+                    <li>
+                        Coneixements en hardware, sistemes, xarxes i ofimàtica
+                    </li>
+                </ul>
+
+                <br>
+
+                <h2 data-lang="ca">Estudis compementaris</h2>
+                <h2 data-lang="es" style="display:none;">Estudios complementarios</h2>
+                <h2 data-lang="en" style="display:none;">Complementary education</h2>
+
+                <ul data-lang="ca">
+                    <h3>Iniciació a la programació (215h)</h3>
+                    <strong>2019 | Fundació esplai </strong>
+                    <li>
+                        Bootcamp de formació complementaria enfocat a la programació
+                    </li>
+                    <li>
+                        Coneixements en HTML5, CSS3, JavaScript, React i Bootstrap
+                    </li>
+                </ul>
+                <ul data-lang="es" style="display:none;">
+                    <h3>Iniciació a la programació (215h)</h3>
+                    <strong>2019 | Fundació esplai </strong>
+                    <li>
+                        Bootcamp de formació complementaria enfocat a la programació
+                    </li>
+                    <li>
+                        Coneixements en HTML5, CSS3, JavaScript, React i Bootstrap
+                    </li>
+                </ul>
+                <ul data-lang="en" style="display:none;">
+                    <h3>Iniciació a la programació (215h)</h3>
+                    <strong>2019 | Fundació esplai </strong>
+                    <li>
+                        Bootcamp de formació complementaria enfocat a la programació
+                    </li>
+                    <li>
+                        Coneixements en HTML5, CSS3, JavaScript, React i Bootstrap
+                    </li>
+                </ul>
+
+                <br>
+
+                <ul data-lang="ca">
+                    <h3>Programació Full Stack (285h)</h3>
+                    <strong>2020 | Fundació esplai</strong>
+                    <li>
+                        Bootcamp de formació complementaria enfocat a la programació
+                    </li>
+                    <li>
+                        Coneixements en JavaScript, React, Bootstrap i SQL.
+                    </li>
+                </ul>
+                <ul data-lang="es" style="display:none;">
+                    <h3>Programació Full Stack (285h)</h3>
+                    <strong>2020 | Fundació esplai</strong>
+                    <li>
+                        Bootcamp de formació complementaria enfocat a la programació
+                    </li>
+                    <li>
+                        Coneixements en JavaScript, React, Bootstrap i SQL.
+                    </li>
+                </ul>
+                <ul data-lang="en" style="display:none;">
+                    <h3>Programació Full Stack (285h)</h3>
+                    <strong>2020 | Fundació esplai</strong>
+                    <li>
+                        Bootcamp de formació complementaria enfocat a la programació
+                    </li>
+                    <li>
+                        Coneixements en JavaScript, React, Bootstrap i SQL.
+                    </li>
+                </ul>
+            </section>
+
+
+            <section class="card" id="projects">
+                <h2 data-lang="ca">Projectes</h2>
+                <h2 data-lang="es" style="display:none;">Proyectos</h2>
+                <h2 data-lang="en" style="display:none;">Projects</h2>
+                <ul>
+                    <h3><a href="https://lorcano.es/" target="_blank">Lorcano</a></h3>
+                    <li> lorcano nseke</li>
+                    <h3><a href="https://tbernaus.github.io/RFS/" target="_blank">RFS</a></h3>
+                    <li> rfs nseke</li>
+                </ul>
+            </section>
+
+            <section class="card" id="volunteering">
+                <h2 data-lang="ca">Voluntariats</h2>
+                <h2 data-lang="es" style="display:none;">Voluntariados</h2>
+                <h2 data-lang="en" style="display:none;">Volunteering</h2>
+                <ul>
+                    <li>Activitat 1</li>
+                    <li>Activitat 2</li>
+                </ul>
+            </section>
+
+            <section class="card" id="extracurricular">
+                <h2 data-lang="ca">Activitats Extracurriculars</h2>
+                <h2 data-lang="es" style="display:none;">Actividades Extracurriculares</h2>
+                <h2 data-lang="en" style="display:none;">Extracurricular Activities</h2>
+                <ul>
+                    <li>Activitat 1</li>
+                    <li>Activitat 2</li>
+                </ul>
+            </section>
         </div>
-    </nav>
+    </main>
 
+    <footer>
+        <p>&copy; 2025 Tomàs Bernaus Solé. Tots els drets reservats.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
