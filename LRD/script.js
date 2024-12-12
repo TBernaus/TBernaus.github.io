@@ -52,11 +52,11 @@ const getRegionCode = (regionName) => {
     return null; // Si no coincide, devolver null
 };
 
-// Generar un mazo aleatorio basado en las restricciones
-const generateRandomDeck = () => {
-    const deck = [];
-    const cardCounts = {}; // Rastrea el número de copias por carta
-    const championCount = { count: 0 };
+// Función centralizada para generar el mazo y sus copias
+const createRandomDeck = () => {
+    const deck = {};
+    let totalCards = 0;
+    let championCount = 0;
     const selectedRegions = selectRandomRegions();
 
     // Filtrar cartas válidas
@@ -72,54 +72,33 @@ const generateRandomDeck = () => {
 
     if (validCards.length === 0) {
         console.error("No hay cartas válidas para construir un mazo.");
-        return [];
+        return null;
     }
 
-    // Construir mazo hasta tener exactamente 40 cartas
-    while (deck.length < 40) { 
-        const randomCard = validCards[Math.floor(Math.random() * validCards.length)];
-        if (!randomCard) continue;
+    while (totalCards < 40) {
+        const selectedCard = validCards[Math.floor(Math.random() * validCards.length)];
+        const isChampion = selectedCard.rarity.toLowerCase() === "champion";
 
-        const cardCode = randomCard.cardCode;
-        const isChampion = randomCard.rarity.toLowerCase() === "champion";
-        const currentCount = cardCounts[cardCode] || 0;
+        if (!selectedCard) continue;
+        if(isChampion && championCount >= 6) continue;
 
-        // Verificar restricciones
-        if (
-            currentCount < 3 && 
-            (!isChampion || championCount.count < 6)
-        ) {
-            // Solo agregar si no excederá el total de 40 cartas
-            if (deck.length < 40) {
-                deck.push(cardCode);
-                cardCounts[cardCode] = currentCount + 1;
-                if (isChampion) championCount.count++;
+        if (deck[selectedCard.cardCode]) {
+            if (deck[selectedCard.cardCode] < 3) {
+                deck[selectedCard.cardCode]++;
+                totalCards++;
+                if(isChampion) championCount++;
             }
-        }
-
-        // Si el mazo tiene 40 cartas, salimos del bucle
-        if (deck.length === 40) {
-            break;
-        }
-    }
-
-    // Validar que el mazo tenga exactamente 40 cartas
-    if (deck.length !== 40) {
-        console.error("Error: El mazo no tiene exactamente 40 cartas.");
-    }
-
-    // Crear la lista expandida con copias exactas
-    const finalDeck = [];
-    for (const code of Object.keys(cardCounts)) {
-        const count = cardCounts[code];
-        for (let i = 0; i < count; i++) {
-            finalDeck.push(code);
+        } else {
+            deck[selectedCard.cardCode] = 1;
+            totalCards++;
+            if(isChampion) championCount++;
         }
     }
-
-    console.log(finalDeck.length);
-    return finalDeck;
+    
+    return deck;
 };
+
+
 const displayResult = (deck, deckCode, format) => {
     const resultDiv = document.getElementById('result');
     const copyButton = document.getElementById('copy-deckcode');
@@ -136,92 +115,78 @@ const displayResult = (deck, deckCode, format) => {
         console.log('Código del mazo copiado al portapapeles');
     };
 
-    // Mostrar las cartas como imágenes (respetando copias)
     cardListDiv.innerHTML = '';
-    const cardInstances = {};
-    deck.forEach((cardCode) => {
-        if (!cardInstances[cardCode]) cardInstances[cardCode] = 0;
-        cardInstances[cardCode]++;
+     const sortedDeckEntries = Object.entries(deck).sort(([,], [cardCodeA, cardCodeB]) => {
+        const cardA = cardData.find((c) => c.cardCode === cardCodeA);
+          return cardA?.name?.localeCompare(cardData.find((c) => c.cardCode === cardCodeB)?.name);
     });
-
-    Object.entries(cardInstances).forEach(([cardCode, count]) => {
-        const card = cardData.find((c) => c.cardCode === cardCode);
-        if (card) {
-            for (let i = 0; i < count; i++) {
-                const img = document.createElement('img');
-                img.src = card.assets[0].gameAbsolutePath;
-                img.alt = card.name;
-                img.classList.add('card-image');
-                cardListDiv.appendChild(img);
-            }
+    for (const [cardCode, count] of sortedDeckEntries) {
+           const card = cardData.find((c) => c.cardCode === cardCode);
+              if(card){
+                  for(let i=0; i<count; i++){
+                       const img = document.createElement('img');
+                        img.src = card.assets[0].gameAbsolutePath;
+                        img.alt = card.name;
+                        img.classList.add('card-image');
+                         cardListDiv.appendChild(img);
+                  }
         }
-    });
+    }
 };
-
-
 
 
 // Generar el código de mazo
 const generateDeckCode = (deck) => {
-    const cardCounts = {};
+    const byteArray = [0x14]; // Versión fija para el formato de codificación
+    const groupedByCount = {};
 
-    // Contar las ocurrencias de cada carta
-    deck.forEach((code) => {
-        if (!cardCounts[code]) cardCounts[code] = 0;
-        cardCounts[code]++;
-    });
+    // Agrupar cartas por número de copias
+    for (const cardCode in deck) {
+        const count = deck[cardCode];
+        if (!groupedByCount[count]) {
+            groupedByCount[count] = [];
+        }
+        groupedByCount[count].push(cardCode);
+    }
 
-    // Organizar las cartas por cantidad y set/facción
-    const groupedCards = Object.entries(cardCounts).reduce(
-        (acc, [cardCode, count]) => {
+    // Ordenar grupos por número de copias
+    const sortedCounts = Object.keys(groupedByCount).sort((a, b) => parseInt(b) - parseInt(a));
+
+    for (const count of sortedCounts) {
+        const cards = groupedByCount[count];
+        const groupedBySetFaction = {};
+
+        // Agrupar por set y facción
+        for (const cardCode of cards) {
             const set = parseInt(cardCode.slice(0, 2), 10);
             const faction = factionMapping[cardCode.slice(2, 4)];
-            const cardNum = parseInt(cardCode.slice(4), 10);
-
-            if (!acc[count]) acc[count] = [];
-            let group = acc[count].find((g) => g.set === set && g.faction === faction);
-
-            if (!group) {
-                group = { set, faction, cards: [] };
-                acc[count].push(group);
+            const key = `${set}-${faction}`;
+            if (!groupedBySetFaction[key]) {
+                groupedBySetFaction[key] = [];
             }
+            groupedBySetFaction[key].push(cardCode);
+        }
 
-            group.cards.push(cardNum);
-            return acc;
-        },
-        {}
-    );
+        // Codificar grupos por set y facción
+        const setFactionGroups = Object.values(groupedBySetFaction).sort((a, b) => a.length - b.length);
+        byteArray.push(setFactionGroups.length);
 
-    // Ordenar las listas
-    const sortedGroups = Object.entries(groupedCards).map(([count, groups]) => ({
-        count: parseInt(count, 10),
-        groups: groups
-            .map((g) => ({
-                ...g,
-                cards: g.cards.sort((a, b) => a - b),
-            }))
-            .sort((a, b) => a.cards.length - b.cards.length),
-    }));
+        for (const group of setFactionGroups) {
+            const set = parseInt(group[0].slice(0, 2), 10);
+            const faction = factionMapping[group[0].slice(2, 4)];
+            const cardNums = group.map(code => parseInt(code.slice(4), 10)).sort((a, b) => a - b);
 
-    // Crear un byte array
-    const byteArray = [];
-    byteArray.push(0x14); 
+            // Codificar grupo
+            byteArray.push(cardNums.length);
+            byteArray.push(set);
+            byteArray.push(faction);
 
-    sortedGroups.forEach(({ count, groups }) => {
-        byteArray.push(groups.length);
-
-        groups.forEach((group) => {
-            byteArray.push(group.cards.length);
-            byteArray.push(group.set);
-            byteArray.push(group.faction);
-
-            group.cards.forEach((cardNum) => {
+            for (const cardNum of cardNums) {
                 encodeVarInt(byteArray, cardNum);
-            });
-        });
-    });
+            }
+        }
+    }
 
-    // Codificar en Base32
     return encodeBase32(byteArray);
 };
 
@@ -263,38 +228,10 @@ const encodeBase32 = (byteArray) => {
 
 // Evento para generar mazo aleatorio
 document.getElementById('generate-random').onclick = () => {
-    const deck = generateRandomDeck();
-    const deckCode = generateDeckCode(deck);
-    displayResult(deck, deckCode, 'eterno');
+    const deck = createRandomDeck();
+    if (deck) {
+        const deckCode = generateDeckCode(deck);
+        displayResult(deck, deckCode, 'eterno');
+        console.log(deck)
+    }
 };
-
-// Mostrar el resultado
-// const displayResult = (deck, deckCode, format) => {
-//     const resultDiv = document.getElementById('result');
-//     const copyButton = document.getElementById('copy-deckcode');
-//     const cardListDiv = document.getElementById('card-list');
-
-//     resultDiv.innerHTML = `
-//       <p>${deckCode}</p>
-//       <p>El mazo es del formato ${format}</p>
-//     `;
-
-//     copyButton.style.display = 'block';
-//     copyButton.onclick = () => {
-//         navigator.clipboard.writeText(deckCode);
-//         console.log('Código del mazo copiado al portapapeles');
-//     };
-
-//     // Mostrar las cartas como imágenes
-//     cardListDiv.innerHTML = '';
-//     deck.forEach((cardCode) => {
-//         const card = cardData.find((c) => c.cardCode === cardCode);
-//         if (card) {
-//             const img = document.createElement('img');
-//             img.src = card.assets[0].gameAbsolutePath;
-//             img.alt = card.name;
-//             img.classList.add('card-image');
-//             cardListDiv.appendChild(img);
-//         }
-//     });
-// };
