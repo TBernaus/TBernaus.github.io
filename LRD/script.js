@@ -97,12 +97,53 @@ const createRandomDeck = () => {
     
     return deck;
 };
+// Función centralizada para generar el mazo budget y sus copias
+const createBudgetDeck = () => {
+     const deck = {};
+    let totalCards = 0;
+    const selectedRegions = selectRandomRegions();
+
+    // Filtrar cartas válidas
+    const validCards = cardData.filter((card) => {
+        const cardRegions = card.regions.map((region) => getRegionCode(region));
+         const isCommonOrRare = card.rarity.toLowerCase() === "common" || card.rarity.toLowerCase() === "rare";
+        return (
+            card.collectible &&
+            cardRegions.some((region) => selectedRegions.includes(region)) &&
+            isCommonOrRare &&
+            typeof card.cost === "number"
+        );
+    });
+
+    if (validCards.length === 0) {
+        console.error("No hay cartas válidas para construir un mazo.");
+        return null;
+    }
+
+    while (totalCards < 40) {
+        const selectedCard = validCards[Math.floor(Math.random() * validCards.length)];
+        if (!selectedCard) continue;
+
+        if (deck[selectedCard.cardCode]) {
+            if (deck[selectedCard.cardCode] < 3) {
+                deck[selectedCard.cardCode]++;
+                totalCards++;
+            }
+        } else {
+            deck[selectedCard.cardCode] = 1;
+            totalCards++;
+        }
+    }
+    
+    return deck;
+};
 
 
 const displayResult = (deck, deckCode, format) => {
     const resultDiv = document.getElementById('result');
     const copyButton = document.getElementById('copy-deckcode');
     const cardListDiv = document.getElementById('card-list');
+    const toggleCardButton = document.getElementById('toggle-cards');
 
     resultDiv.innerHTML = `
       <p>${deckCode}</p>
@@ -115,8 +156,24 @@ const displayResult = (deck, deckCode, format) => {
         console.log('Código del mazo copiado al portapapeles');
     };
 
+  // Ocultar cartas por defecto y mostrar botón de toggle
+  cardListDiv.style.display = 'none';
+  toggleCardButton.style.display = 'block';
+  toggleCardButton.textContent = "Mostrar Cartas";
+
+  toggleCardButton.onclick = () => {
+      if(cardListDiv.style.display === 'none') {
+          cardListDiv.style.display = 'flex';
+          toggleCardButton.textContent = 'Ocultar Cartas'
+      } else {
+          cardListDiv.style.display = 'none';
+          toggleCardButton.textContent = 'Mostrar Cartas'
+      }
+  }
+
+
     cardListDiv.innerHTML = '';
-     const sortedDeckEntries = Object.entries(deck).sort(([,], [cardCodeA, cardCodeB]) => {
+    const sortedDeckEntries = Object.entries(deck).sort(([,], [cardCodeA, cardCodeB]) => {
         const cardA = cardData.find((c) => c.cardCode === cardCodeA);
           return cardA?.name?.localeCompare(cardData.find((c) => c.cardCode === cardCodeB)?.name);
     });
@@ -137,10 +194,8 @@ const displayResult = (deck, deckCode, format) => {
 
 // Generar el código de mazo
 const generateDeckCode = (deck) => {
-    const byteArray = [0x14]; // Versión fija para el formato de codificación
+    const byteArray = [0x14];
     const groupedByCount = {};
-
-    // Agrupar cartas por número de copias
     for (const cardCode in deck) {
         const count = deck[cardCode];
         if (!groupedByCount[count]) {
@@ -148,46 +203,37 @@ const generateDeckCode = (deck) => {
         }
         groupedByCount[count].push(cardCode);
     }
-
-    // Ordenar grupos por número de copias
     const sortedCounts = Object.keys(groupedByCount).sort((a, b) => parseInt(b) - parseInt(a));
-
+    
     for (const count of sortedCounts) {
         const cards = groupedByCount[count];
         const groupedBySetFaction = {};
-
-        // Agrupar por set y facción
         for (const cardCode of cards) {
             const set = parseInt(cardCode.slice(0, 2), 10);
             const faction = factionMapping[cardCode.slice(2, 4)];
-            const key = `${set}-${faction}`;
+             const key = `${set}-${faction}`;
             if (!groupedBySetFaction[key]) {
                 groupedBySetFaction[key] = [];
             }
             groupedBySetFaction[key].push(cardCode);
         }
-
-        // Codificar grupos por set y facción
-        const setFactionGroups = Object.values(groupedBySetFaction).sort((a, b) => a.length - b.length);
-        byteArray.push(setFactionGroups.length);
-
-        for (const group of setFactionGroups) {
-            const set = parseInt(group[0].slice(0, 2), 10);
-            const faction = factionMapping[group[0].slice(2, 4)];
-            const cardNums = group.map(code => parseInt(code.slice(4), 10)).sort((a, b) => a - b);
-
-            // Codificar grupo
-            byteArray.push(cardNums.length);
-            byteArray.push(set);
-            byteArray.push(faction);
-
-            for (const cardNum of cardNums) {
-                encodeVarInt(byteArray, cardNum);
+          const setFactionGroups = Object.values(groupedBySetFaction).sort((a, b) => a.length - b.length);
+          byteArray.push(setFactionGroups.length);
+        
+            for (const group of setFactionGroups) {
+                 const set = parseInt(group[0].slice(0, 2), 10);
+                const faction = factionMapping[group[0].slice(2, 4)];
+                const cardNums = group.map(code => parseInt(code.slice(4), 10)).sort((a, b) => a - b);
+                byteArray.push(cardNums.length);
+                byteArray.push(set);
+                byteArray.push(faction);
+                  cardNums.forEach(cardNum => {
+                    encodeVarInt(byteArray, cardNum);
+                });
             }
         }
-    }
 
-    return encodeBase32(byteArray);
+  return encodeBase32(byteArray);
 };
 
 // Codificación VarInt (big endian)
@@ -229,6 +275,15 @@ const encodeBase32 = (byteArray) => {
 // Evento para generar mazo aleatorio
 document.getElementById('generate-random').onclick = () => {
     const deck = createRandomDeck();
+    if (deck) {
+        const deckCode = generateDeckCode(deck);
+        displayResult(deck, deckCode, 'eterno');
+        console.log(deck)
+    }
+};
+// Evento para generar mazo budget
+document.getElementById('generate-budget').onclick = () => {
+    const deck = createBudgetDeck();
     if (deck) {
         const deckCode = generateDeckCode(deck);
         displayResult(deck, deckCode, 'eterno');

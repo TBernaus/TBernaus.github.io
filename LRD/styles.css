@@ -1,67 +1,105 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Para cubrir toda la altura de la pantalla */
+  overflow-x: hidden; /* Evitar la barra de desplazamiento horizontal en móviles */
   }
-  
-  .container {
-    text-align: center;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-  
-  h1 {
-    font-size: 1.8em;
-    margin-bottom: 1.5em;
-    color: #ffcc00;
-  }
-  
-  .button-group {
-    margin-bottom: 1.5em;
-  }
-  
-  .btn {
-    background-color: #ff6f00;
-    border: none;
-    color: white;
-    padding: 0.8em 1.2em;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 0.5em;
-    transition: background-color 0.3s;
-  }
-  
-  .btn:hover {
-    background-color: #ffa726;
-  }
-  
-  .copy-btn {
-    background-color: #0288d1;
-  }
-  
-  .copy-btn:hover {
-    background-color: #03a9f4;
-  }
-  
-  .result {
-    margin: 1em 0;
-    font-size: 1.2em;
-    word-wrap: break-word;
-    text-align: center;
-  }
-  
-  .result p {
-    margin: 0.5em 0;
-    color: #bbbbbb;
-  }
-  .card-image{
-    width: 100px;
-  }
+
+.container {
+  text-align: center;
+  max-width: 95%; /* Ajustar el ancho máximo para móviles */
+  margin: 0 auto;
+  padding: 1em; /* Añadir un poco de padding en los lados para móviles */
+}
+
+h1 {
+  font-size: 1.6em;
+  margin-bottom: 1em;
+  color: #ffcc00;
+}
+
+.button-group {
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column; /* Cambiar la dirección a columna en móviles */
+  align-items: center; /* Centrar los botones */
+}
+
+.btn {
+  background-color: #ff6f00;
+  border: none;
+  color: white;
+  padding: 0.7em 1em;
+  font-size: 0.9em;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0.4em; /* Reducir el margen para móviles */
+  transition: background-color 0.3s;
+  width: 100%; /* Botones ocupan todo el ancho disponible */
+}
+
+
+.btn:hover {
+  background-color: #ffa726;
+}
+
+.copy-btn {
+  background-color: #0288d1;
+}
+
+.copy-btn:hover {
+  background-color: #03a9f4;
+}
+
+.result {
+  margin: 1em 0;
+  font-size: 1em;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.result p {
+  margin: 0.4em 0;
+  color: #bbbbbb;
+}
+
+.card-image {
+  width: 80px; /* Reducir el tamaño de la imagen para móviles */
+}
+
+#card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em;
+  margin: 1em 0;
+}
+#toggle-cards{
+  margin-bottom: 1em;
+  display: none;
+}
+/* Ajustes para pantallas más pequeñas */
+@media screen and (min-width: 600px) {
+    h1 {
+        font-size: 1.8em; /* Volver al tamaño de texto para pantallas más grandes */
+        margin-bottom: 1.5em;
+        }
+    .button-group {
+       flex-direction: row;
+       justify-content: center;
+    }
+
+    .btn {
+    width: auto;
+    }
+    
+    .card-image {
+    width: 100px; /* Reducir el tamaño de la imagen para móviles */
+    }
+}
