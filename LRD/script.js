@@ -14,7 +14,7 @@ const factionMapping = {
 
 // Leer y cargar datos del archivo JSON
  let cardData = [];
- fetch('./cards.json')
+ fetch('./allcards.json')
      .then((response) => response.json())
      .then((data) => {
          cardData = data.filter((card) => card.collectible);
