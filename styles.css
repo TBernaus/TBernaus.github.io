@@ -34,11 +34,9 @@ header h1 {
     right: 10px;
     display: flex;
     gap: 5px;
-}
-
-.language-switcher{
     margin-right: 40px;
 }
+
 .language-switcher .lang-btn {
     display: block !important;
     background-color: #f4f4f4;
@@ -67,6 +65,7 @@ aside {
     height: 100%;
     padding: 1rem 0;
     z-index: 999;
+    transition: left 0.3s ease;
 }
 
 aside ul {
@@ -104,6 +103,7 @@ main {
     flex-direction: column;
     scroll-padding-top: 80px;
 }
+
 .content-wrapper {
     width: 90em;
     margin: 0 auto;
@@ -117,19 +117,18 @@ main {
     gap: 20px;
     flex-direction: column;
 }
+
 .card {
     display: inline-block;
     flex: 1 1 calc(33.33% - 20px);
     width: 100%;
-    /* max-width: 600px; */
     margin: 0 auto;
-    /* min-width: 250px;
-    max-width: 300px; */
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
+
 section {
     margin-bottom: 2rem;
     width: 80px;
@@ -144,7 +143,7 @@ section h2 {
     padding-bottom: 0.5rem;
 }
 
-#pfp{
+#pfp {
     border-radius: 1000px;
     height: 200px;
     width: auto;
@@ -153,42 +152,106 @@ section h2 {
     margin-bottom: 10px;
     float: right;
 }
-
+ 
 footer {
     background: #333;
     color: #fff;
+    /* padding: 1rem; */
     text-align: center;
-    padding: 1rem;
     position: relative;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    margin-top: auto;
+    z-index: 1000;
 }
 
-a{
+a {
     text-decoration: none;
     color: #333;
 }
 
 /* Image List Styles */
 .skill-logos {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 20px; 
-    padding: 20px; 
-    list-style: none; 
-    background-color: white; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    list-style: none;
+    background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .skill-logos img {
-    max-width: 100px; 
-    height: auto; 
-    transition: transform 0.3s ease; 
+    max-height: 80px;
+    margin-right: 10px;
+    width: auto;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
 }
 
-.skill-logos img:hover{
-    transform: scale(1.1); 
+.skill-logos h3 {
+    width: 100%;
+    text-align: center;
 }
+
+.skill-logos h3,
+.skill-logos img {
+    margin-bottom: 15px;
+}
+
+
+.skill-logos img:hover {
+    transform: scale(1.2);
+}
+
+/* menu button */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5em;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+@media(max-width: 768px) {
+    main {
+        flex: 1;
+        margin-left: 100px;
+        margin-right: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        scroll-padding-top: 80px;
+    }
+    
+    .content-wrapper {
+        margin-left: 10px;
+        margin-right: 10px;
+        gap:none;
+        padding: none;
+    }
+
+    .card {
+        flex: 1 1 calc(100% - 20px);
+        width: 80%;
+    }
+
+    #pfp {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
+

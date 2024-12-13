@@ -14,40 +14,11 @@ langButtons.forEach(button => {
     });
 });
 
-// menú lateral
-// document.addEventListener("scroll", () => {
-//     const fromTop = window.scrollY + 100;
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.querySelector('.menu-btn');
+    const aside = document.querySelector('aside');
 
-//     menuLinks.forEach(link => {
-//         const section = document.querySelector(link.getAttribute("href"));
-
-//         if (
-//             section.offsetTop <= fromTop &&
-//             section.offsetTop + section.offsetHeight > fromTop
-//         ) {
-//             link.classList.add("active");
-//         } else {
-//             link.classList.remove("active");
-//         }
-//     });
-// });
-
-document.querySelectorAll('aside a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault(); // Evita el comportamiento predeterminado
-        const targetId = this.getAttribute('href'); // Obtén el id de destino
-        const targetElement = document.querySelector(targetId);
-
-        if (targetElement) {
-            // Calcula la posición con el margen deseado
-            const headerHeight = document.querySelector('header').offsetHeight;
-            const offsetTop = targetElement.offsetTop - headerHeight - 20; // 20px de margen adicional
-
-            // Realiza el desplazamiento suave
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
+    menuBtn.addEventListener('click', function(){
+        aside.classList.toggle('active')
     });
 });
