@@ -14,11 +14,21 @@ langButtons.forEach(button => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const menuBtn = document.querySelector('.menu-btn');
-    const aside = document.querySelector('aside');
+document.querySelectorAll('aside a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
 
-    menuBtn.addEventListener('click', function(){
-        aside.classList.toggle('active')
+        if (targetElement) {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const offsetTop = targetElement.offsetTop - headerHeight - 20;
+
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
     });
 });
+
