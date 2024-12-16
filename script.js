@@ -1,5 +1,7 @@
 const langButtons = document.querySelectorAll(".lang-btn");
+const skillsButtons = document.querySelectorAll(".skills-btn");
 const elements = document.querySelectorAll("[data-lang]");
+const skills = document.querySelectorAll("[data-skills]");
 const menuLinks = document.querySelectorAll(".menu-link");
 
 // idioma
@@ -14,6 +16,20 @@ langButtons.forEach(button => {
     });
 });
 
+// skills
+skillsButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const selectedSkills = button.getAttribute("data-skills");
+
+        skills.forEach(el => {
+            const skillType = el.getAttribute("data-skills");
+             el.style.display = skillType === selectedSkills ? "" : "none";
+        });
+    });
+});
+
+
+// aside
 document.querySelectorAll('aside a').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();

@@ -23,11 +23,14 @@
     <aside>
         <ul>
             <li><a href="#personal-info" class="menu-link" data-lang="ca">Informació Personal</a></li>
-            <li><a href="#personal-info" class="menu-link" data-lang="es" style="display:none;">Información Personal</a></li>
-            <li><a href="#personal-info" class="menu-link" data-lang="en" style="display:none;">Personal Information</a></li>
+            <li><a href="#personal-info" class="menu-link" data-lang="es" style="display:none;">Información Personal</a>
+            </li>
+            <li><a href="#personal-info" class="menu-link" data-lang="en" style="display:none;">Personal Information</a>
+            </li>
 
             <li><a href="#experience" class="menu-link" data-lang="ca">Experiència Laboral</a></li>
-            <li><a href="#experience" class="menu-link" data-lang="es" style="display:none;">Experiencia Laboral</a></li>
+            <li><a href="#experience" class="menu-link" data-lang="es" style="display:none;">Experiencia Laboral</a>
+            </li>
             <li><a href="#experience" class="menu-link" data-lang="en" style="display:none;">Work Experience</a></li>
 
             <li><a href="#education" class="menu-link" data-lang="ca">Estudis</a></li>
@@ -715,12 +718,30 @@
             </section>
 
             <section class="card" id="extracurricular">
-                <h2 data-lang="ca">Coneixements</h2>
-                <h2 data-lang="es" style="display:none;">Conocimientos</h2>
-                <h2 data-lang="en" style="display:none;">Skills</h2>
+                <h2 data-lang="ca">
+                    Coneixements
+                    <span class="skills-container">
+                        <button class="skills-btn" data-skills="logo">Imatges</button>
+                        <button class="skills-btn" data-skills="text">Text</button>
+                    </span>
+                </h2>
+                <h2 data-lang="es" style="display:none;">
+                    Conocimientos
+                    <span class="skills-container">
+                        <button class="skills-btn" data-skills="logo">Imágenes</button>
+                        <button class="skills-btn" data-skills="text">Texto</button>
+                    </span>
+                </h2>
+                <h2 data-lang="en" style="display:none;">
+                    Skills
+                    <span class="skills-container">
+                        <button class="skills-btn" data-skills="logo">Images</button>
+                        <button class="skills-btn" data-skills="text">Text</button>
+                    </span>
+                </h2>
                 <ul class="skill-logos">
                     <!-- llenguatges -->
-                    <div id="llenguatges">
+                    <div id="llenguatges" data-skills="logo">
                         <img src="https://ik.imagekit.io/tbernaus/CV/javascript.png" alt="javascript">
                         <img src="https://ik.imagekit.io/tbernaus/CV/php.png" alt="php">
                         <img src="https://ik.imagekit.io/tbernaus/CV/python.png" alt="python">
@@ -728,11 +749,23 @@
                         <img src="https://ik.imagekit.io/tbernaus/CV/css.png" alt="css">
                         <img src="https://ik.imagekit.io/tbernaus/CV/html.png" alt="html">
                     </div>
-
+                    <div id="llenguatges" style="display:none;" data-skills="text">
+                        <h3 data-lang="ca">Llenguatges</h3>
+                        <h3 data-lang="es" style="display: none;">Lenguajes</h3>
+                        <h3 data-lang="en" style="display: none;">Languages</h3>
+                        <ul>
+                            <li>Javascript</li>
+                            <li>PHP</li>
+                            <li>Python</li>
+                            <li>Typescript</li>
+                            <li>CSS</li>
+                            <li>HTML</li>
+                        </ul>
+                    </div>
                     <br />
                     <br />
                     <!-- frameworks -->
-                    <div id="frameworks">
+                    <div id="frameworks" data-skills="logo">
                         <img src="https://ik.imagekit.io/tbernaus/CV/bootstrap.png" alt="bootstrap">
                         <img src="https://ik.imagekit.io/tbernaus/CV/drupal.png" alt="drupal">
                         <img src="https://ik.imagekit.io/tbernaus/CV/gatsby.png" alt="gatsby">
@@ -743,23 +776,52 @@
                         <img src="https://ik.imagekit.io/tbernaus/CV/wordpress.png" alt="wordpress">
                         <img src="https://ik.imagekit.io/tbernaus/CV/expressjs.png" alt="expressjs">
                     </div>
+                    <div id="frameworks" style="display:none;" data-skills="text">
+                        <h3>Frameworks</h3>
+                        <ul>
+                            <li>Bootstrap</li>
+                            <li>Drupal</li>
+                            <li>Gtabsy</li>
+                            <li>jQuery</li>
+                            <li>Node.js</li>
+                            <li>React.js</li>
+                            <li>Vue.js</li>
+                            <li>Wordpress</li>
+                            <li>Express.js</li>
+                        </ul>
+                    </div>
 
                     <br />
                     <br />
                     <!-- db -->
-                    <div id="databases">
+                    <div id="databases" data-skills="logo">
                         <img src="https://ik.imagekit.io/tbernaus/CV/firebase.png" alt="firebase">
                         <img src="https://ik.imagekit.io/tbernaus/CV/mysql.png" alt="mysql">
                         <img src="https://ik.imagekit.io/tbernaus/CV/postgresql.png" alt="postgresql">
                         <img src="https://ik.imagekit.io/tbernaus/CV/sqlite.png" alt="sqlite">
                         <img src="https://ik.imagekit.io/tbernaus/CV/mongodb.png" alt="mongodb">
                     </div>
+                    <div id="databases" style="display:none;" data-skills="text">
+                        <h3 data-lang="ca">Bases de dades</h3>
+                        <h3 data-lang="es" style="display: none;">Bases de datos</h3>
+                        <h3 data-lang="en" style="display: none;">Databases</h3>
+                        <ul>
+                            <li>Firebase</li>
+                            <li>MySQL</li>
+                            <li>PostgreSQL</li>
+                            <li>SQLite</li>
+                            <li>MongoDB</li>
+                        </ul>
+                    </div>
+                </ul>
+
+
             </section>
         </div>
     </main>
 
     <!-- <footer id="site-footer">
-        <p>&copy; 2024 Tomàs Bernaus Solé. Tots els drets reservats.</p>
+        <p>© 2024 Tomàs Bernaus Solé. Tots els drets reservats.</p>
     </footer> -->
 
     <script src="script.js"></script>
