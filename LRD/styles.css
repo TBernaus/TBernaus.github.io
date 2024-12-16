@@ -93,7 +93,9 @@ h1 {
   gap: 0.5em;
   margin: 1em 0;
   padding: 1em;
-  background-color: rgba(221, 133, 0, 0.795)
+  background-color: rgba(221, 133, 0, 0.795);
+  margin: 10px;
+  border-radius: 10px;
 }
 
 /* Ajustes para pantallas más pequeñas */
