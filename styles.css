@@ -1,9 +1,4 @@
 /* Existing CSS (no changes) */
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-  }
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -169,19 +164,6 @@ footer {
     width: 100%;
     z-index: 1000;
 }
-#site-footer {
-    padding: 25px 0;
-    font-size: 85%;
-    background-color: #2A2A2A;
-    position: -webkit-sticky;
-    z-index: -1;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    color: antiquewhite;
-    text-align: center;
-    width: 100%;
-  }
 
 a {
     text-decoration: none;
@@ -238,6 +220,19 @@ a {
     cursor: pointer;
     display: none;
 }
+
+#site-footer {
+    padding: 25px 0;
+    font-size: 85%;
+    background-color: #2A2A2A;
+    position: -webkit-sticky;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: antiquewhite;
+    text-align: center;
+  }
 
 @media(max-width: 768px) {
     main {
