@@ -5,17 +5,18 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  min-height: 100vh; /* Para cubrir toda la altura de la pantalla */
-  overflow-x: hidden; /* Evitar la barra de desplazamiento horizontal en móviles */
+  min-height: 100vh;
+  overflow-x: hidden;
   }
 
 .container {
   text-align: center;
-  max-width: 95%; /* Ajustar el ancho máximo para móviles */
+  max-width: 95%;
   margin: 0 auto;
-  padding: 1em; /* Añadir un poco de padding en los lados para móviles */
+  padding: 1em;
 }
 
 h1 {
@@ -27,8 +28,8 @@ h1 {
 .button-group {
   margin-bottom: 1em;
   display: flex;
-  flex-direction: column; /* Cambiar la dirección a columna en móviles */
-  align-items: center; /* Centrar los botones */
+  flex-direction: column;
+  align-items: center; 
 }
 
 .btn {
@@ -39,11 +40,10 @@ h1 {
   font-size: 0.9em;
   cursor: pointer;
   border-radius: 5px;
-  margin: 0.4em; /* Reducir el margen para móviles */
+  margin: 0.4em; 
   transition: background-color 0.3s;
-  width: 100%; /* Botones ocupan todo el ancho disponible */
+  width: 100%; 
 }
-
 
 .btn:hover {
   background-color: #ffa726;
@@ -51,6 +51,16 @@ h1 {
 
 .copy-btn {
   background-color: #0288d1;
+  display: block;
+  margin: 0.4em auto;
+  width: fit-content; 
+}
+
+#toggle-cards{
+  margin-bottom: 1em;
+  display: none;
+  margin: 0.4em auto;
+  width: fit-content; 
 }
 
 .copy-btn:hover {
@@ -62,6 +72,9 @@ h1 {
   font-size: 1em;
   word-wrap: break-word;
   text-align: center;
+  background-color: rgba(207, 173, 173, 0.151);
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .result p {
@@ -70,7 +83,7 @@ h1 {
 }
 
 .card-image {
-  width: 80px; /* Reducir el tamaño de la imagen para móviles */
+  width: 80px; 
 }
 
 #card-list {
@@ -79,15 +92,14 @@ h1 {
   justify-content: center;
   gap: 0.5em;
   margin: 1em 0;
+  padding: 1em;
+  background-color: rgba(221, 133, 0, 0.795)
 }
-#toggle-cards{
-  margin-bottom: 1em;
-  display: none;
-}
+
 /* Ajustes para pantallas más pequeñas */
 @media screen and (min-width: 600px) {
     h1 {
-        font-size: 1.8em; /* Volver al tamaño de texto para pantallas más grandes */
+        font-size: 1.8em; 
         margin-bottom: 1.5em;
         }
     .button-group {
@@ -100,6 +112,6 @@ h1 {
     }
     
     .card-image {
-    width: 100px; /* Reducir el tamaño de la imagen para móviles */
+    width: 100px; 
     }
 }
