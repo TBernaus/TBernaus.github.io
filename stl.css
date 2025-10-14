@@ -18,7 +18,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
-    background: linear-gradient(135deg, #222b53 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #222b53 100%, #11162b 0%);
     min-height: 100vh;
     padding: 20px;
     line-height: 1.6;
@@ -170,14 +170,20 @@ body {
 .section-title {
     font-size: 2em;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    /* background: linear-gradient(135deg, var(--primary), var(--accent));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
     background-clip: text;
     margin-bottom: 25px;
     display: flex;
     align-items: center;
     gap: 12px;
+}
+.section-title span {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .about-text {
