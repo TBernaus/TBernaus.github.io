@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mapa d'Estacions Sierranevada</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Mapa interactiu d'estacions Sierranevada</h1>
+      <p>Visualitza les estacions de Sierranevada amb vista 2D o 3D.</p>
+    </header>
+    <main class="layout">
+      <section class="controls">
+        <h2>Vista del mapa</h2>
+        <div class="control-group">
+          <label for="styleSelectMs">Escull l'estil cartogràfic</label>
+          <select id="styleSelectMs" class="map-select">
+            <option value="topo" selected>Topogràfic</option>
+            <option value="classic">Base clàssica OSM</option>
+            <option value="satellite">Ortofoto satèl·lit</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="searchInputMs">Cerca per codi</label>
+          <input
+            id="searchInputMs"
+            class="map-input"
+            type="search"
+            placeholder="Escriu 'MS22', 'MS24'..."
+            autocomplete="off"
+            list="stationsListMs"
+          />
+          <datalist id="stationsListMs"></datalist>
+        </div>
+        <div class="control-group">
+          <label for="filterSelectMs">Filtra per altitud</label>
+          <select id="filterSelectMs" class="map-select">
+            <option value="all" selected>Totes les estacions</option>
+            <option value="alt-2600">Altitud ≥ 2.600 m</option>
+            <option value="alt-2400-2599">Altitud 2.400 - 2.599 m</option>
+            <option value="alt-2300-2399">Altitud 2.300 - 2.399 m</option>
+          </select>
+        </div>
+        <button id="toggleViewMs" class="primary-btn">Canvia a vista 3D</button>
+        <p class="hint">
+          Fes clic sobre una estaci&oacute; per veure detalls. Pots fer zoom i girar amb els controls del mapa.
+        </p>
+        <article class="insights-card" aria-live="polite">
+          <h3>Estad&iacute;stiques del sector</h3>
+          <div id="statsSummaryMs" class="stats-grid"></div>
+        </article>
+      </section>
+      <section class="map-container">
+        <div id="mapMs"></div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <small>
+        Troposf&egrave;rica &middot; Dades de Meteocat &middot; Projecci&oacute; UTM transformada a coordenades geogr&agrave;fiques.
+      </small>
+    </footer>
+    <script src="https://unpkg.com/proj4@2.9.0/dist/proj4.js"></script>
+    <script src="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.js"></script>
+    <script defer src="app_ms.js"></script>
+  </body>
+</html>
+
