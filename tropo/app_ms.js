@@ -58,9 +58,9 @@ const msStations = [
   {
     code: "PRADOLLANO",
     name: "Pradollano AEMET",
-    altitude: 3092,
-    lat: 37.06444,
-    lon: -3.37139,
+    altitude: 2500,
+    lat: 37.09389,
+    lon: -3.39139,
     isAemet: true,
     idema: "5511"
   }
@@ -68,12 +68,15 @@ const msStations = [
 
 const AEMET_API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtcnVzaW5vbEB0cm9wb3NmZXJpY2EuY29tIiwianRpIjoiZGIyNDkzNjQtOTA3MS00NjExLWIwZjMtZTBlN2RlMGUyZGIzIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE3NDc4MTQ2MDAsInVzZXJJZCI6ImRiMjQ5MzY0LTkwNzEtNDYxMS1iMGYzLWUwZTdkZTBlMmRiMyIsInJvbGUiOiIifQ.ML6ciatRj9WzAHeJM6qoXamNxomP-sGw0kahW9DS4dc";
 
+// Proxy CORS per permetre crides a l'API AEMET des del navegador
+const CORS_PROXY = "https://corsproxy.io/?";
+
 const aemetDataCache = {};
 
 async function fetchAemetData(idema) {
   if (aemetDataCache[idema]) {
     return aemetDataCache[idema];
-  } 
+  }
 
   try {
     const endDate = new Date();
@@ -86,7 +89,8 @@ async function fetchAemetData(idema) {
     
     const apiUrl = `https://opendata.aemet.es/opendata/api/valores/climatologicos/diarios/datos/fechaini/${fechaIni}/fechafin/${fechaFin}/estacion/${idema}`;
     
-    const response1 = await fetch(apiUrl, {
+    // Primera crida amb proxy CORS
+    const response1 = await fetch(CORS_PROXY + encodeURIComponent(apiUrl), {
       headers: {
         'api_key': AEMET_API_KEY
       }
@@ -102,7 +106,8 @@ async function fetchAemetData(idema) {
       throw new Error('No s\'ha rebut URL de dades');
     }
     
-    const response2 = await fetch(metaData.datos);
+    // Segona crida amb proxy CORS
+    const response2 = await fetch(CORS_PROXY + encodeURIComponent(metaData.datos));
     
     if (!response2.ok) {
       throw new Error(`Error en obtenir dades: ${response2.status}`);
@@ -266,11 +271,11 @@ function buildMsPopup(station, aemetData = null) {
           </div>
           <div>
             <dt>Pressió màxima</dt>
-            <dd>${aemetData.presMax !== undefined ? aemetData.presMax + ' hPa' : 'N/A'}</dd>
+            <dd>${aemetData.presMin !== undefined ? aemetData.presMin + ' hPa' : 'N/A'}</dd>
           </div>
           <div>
             <dt>Pressió mínima</dt>
-            <dd>${aemetData.presMin !== undefined ? aemetData.presMin + ' hPa' : 'N/A'}</dd>
+            <dd>${aemetData.presMax !== undefined ? aemetData.presMax + ' hPa' : 'N/A'}</dd>
           </div>
         </dl>
       </section>
@@ -413,14 +418,6 @@ async function focusMsStation(code) {
     duration: 900,
   });
   
-  if (target.isAemet && target.idema) {
-    const aemetData = await fetchAemetData(target.idema);
-    if (aemetData) {
-      const newPopupContent = buildMsPopup(target, aemetData);
-      entry.popup.setHTML(newPopupContent);
-    }
-  }
-  
   const popup = entry.marker.getPopup();
   if (popup) {
     popup.setLngLat([lng, lat]).addTo(msMapInstance);
@@ -460,22 +457,23 @@ async function initMsMap() {
     if (msMarkerStore.length === 0) {
       const bounds = new maplibregl.LngLatBounds();
 
-        console.log("Carregant dades de l'AEMET...");
-        const aemetPromises = msStations
-          .filter(station => station.isAemet && station.idema)
-          .map(station => fetchAemetData(station.idema));
-        
-        await Promise.all(aemetPromises);
-        console.log("Dades de l'AEMET carregades");
+      // Primer, carregar les dades AEMET de totes les estacions que ho necessiten
+      console.log("Carregant dades de l'AEMET...");
+      const aemetPromises = msStations
+        .filter(station => station.isAemet && station.idema)
+        .map(station => fetchAemetData(station.idema));
+      
+      await Promise.all(aemetPromises);
+      console.log("Dades de l'AEMET carregades");
 
       for (const station of msStations) {
         const { lon, lat } = getStationCoords(station);
         bounds.extend([lon, lat]);
         const markerEl = document.createElement("div");
         markerEl.className = "station-marker";
-          if (station.isAemet) {
-            markerEl.classList.add("aemet-marker");
-          }
+        if (station.isAemet) {
+          markerEl.classList.add("aemet-marker");
+        }
         const stationName = station.name || station.code;
         markerEl.title = `${stationName} · ${station.altitude} m`;
 

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Script per descarregar dades climatològiques diàries de l'AEMET OpenData API.
 Permet seleccionar una estació i un rang de dates i exporta les dades a CSV/Excel.
