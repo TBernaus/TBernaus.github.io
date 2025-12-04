@@ -60,7 +60,7 @@ const msStations = [
     name: "Pradollano AEMET",
     altitude: 3092,
     lat: 37.06444,
-    lon: -3.39139,
+    lon: -3.37139,
     isAemet: true,
     idema: "5511"
   }
@@ -265,8 +265,12 @@ function buildMsPopup(station, aemetData = null) {
             <dd>${aemetData.hrMin !== undefined ? aemetData.hrMin + ' %' : 'N/A'}</dd>
           </div>
           <div>
-            <dt>Pressió mitjana</dt>
-            <dd>${aemetData.presMedia !== undefined ? aemetData.presMedia + ' hPa' : 'N/A'}</dd>
+            <dt>Pressió màxima</dt>
+            <dd>${aemetData.presMax !== undefined ? aemetData.presMax + ' hPa' : 'N/A'}</dd>
+          </div>
+          <div>
+            <dt>Pressió mínima</dt>
+            <dd>${aemetData.presMin !== undefined ? aemetData.presMin + ' hPa' : 'N/A'}</dd>
           </div>
         </dl>
       </section>
